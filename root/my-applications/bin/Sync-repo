@@ -1,0 +1,35 @@
+#!/bin/sh
+###############################
+#          repo-Sync          #
+# Copyright 2012 - GNU GPL v2 #
+#        Versión 2.7          #
+###############################
+#m0li
+#mama21mama
+#actualiza el indice del repo mamalibre para puppy-es cada 30min
+for (( ; ; ))
+do
+
+#041012 
+#se omite de la version RC en adelante
+# por que traera el repo y no es necesario añadirlo
+#if [ -f /tmp/repo ]
+#then
+#echo tenemos el archivo
+#else
+#añadiendo repo
+#cd /tmp;curl -o repo http://text0.tk/?dl=869
+#cat /tmp/repo > /root/.packages/DISTRO_PET_REPOS
+#fi
+#end 041012
+
+if [ -f /root/Packages-puppy-5-official ]
+then
+echo tenemos el archivo
+else
+#descarga y sobreescribe indice
+cd /root && wget --no-cache http://mamalibre.no-ip.org/pub/puppylinux/Packages-puppy-5-official && mv -f ~/Packages-puppy-5-official ~/.packages/Packages-puppy-5-official.new
+fi
+       
+sleep 30m
+done 
