@@ -1,0 +1,602 @@
+item= MENU PUPPY-ES
+cmd = thunar
+icon= null
+#iconsize = 20
+
+SEPARATOR
+SEPARATOR
+SEPARATOR 	
+SEPARATOR
+
+Submenu = Escritorio
+	icon = /usr/local/lib/X11/pixmaps/x48.png
+
+	item = cambiador de iconos
+	cmd = icon_switcher
+	icon = /usr/local/lib/X11/mini-icons/mini-icons.xpm
+	
+	item = Selector de temas GTK
+	cmd = /usr/bin/gtk-chtheme
+	icon = /usr/share/pixmaps/gtk-chtheme.xpm
+	
+	item = Configuracion de JWM
+	cmd = /usr/sbin/jwmconfig
+	icon = /usr/local/lib/X11/mini-icons/mini.window3d.xpm
+	
+	item = Configuracion de Openbox
+	cmd = /usr/bin/obconf
+	icon = /usr/share/pixmaps/obconf.png
+	
+	item = Configuracion de Salvapantalla
+	cmd = /usr/local/apps/Xlock/AppRun -configure
+	icon = /var/local/icons/mini.xlock.xpm
+	
+	item = Creador de temas JWM
+	cmd = /usr/sbin/jwmthememaker
+	icon = /usr/local/lib/X11/mini-icons/mini.window3d.xpm
+	
+	item = Configura Touchpad
+	cmd = /usr/bin/flsynclient
+	icon = /usr/share/pixmaps/flsynclient.png
+
+	item = wallapers
+	cmd = wallpaper
+	icon = /usr/local/apps/Wallpaper/.DirIcon
+	
+	item = No pantalla blanca
+	cmd = /usr/sbin/noblankscreen
+    icon = /usr/local/lib/X11/mini-icons/mini.window3d.xpm
+    
+    item = Selector de Cursor
+	cmd = /usr/sbin/pcur
+    icon = /usr/local/lib/X11/mini-icons/default_left_ptr.png
+    
+    item = La configuracion de X 
+	cmd = /usr/bin/pupx
+    icon = /usr/local/lib/X11/mini-icons/mini.window3d.xpm
+    
+    item = Control de Salvapantallas
+	cmd = /usr/local/PupControl/SS-control
+    icon= /usr/local/PupControl/icons/screen20.png
+    
+    item = Ajusta tamaño de fuentes
+	cmd = /usr/sbin/set-xftdpi
+    icon = /usr/local/lib/X11/mini-icons/mini-x.xpm
+    
+    item = Creador de temas openbox
+	cmd =  simplebox
+    icon = /usr/local/lib/X11/mini-icons/mini-ray.xpm
+    
+    item = Cambiador de Escritorio
+	cmd =  wmswitcher
+    icon = /usr/local/lib/X11/mini-icons/mini-x2.xpm
+    
+    item = Configuracion de tint2
+	cmd =  /usr/bin/tint2conf
+    icon = /usr/share/tint2/default_icon.png
+    
+    item = Configura Idioma,Zona horaria y Teclado
+	cmd =  countrywizard
+    icon = /usr/local/lib/X11/mini-icons/mini-font.xpm
+    
+    item = Configurar hora y fecha
+	cmd =  set-time-for-puppy
+    icon = /usr/local/lib/X11/mini-icons/mini-clock.xpm
+    
+    item = Adminitrador de notas
+	cmd =  /usr/local/bin/glipper_shell
+    icon = /usr/local/PupControl/icons/glipper20.png
+    
+    item = Xclipboard
+	cmd =  /usr/bin/xclipboard
+    icon = /usr/local/lib/X11/mini-icons/mini-clipboard.xpm
+
+SEPARATOR    
+    
+Submenu = sistema
+	icon = /usr/local/lib/X11/pixmaps/pc48.png
+	
+    Submenu = Sistema Status y config
+		icon = /usr/local/lib/X11/mini-icons/mini-term.xpm
+		
+		item = Conky
+	    cmd = /usr/bin/conky
+	    icon =/usr/local/lib/X11/mini-icons/conky.png 
+	    
+	    item = Informacion del Hardware
+	    cmd = /usr/bin/hardinfo
+	    icon =/usr/share/pixmaps/hardinfo.png
+	    
+	    item = Procesos del Sistema
+	    cmd = /usr/bin/htop
+	    icon =/usr/share/pixmaps/htop48.png
+	    
+	    item = Informacion de la Red
+	    cmd = /usr/sbin/ipinfo
+	    icon =/usr/local/lib/X11/mini-icons/mini-telnet.xpm
+	    
+	    item = Administrador de procesos
+	    cmd = /usr/local/bin/pprocess
+	    icon =/usr/local/lib/X11/mini-icons/mini-run.xpm
+	    
+	    item = Informacion del Sistema
+	    cmd = /usr/local/bin/Pup-SysInfo
+	    icon =/usr/local/PupControl/icons/Pup-SysInfo20.png
+	    
+	    item = Pupscan Informacion de interface
+	    cmd = /usr/bin/pupscan
+	    icon =/usr/local/lib/X11/mini-icons/Card.xpm
+	    
+	    item = Reporte de video GLX
+	    cmd = /usr/sbin/report-video-glx
+	    icon =/usr/share/pixmaps/report-video.png
+	    
+	    item = Bloquear Pantalla
+	    cmd = /usr/local/apps/Xlock/AppRun -locknow
+	    icon =/usr/local/lib/X11/mini-icons/mini.xlock.xpm
+		
+    item = actualizar Puppy-es
+	cmd = /root/my-applications/bin/update
+	icon = /usr/local/lib/X11/pixmaps/refresh48.png
+	
+	item = gparted
+	cmd = gparted
+	icon = /usr/local/lib/X11/mini-icons/gparted.xpm
+	
+	item = Grub
+	cmd = /usr/sbin/grubconfig
+	icon = /usr/local/PupControl/icons/grub20.png
+	
+	item = grub4dos
+	cmd = grub4dosconfig
+	icon = /usr/share/pixmaps/gnibbles.png
+
+    item = Pdisk Administrador de Particiones
+	cmd = /usr/sbin/Pdisk
+	icon = /usr/local/lib/X11/mini-icons/Pdisk.xpm
+	
+	item =  Administrador de Arranque
+	cmd = /usr/sbin/bootmanager
+	icon =/usr/local/lib/X11/mini-icons/so.xpm
+	
+	item =  Administrador de Eventos
+	cmd = eventmanager
+	icon =/usr/local/lib/X11/mini-icons/so.xpm
+	
+SEPARATOR
+
+Submenu = Configuracion
+	icon = /usr/local/lib/X11/pixmaps/configuration48.png  
+	
+	item = Revisa Dependencias
+	cmd =  /usr/local/petget/check_deps.sh
+	icon = /usr/local/lib/X11/mini-icons/pet16.xpm
+	
+	item = Configuracion personal
+	cmd =  fullrun
+	icon = /usr/local/lib/X11/mini-icons/mini-dog.xpm
+ 
+    item = Quickpet
+	cmd =  quickpet
+	icon = /usr/local/lib/X11/mini-icons/pet16.xpm
+	
+	item = Cargador de .Sfs
+	cmd =  sfs_load
+	icon = /usr/share/pixmaps/squashfs-image.png
+	
+    item = instalador de paquetes ppm
+	cmd = /usr/local/petget/pkg_chooser.sh
+	icon = /usr/local/lib/X11/pixmaps/pet48x.png
+	
+	SEPARATOR
+	
+	item = Asistente de Configuracion de Sonido
+	cmd = alsawizard
+	icon = /usr/local/lib/X11/mini-icons/wizard16.xpm
+	
+	item = Instalador de Impresoras
+	cmd = /usr/sbin/cups_shell
+	icon =/usr/share/cups/doc-root/images/cups.png
+	
+	item = Asistente de Conexion Internet
+	cmd = connectwizard
+	icon =/usr/local/lib/X11/mini-icons/wizard16.xpm
+	
+	item = Asistente de Firewall
+	cmd = rxvt -e firewallinstallshell
+	icon =/usr/local/lib/X11/mini-icons/mini-firewall.xpm
+	
+	item = Configuracion del Pupsave
+	cmd = pupsaveconfig
+	icon =/usr/local/lib/X11/mini-icons/wizard16.xpm
+	
+	item = Xorgwizard
+	cmd = xorgwizard
+	icon =/usr/local/lib/X11/mini-icons/wizard16.xpm
+	
+	item = Instalador de Puppy en usb
+	cmd = /usr/sbin/bootflash
+	icon =/usr/local/lib/X11/mini-icons/mini-ray.xpm
+	
+	item = instalador universal de puppy
+	cmd = /usr/sbin/puppyinstaller
+	icon = /usr/local/lib/X11/pixmaps/pet48.png
+	
+	item = Remasterizar Puppy
+	cmd = /usr/sbin/remasterpup2
+	icon = /usr/local/lib/X11/mini-icons/mini-ray.xpm
+	
+	item = Crear Diskette de Arranque
+	cmd = wakepup2
+	icon = /usr/local/lib/X11/mini-icons/mini-ray.xpm
+		
+     item = Desinstala Paquetes Instalados
+	 cmd = /usr/sbin/remove_builtin
+	 icon = /usr/local/lib/X11/mini-icons/mini-ray.xpm
+SEPARATOR
+
+Submenu = Herramientas
+	icon = /usr/local/lib/X11/pixmaps/utility48.png 
+
+     item = Chequeo de MD5sum
+	 cmd = gtkhash
+	 icon = /usr/local/lib/X11/mini-icons/gtkhash.png
+	 
+	 item = Administrador Clipboard
+	 cmd = parcellite
+	 icon = /usr/local/lib/X11/mini-icons/Executable.xpm
+	 
+	 item = Panel PupControl
+	 cmd = PupControl
+	 icon = /usr/local/PupControl/icons/control-panel_20.png
+	 
+	 item = SFSconver Convertidor de Versiones
+	 cmd = /usr/local/sfsconvert/sfsconvert
+	 icon = /usr/local/apps/ROX-Filer/ROX/MIME/application-x-squashfs-image.png
+	 
+	 item = Administrador de Archivos
+	 cmd = xarchive
+	 icon = /usr/local/lib/X11/mini-icons/package.xpm
+	 
+	 SEPARATOR
+	 
+	 item = Respaldo Remoto
+	 cmd = gadmin-rsync
+	 icon = /usr/share/pixmaps/gadmin-rsync.png
+	 
+	 item = Pbackup-Respaldo y Sincronización
+	 cmd = pbackup
+	 icon = /usr/local/lib/X11/mini-icons/mini-diskette.xpm
+	 
+	 item = Pudd Copia Drive/Particion
+	 cmd = Pudd
+	 icon = /usr/local/lib/X11/mini-icons/mini-diskette.xpm
+	 
+	 item = Respaldo Para Archivos Save en Frugal
+	 cmd = pupsave-hot-backup
+	 icon = /usr/local/lib/X11/mini-icons/mini-diskette.xpm
+	 
+	 item = Redimensiona el Archivo Personal de Almancenamiento
+	 cmd = resizepfile.sh
+	 icon =/usr/local/lib/X11/mini-icons/so.xpm
+	 
+	 SEPARATOR
+	 
+	 item = Terminal
+	 cmd = roxterm
+	 icon =/usr/local/lib/X11/pixmaps/console48.png
+	 
+	 item = Terminal Urxvt
+	 cmd = urxvt
+	 icon =/usr/local/lib/X11/mini-icons/mini-sh.xpm
+	 
+	 item = Xconsole
+	 cmd = xconsole -verbose
+	 icon =/usr/local/lib/X11/mini-icons/mini-sh.xpm
+	 	 
+SEPARATOR
+
+Submenu = Sistema de Archivos
+	icon = /usr/local/lib/X11/pixmaps/folder48.png
+          
+      item = Sistema de Archivos Rox-filer
+	  cmd = rox
+	  icon = /usr/local/lib/X11/pixmaps/home48.png
+	  
+	  item=pmount monta y desmonta unidades
+	  cmd=/usr/sbin/pmount
+	  icon=/usr/local/lib/X11/pixmaps/drive48.png
+	   
+	  item = Startmount Montar unidades y programas en el arranque
+	  cmd = /usr/local/Startmount/Startmount
+	  icon= /usr/local/Startmount/startmount.xpm
+	  
+	  SEPARATOR
+	  
+	  item=Pfind-Buscador de Archivos
+	  cmd=pfind
+	  icon=/usr/local/lib/X11/mini-icons/mini-search.xpm
+	  
+	  item=Searchmonkey Buscador de Archivos
+	  cmd=searchmonkey
+	  icon=/usr/share/pixmaps/searchmonkey.png
+	  
+	  
+	  
+	  
+SEPARATOR
+
+Submenu = Gráficos
+	icon = /usr/local/lib/X11/pixmaps/paint48.png
+	
+	item = Visor de fotografias
+	cmd = /usr/local/bin/Pictureviewer
+	icon=/usr/share/pixmaps/Pictureviewer.png
+	
+	item = Visor de imagenes
+	cmd = /usr/bin/viewnior
+	icon=/usr/share/icons/hicolor/48x48/apps/viewnior.png
+
+	item = Editor de imagenes
+	cmd = /usr/local/bin/defaultpaint
+	icon=/usr/local/lib/X11/pixmaps/paint48.png
+	
+	item = Mtpaint Editor de imagenes
+	cmd = /usr/bin/mtpaint
+	icon=/usr/share/pixmaps/mtpaint.png
+	
+	item = Selector de color
+	cmd = /usr/bin/gcolor2
+	icon=/usr/share/pixmaps/gcolor2.png
+	
+	item = Manejador de camaras
+	cmd = /usr/bin/gtkam
+	icon=/usr/share/pixmaps/gtkam.png
+
+	item = Pupsnap
+	cmd = /usr/local/PupSnap/PupSnap
+	icon = /usr/local/PupSnap/icons/mini-camera.xpm
+	
+	item = Scanner
+	cmd = /usr/bin/Xsane
+	icon = /usr/share/pixmaps/xsane.xpm
+	
+	item = Capturador de pantalla
+	cmd = /usr/bin/mtpaintsnapshot.sh
+	icon = /usr/local/lib/X11/mini-icons/mini-camera.xpm
+
+SEPARATOR
+
+Submenu = Documentos
+	icon = /usr/local/lib/X11/pixmaps/word48.png
+	
+	item = Descarga e instala LibreOffice
+	cmd = get_libreoffice
+	icon = /usr/share/pixmaps/libreoffice-main.png			  
+   
+     item = procesador de texto
+	cmd = defaultwordprocessor
+	icon = /usr/local/lib/X11/pixmaps/word48.png
+	
+	  item = Geany Editor de Texto
+	  cmd = /usr/bin/geany
+	  icon = /usr/local/lib/X11/mini-icons/geany.xpm
+	  
+	  item=MP Consola Editor
+	  cmd=rxvt -geometry 80x25 -e mp
+	  icon = /usr/local/lib/X11/mini-icons/mp16.xpm
+	  
+	  item=Markup Composicion de Atributos
+	  cmd=markup
+	  icon=/usr/local/lib/X11/mini-icons/mini.stick.xpm
+	  
+	  item=Editor de Consola e3
+	  cmd=rxvt -geometry 80x25 -e e3ne
+	  icon=/usr/local/lib/X11/mini-icons/mini-edit.xpm
+	  
+	  item=Convertidor de Archivos a PDF
+	  cmd=puppypdf
+	  icon=/usr/local/lib/X11/mini-icons/mini-pdf.xpm
+	  
+	  item=Visor de PDF
+	  cmd=epdfview
+	  icon=/usr/local/lib/X11/mini-icons/mini-pdf.xpm
+
+SEPARATOR	
+	
+Submenu = Negocios
+	icon = /usr/local/lib/X11/pixmaps/spread48.png
+	
+    item =Gnumeric hoja de calculo
+	cmd = gnumeric
+	icon =/usr/share/icons/hicolor/48x48/apps/gnumeric.png
+	
+	item =Calculadora
+	cmd = gcalctool
+	icon =/usr/local/lib/X11/pixmaps/calculator48.png
+	
+SEPARATOR
+
+submenu=Personal
+      icon = /usr/local/lib/X11/pixmaps/date48.png
+     
+    item =Figaro Administrador de Contraseñas
+	cmd = fpm2
+	icon =/usr/share/fpm2/pixmaps/logo.xpm
+	
+	item=Osmo Organizador Personal
+	cmd=osmo
+	icon=/usr/share/pixmaps/osmo.png
+     
+SEPARATOR
+
+Submenu = Redes
+	icon = /usr/local/lib/X11/pixmaps/connect48.png
+	
+	item=Frisbee Conecta Wifi o Ethenet
+	cmd=frisbee
+	icon=/usr/share/pixmaps/frisbee.png
+	
+	item=Gpptp PPTP VPN cliente
+	cmd=gpptp
+	icon=/usr/local/lib/X11/mini-icons/pc-2x.xpm
+	
+	item=MTR traceroute
+	cmd=mtr -g
+	icon=/usr/local/lib/X11/mini-icons/pc-2x.xpm
+	
+	item=PcurlFtp Intercambio de Archivos
+	cmd=rox -d /root/File-Sharing
+	icon=/usr/local/lib/X11/mini-icons/pc-2x.xpm
+	
+	item=Compartir Archivos Samba
+	cmd=pnethood
+	icon=/usr/local/lib/X11/mini-icons/pc-2x.xpm
+	
+	item=Servidor FTP PureFTPd
+	cmd=run-pureftpd
+	icon=/usr/local/lib/X11/mini-icons/pc2www.xpm
+	
+	item=Superscan Scanner de Redes
+	cmd=superscan
+	icon=/usr/local/lib/X11/mini-icons/pc-2x.xpm
+	
+	
+
+SEPARATOR
+	
+Submenu = Internet
+	icon = /usr/local/lib/X11/pixmaps/www48.png
+	
+	item = Adobe Flash Propiedades
+	cmd = flash-player-properties
+	icon = /usr/share/icons/flash-player-properties.png
+	
+	item = Acelerador de descargas
+	cmd = /usr/bin/axel
+	icon = /usr/local/lib/X11/mini-icons/puppyaxel.xpm
+	
+	item = Chat pidgin
+	cmd = /usr/bin/pidgin
+	icon = /usr/share/icons/hicolor/48x48/apps/pidgin.png
+
+	item = Navegador web
+	cmd = /usr/local/bin/defaultbrowser
+	icon = /usr/local/lib/X11/pixmaps/www48.png
+	
+	item = Navegador Google-chrome
+	cmd = /usr/bin/google-chrome
+	icon=/opt/google/chrome/product_logo_256.png
+
+	item = Cliente de correo
+	cmd = /usr/bin/sylpheed
+	icon=/usr/local/lib/X11/mini-icons/sylpheed.png
+	
+	item = Xchat cliente IRC
+	cmd = /usr/bin/xchat
+	icon=/usr/share/pixmaps/xchat.png
+	
+	item = Gftp Cliente ftp
+	cmd = /usr/bin/gftp
+	icon=/usr/share/pixmaps/gftp.png
+
+	item = gestor de redes
+	cmd = /usr/local/bin/defaultconnect
+	icon= /usr/local/lib/X11/pixmaps/connect48.png
+	
+	item = Instala FlashPlayer
+	cmd = flash_install
+	icon= /usr/share/icons/flash-player-properties.png
+
+	item = uget gestor de descarga
+	cmd = uget-gtk %u
+	icon = /usr/share/icons/hicolor/16x16/apps/uget-icon.png
+	
+	item = transmission
+	cmd = transmission-gtk
+	icon = /usr/share/pixmaps/transmission.png
+
+SEPARATOR 
+
+Submenu = Multimedia
+	icon = /usr/local/lib/X11/pixmaps/multimedia48.png
+
+	item = Alsa Mixer
+	cmd =Alsamixer
+	icon = /usr/local/lib/X11/mini-icons/mini-sound.xpm
+	
+	item = Musica
+	cmd =/usr/local/bin/defaultaudioplayer
+	icon = /usr/share/pixmaps/pmusic.png
+
+	item = video
+	cmd = /usr/local/bin/defaultmediaplayer
+	icon = /usr/local/lib/X11/pixmaps/multimedia48.png
+
+	item = ffconvert
+	cmd = ffconvert
+	icon = /usr/local/lib/X11/mini-icons/ffconvert.png
+	
+	item = iso master
+	cmd = isomaster
+	icon = /usr/local/lib/X11/mini-icons/mini-cd.xpm
+
+	item = pburn
+	cmd = pburn
+	icon = /usr/local/pburn/pburn20.png
+
+	item = XineDVD DVD Player
+	cmd = xine
+	icon = /usr/local/lib/X11/mini-icons/xine.png
+
+SEPARATOR	
+
+Submenu = Juegos
+	icon = /usr/local/lib/X11/pixmaps/games48.png
+	
+	item=Tile
+	cmd=tile
+	icon=/usr/local/lib/X11/mini-icons/mini-modules.xpm	
+
+SEPARATOR
+		
+Submenu = Accesorios        # see man consolehelper
+
+	icon = /usr/local/lib/X11/pixmaps/folder48.png
+
+	item=mis archivos
+	cmd=/usr/local/bin/rox
+	icon=/usr/local/lib/X11/pixmaps/folder48.png
+	
+	item=mis documentos
+	cmd=rox my-documents
+	icon=/usr/local/lib/X11/pixmaps/folder48.png
+
+	item=pmount monta y desmonta unidades
+	cmd=/usr/sbin/pmount
+	icon=/usr/local/lib/X11/pixmaps/drive48.png
+
+	item=Terminal
+	cmd=roxterm
+	icon=/usr/local/lib/X11/pixmaps/console48.png
+
+	item=editor de texto
+	cmd=geany
+	icon=/usr/local/lib/X11/pixmaps/edit48.png
+
+	item=buscador de archivos
+	cmd=pfind
+	icon=/usr/local/lib/X11/mini-icons/mini-eye.xpm  
+
+SEPARATOR 
+
+item = Ayuda
+cmd = puppyhelp
+icon = /usr/local/lib/X11/pixmaps/help48.png
+
+SEPARATOR
+
+item = Cerrar Sesión
+cmd = /usr/local/bin/Apagar_pc
+icon = /usr/share/tint2/shutdown90.xpm
+
