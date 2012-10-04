@@ -4,8 +4,8 @@ Puppy-es
 Puppy linux enteramente en español
 
 Que es puppy-es ?. Es un proyecto del canal IRC en español para tener nuestro puppy enteramente al español.
-Todavía falta mucho trabajo pero si estas interesado seria de nuestro agrado,    que participaras.
-Puppy-es esta basada en woof 525 del usuario playdaz y se aprovecharon actualizaciones que andan de la 5.28.
+Todavía falta mucho trabajo pero si estas interesado, seria de nuestro agrado que participaras.
+Puppy-es esta basada en woof 525 del usuario playdaz y se aprovecharon actualizaciones que funcionan de la 5.28.
 Se actualizaron paquetes y programas.
 Algunas características en proceso de traducción total al español
 
