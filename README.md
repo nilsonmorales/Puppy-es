@@ -1,5 +1,9 @@
 Puppy-es
 =========
+Esto sera el proximo archivo .pet de update
+
+
+
 
 Puppy linux enteramente en español
 
