@@ -163,7 +163,7 @@
     <!-- Keybindings for desktop switching -->
     <keybind key="A-F7">
       <action name="execute">        
-      <command>roxterm --title=Terminal</command>
+      <command>urxvt --background black --foreground white --title Terminal</command>
       </action>
     </keybind>
     <keybind key="A-F6">
