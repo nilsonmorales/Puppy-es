@@ -161,6 +161,11 @@
     </keybind>
     <chainQuitKey>C-g</chainQuitKey>
     <!-- Keybindings for desktop switching -->
+    <keybind key="A-F5">
+      <action name="execute">        
+      <command>mtpaint -s</command>
+      </action>
+    </keybind>
     <keybind key="A-F3">
       <action name="Iconify" />        
     </keybind>
