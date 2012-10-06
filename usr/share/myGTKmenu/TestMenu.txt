@@ -98,10 +98,6 @@ Submenu = sistema
 	
     Submenu = Sistema Status y config
 		icon = /usr/local/lib/X11/mini-icons/mini-term.xpm
-		
-		item = Conky
-	    cmd = /usr/bin/conky
-	    icon =/usr/local/lib/X11/mini-icons/conky.png 
 	    
 	    item = Informacion del Hardware
 	    cmd = /usr/bin/hardinfo
@@ -432,10 +428,6 @@ SEPARATOR
 
 Submenu = Redes
 	icon = /usr/local/lib/X11/pixmaps/connect48.png
-	
-	item=Frisbee Conecta Wifi o Ethenet
-	cmd=frisbee
-	icon=/usr/share/pixmaps/frisbee.png
 	
 	item=Gpptp PPTP VPN cliente
 	cmd=gpptp
