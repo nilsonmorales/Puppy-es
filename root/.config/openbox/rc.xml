@@ -161,6 +161,11 @@
     </keybind>
     <chainQuitKey>C-g</chainQuitKey>
     <!-- Keybindings for desktop switching -->
+    <keybind key="A-F6">
+      <action name="execute">        
+      <command>/usr/local/bin/Apagar_pc</command>
+      </action>
+    </keybind>
     <keybind key="A-F5">
       <action name="execute">        
       <command>mtpaint -s</command>
