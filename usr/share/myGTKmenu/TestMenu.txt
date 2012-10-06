@@ -524,6 +524,14 @@ Submenu = Multimedia
 	item = video
 	cmd = /usr/local/bin/defaultmediaplayer
 	icon = /usr/local/lib/X11/pixmaps/multimedia48.png
+	
+	item = Shrink Realiza Copia de Seguridad de DVD
+	cmd = pdvdrsab
+	icon = /usr/local/lib/X11/mini-icons/mini-cd.xpm
+	
+	item = Guvcview Visor de webcam
+	cmd = /usr/bin/guvcview
+	icon = /usr/share/pixmaps/guvcview/guvcview.png
 
 	item = ffconvert
 	cmd = ffconvert
