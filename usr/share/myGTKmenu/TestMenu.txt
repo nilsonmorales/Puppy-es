@@ -599,4 +599,3 @@ SEPARATOR
 item = Cerrar Sesión
 cmd = /usr/local/bin/Apagar_pc
 icon = /usr/share/tint2/shutdown90.xpm
-
