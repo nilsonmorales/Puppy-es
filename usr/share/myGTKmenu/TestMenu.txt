@@ -476,9 +476,9 @@ Submenu = Internet
 	cmd = /usr/local/bin/defaultbrowser
 	icon = /usr/local/lib/X11/pixmaps/www48.png
 	
-	item = Navegador Google-chrome
-	cmd = /usr/bin/google-chrome
-	icon=/opt/google/chrome/product_logo_256.png
+	#item = Navegador Google-chrome
+	#cmd = /usr/bin/google-chrome
+	#icon=/opt/google/chrome/product_logo_256.png
 
 	item = Cliente de correo
 	cmd = /usr/bin/sylpheed
