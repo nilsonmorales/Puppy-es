@@ -468,9 +468,9 @@ Submenu = Internet
 	cmd = /usr/bin/axel
 	icon = /usr/local/lib/X11/mini-icons/puppyaxel.xpm
 	
-	item = Chat pidgin
-	cmd = /usr/bin/pidgin
-	icon = /usr/share/icons/hicolor/48x48/apps/pidgin.png
+	#item = Chat pidgin
+	#cmd = /usr/bin/pidgin
+	#icon = /usr/share/icons/hicolor/48x48/apps/pidgin.png
 
 	item = Navegador web
 	cmd = /usr/local/bin/defaultbrowser
