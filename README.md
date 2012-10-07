@@ -21,3 +21,6 @@ Algunas características en proceso de traducción total al español
     Trabajo y mantenimiento por miembros en español del canal irc #puppy-es
 
 Se acordó trabajar en dos ramas una para equipos antiguos y otro para maquinas mas recientes.
+
+Web del Proyecto
+http://puppyes.com.ar/
