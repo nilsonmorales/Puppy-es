@@ -1,0 +1,79 @@
+
+		<item label="ayuda">
+			<action name="Execute">
+				<execute>
+					defaulthtmlviewer file:///usr/share/doc/home.htm
+				</execute>
+			</action>
+		</item>
+#
+#
+#
+#
+#
+<!-- This section is for your shortcuts and will not be overwritten by fixmenus -->		
+<menu id="temas openbox" label="Temas openbox" execute="~/.config/openbox/bin/genmenu"/>
+<menu id="openbox" label="openbox">
+
+<!-- This is an example of how to launch a simple program -->
+<menu id="client-list-menu" label="client-list-menu">
+</menu>	
+<item label="Configure Openbox">
+<action name="Execute">
+<command>obconf</command>
+</action>
+</item>	
+
+
+<!-- This shows how to launch Rox Filemanager to a particular directory -->
+<item label="Mis documentos">
+<action name="Execute">
+<command>rox /root/my-documents/</command>
+</action>
+</item>
+
+<!-- This shows how to launch a program using the full path -->
+<item label="montador de unidades">
+<action name="Execute">
+<command>pmount</command>
+</action>
+</item>
+
+<item label="buscador de archivos">
+<action name="Execute">
+<command>pfind</command>
+</action>
+</item>
+
+<item label="Informacion Hardware">
+<action name="Execute">
+<command>hardinfo</command>
+</action>
+</item>
+
+<item label="Editor de texto">
+<action name="Execute">
+<command>geany</command>
+</action>
+</item>
+<!-- Just another example of how to load Abiword with a particular file opened -->
+			<item label="Reconfigurar menu">
+				<action name="Reconfigure"/>
+			</item>
+			<item label="Refrescar menu">
+				<action name="Execute">
+					<execute>
+						fixmenus
+					</execute>
+				</action>
+				<action name="Reconfigure"/>
+			</item>
+			<item label="Salir">
+			<action name="Execute">
+				<command>/usr/local/bin/Apagar_pc</command>
+			</action>
+		</item>	
+		</menu>
+	</menu>
+		</openbox_menu>
+			
