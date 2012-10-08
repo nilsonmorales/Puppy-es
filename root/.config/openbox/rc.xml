@@ -161,6 +161,11 @@
     </keybind>
     <chainQuitKey>C-g</chainQuitKey>
     <!-- Keybindings for desktop switching -->
+    <keybind key="C-A-3">
+      <action name="execute">        
+      <command>geany</command>
+      </action>
+    </keybind>
     <keybind key="C-A-2">
       <action name="execute">        
       <command>/usr/local/bin/defaultchat</command>
