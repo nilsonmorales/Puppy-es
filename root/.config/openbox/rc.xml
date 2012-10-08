@@ -154,6 +154,11 @@
     <!-- 'Left', 'Middle', 'Right' -->
   </dock>
   <keyboard>
+  <keybind key="C-A-6">
+      <action name="execute">        
+      <command>quickpet</command>
+      </action>
+    </keybind>
     <keybind key="A-C-q">
       <action name="ShowMenu">
         <menu>root-menu</menu>
