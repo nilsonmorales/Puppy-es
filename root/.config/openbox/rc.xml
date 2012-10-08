@@ -161,6 +161,21 @@
     </keybind>
     <chainQuitKey>C-g</chainQuitKey>
     <!-- Keybindings for desktop switching -->
+    <keybind key="C-i">
+      <action name="execute">        
+      <command>/usr/local/bin/defaultbrowser</command>
+      </action>
+    </keybind>
+    <keybind key="C-A-5">
+      <action name="execute">        
+      <command>/root/my-applications/bin/update</command>
+      </action>
+    </keybind>
+    <keybind key="C-A-4">
+      <action name="execute">        
+      <command>/usr/local/PupControl/SS-control</command>
+      </action>
+    </keybind>
     <keybind key="C-A-3">
       <action name="execute">        
       <command>geany</command>
