@@ -161,6 +161,11 @@
     </keybind>
     <chainQuitKey>C-g</chainQuitKey>
     <!-- Keybindings for desktop switching -->
+    <keybind key="A-F8">
+      <action name="execute">        
+      <command>/usr/local/petget/pkg_chooser.sh</command>
+      </action>
+    </keybind>
     <keybind key="A-F7">
       <action name="execute">        
       <command>urxvt --background black --foreground white --title Terminal</command>
