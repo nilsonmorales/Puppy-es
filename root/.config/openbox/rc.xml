@@ -173,7 +173,7 @@
     </keybind>
     <keybind key="C-A-4">
       <action name="execute">        
-      <command>/usr/local/PupControl/SS-control</command>
+      <command>PupControl</command>
       </action>
     </keybind>
     <keybind key="C-A-3">
