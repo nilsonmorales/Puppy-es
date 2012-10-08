@@ -161,6 +161,11 @@
     </keybind>
     <chainQuitKey>C-g</chainQuitKey>
     <!-- Keybindings for desktop switching -->
+    <keybind key="C-A-1">
+      <action name="execute">        
+      <command>rox</command>
+      </action>
+    </keybind>
     <keybind key="A-F9">
       <action name="execute">        
       <command>xorgwizard</command>
