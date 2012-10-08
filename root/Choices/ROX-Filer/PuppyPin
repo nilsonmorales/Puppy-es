@@ -1,14 +1,14 @@
 <?xml version="1.0"?>
 <pinboard>
   <backdrop style="Stretched">/usr/share/backgrounds/default.jpg</backdrop>
-  <icon x="36" y="374" label="ppm">/usr/share/applications/Puppy-package-manager.desktop</icon>
-  <icon x="34" y="650" label="papelera">/usr/local/apps/Trash</icon>
+  <icon x="36" y="374" label="PPM">/usr/share/applications/Puppy-package-manager.desktop</icon>
+  <icon x="34" y="650" label="Papelera">/usr/local/apps/Trash</icon>
   <icon x="32" y="174" label="Chat">/usr/local/bin/defaultchat</icon>
   <icon x="32" y="108" label="Internet">/usr/local/bin/defaultbrowser</icon>
   <icon x="30" y="504" label="Montar">/usr/sbin/pmount</icon>
   <icon x="30" y="32" label="Archivos">/usr/local/bin/rox</icon>
   <icon x="32" y="304" label="Conectar">/usr/local/apps/Connect</icon>
   <icon x="30" y="234" label="Correo">/usr/local/bin/defaultemail</icon>
-  <icon x="32" y="442" label="video">/usr/local/bin/defaultmediaplayer</icon>
-  <icon x="34" y="568" label="terminal">/usr/local/bin/defaultterminal</icon>
+  <icon x="32" y="442" label="Video">/usr/local/bin/defaultmediaplayer</icon>
+  <icon x="34" y="568" label="Terminal">/usr/local/bin/defaultterminal</icon>
 </pinboard>
