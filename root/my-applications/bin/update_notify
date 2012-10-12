@@ -1,0 +1,89 @@
+#!/bin/bash
+###############################
+#       update_notify         #
+# Copyright 2012 - GNU GPL v2 #
+#        Versión 1.0          #
+############################### 
+for (( ; ; ))
+do
+NUM1=`cat /var/log/MD5sum_repo | awk '{print $1}'`
+NUM2=`cat /tmp/md5_update | awk '{print $1}'`
+  
+cd /tmp;rm -rf MD5sum*
+wget --no-cache http://mamalibre.no-ip.org/pub/puppylinux/MD5sum.txt
+
+#lee la linea 86 donde se encuentra la md5sum del update
+sed -n 86,10p MD5sum.txt > /var/log/MD5sum_repo
+sed -n 86,10p MD5sum.txt > /tmp/md5_update
+
+#String comparison:
+if [ $NUM1 == $NUM2 ]
+then
+echo "no hay update"
+else
+DIALOG=Xdialog
+
+$DIALOG --title "Hay Update de puppy-es" \
+		--icon /usr/local/lib/X11/pixmaps/archive48.png \
+        --infobox "Hay update de Puppy-es.\\n
+       
+
+Usted tiene 20 segundos para leer esto..." 0 0 10000
+
+$DIALOG --title "Hay Update de puppy-es" \
+		--icon /usr/local/lib/X11/pixmaps/archive48.png \
+        --infobox "Hay update de Puppy-es.\\n
+
+Usted tiene 9 segundos para leer esto..." 0 0
+
+$DIALOG --title "Hay Update de puppy-es" \
+		--icon /usr/local/lib/X11/pixmaps/archive48.png \
+        --infobox "Hay update de Puppy-es.\\n
+
+Usted tiene 8 segundos para leer esto..." 0 0
+
+$DIALOG --title "Hay Update de puppy-es" \
+		--icon /usr/local/lib/X11/pixmaps/archive48.png \
+        --infobox "Hay update de Puppy-es.\\n
+
+Usted tiene 7 segundos para leer esto..." 0 0
+
+$DIALOG --title "Hay Update de puppy-es" \
+		--icon /usr/local/lib/X11/pixmaps/archive48.png \
+        --infobox "Hay update de Puppy-es.\\n
+
+Usted tiene 6 segundos para leer esto..." 0 0
+
+$DIALOG --title "Hay Update de puppy-es" \
+		--icon /usr/local/lib/X11/pixmaps/archive48.png \
+        --infobox "Hay update de Puppy-es.\\n
+
+Usted tiene 5 segundos para leer esto..." 0 0
+
+$DIALOG --title "Hay Update de puppy-es" \
+		--icon /usr/local/lib/X11/pixmaps/archive48.png \
+        --infobox "Hay update de Puppy-es.\\n
+
+Usted tiene 4 segundos para leer esto..." 0 0
+
+$DIALOG --title "Hay Update de puppy-es" \
+		--icon /usr/local/lib/X11/pixmaps/archive48.png \
+        --infobox "Hay update de Puppy-es.\\n
+
+Usted tiene 3 segundos para leer esto..." 0 0
+
+$DIALOG --title "Hay Update de puppy-es" \
+		--icon /usr/local/lib/X11/pixmaps/archive48.png \
+        --infobox "Hay update de Puppy-es.\\n
+
+Usted tiene 2 segundos para leer esto..." 0 0
+
+$DIALOG --title "Hay Update de puppy-es" \
+	--icon "/usr/local/lib/X11/pixmaps/archive48.png" \
+        --infobox "Hay update de Puppy-es.\\n
+
+Usted tiene 1 segundos para leer esto..." 0 0
+fi
+
+sleep 30m
+done
