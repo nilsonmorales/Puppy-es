@@ -2,9 +2,9 @@
 ###############################
 #       update_notify         #
 # Copyright 2012 - GNU GPL v2 #
-#        Versión 2.0          #
+#        Versión 2.1          #
 ############################### 
-#121012 Fabián Bonetti
+#121012 Fabián Bonetti (@mama21mama)
 #121012 Alejandro (@decoy91)
 for (( ; ; ))
 do
@@ -95,6 +95,6 @@ $DIALOG --title "Hay Update de puppy-es" \
 Usted tiene 1 segundos para leer esto..." 0 0
 
 fi
-sleep 3
+sleep 30m
 sed -n 86,10p MD5sum.txt > /tmp/md5_update
 done
