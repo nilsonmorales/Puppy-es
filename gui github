@@ -1,0 +1,48 @@
+
+
+INSTALAR EL PET http://mamalibre.no-ip.org/pub/puppylinux/pet_packages-5/git_1.7.2.5-3_i386.pet
+
+clonamos git clone git://github.com/nilsonmorales/Puppy-es.git
+
+PROCEDIMIENTO PARA AGREGAR ALGO A GITHUB
+
+EN CONSOLA 
+ssh git@github.com
+               SALDRA ESTO
+               Hi nilsonmorales! You've successfully authenticated, but GitHub does not provide shell access.
+              Connection to github.com closed.
+git pull origin master
+               SALDRA ESTO
+               remote: Counting objects: 5, done.remote: Compressing objects: 100% (2/2), done. Unpacking objects: 100% (3/3), done.
+                remote: Total 3 (delta 1), reused 3 (delta 1)
+                From git://github.com/nilsonmorales/Puppy-es
+                 * branch            master     -> FETCH_HEAD
+                Updating da1a771..e636bee
+                Fast-forward
+                 README.md |    3 +++
+                1 files changed, 3 insertions(+), 0 deletions(-)
+git add .
+                NO VERAS NADA
+git commit --m "Agregando guvcview y pdvdrsab a mygtkmenu"
+                SALDRA ESTO
+                [master d050014] Agregando guvcview y pdvdrsab a mygtkmenu
+                1 files changed, 8 insertions(+), 0 deletions(-) 
+git push git@github.com:nilsonmorales/Puppy-es.git
+                SALDRA ESTO
+                Enter passphrase for key '/root/.ssh/id_rsa':
+                INGRESAMOS LA CLAVE
+                Y ESTO APARECERA
+                Counting objects: 11, done.
+                Compressing objects: 100% (3/3), done.
+                Writing objects: 100% (6/6), 574 bytes, done.
+                Total 6 (delta 2), reused 0 (delta 0)
+                To git@github.com:nilsonmorales/Puppy-es.git
+                e636bee..d050014  master -> master
+git pull origin master
+                SALDRA ESTO
+                From git://github.com/nilsonmorales/Puppy-es
+               * branch            master     -> FETCH_HEAD
+               Already up-to-date.
+root@puppy-es:[~/Puppy-es] # ESO ES TODO SOLO VAS AL SITIO WEB Y VES EL REPO                
+
+                               
