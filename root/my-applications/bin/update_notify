@@ -2,24 +2,34 @@
 ###############################
 #       update_notify         #
 # Copyright 2012 - GNU GPL v2 #
-#        Versión 1.0          #
+#        Versión 2.0          #
 ############################### 
+#121012 Fabián Bonetti
+#121012 Alejandro (@decoy91)
 for (( ; ; ))
 do
-NUM1=`cat /var/log/MD5sum_repo | awk '{print $1}'`
-NUM2=`cat /tmp/md5_update | awk '{print $1}'`
-  
-cd /tmp;rm -rf MD5sum*
+cd /tmp;
+rm -rf /tmp/MD5sum*
 wget --no-cache http://mamalibre.no-ip.org/pub/puppylinux/MD5sum.txt
 
 #lee la linea 86 donde se encuentra la md5sum del update
+
+if [ -e /tmp/md5_update ]
+then
+	echo tenemos el archivo
+else
+	sed -n 86,10p MD5sum.txt > /tmp/md5_update
+fi
+
 sed -n 86,10p MD5sum.txt > /var/log/MD5sum_repo
-sed -n 86,10p MD5sum.txt > /tmp/md5_update
+
+NUM1=`cat /var/log/MD5sum_repo | awk '{print $1}'`
+NUM2=`cat /tmp/md5_update | awk '{print $1}'`
 
 #String comparison:
 if [ $NUM1 == $NUM2 ]
 then
-echo "no hay update"
+	echo "no hay update"
 else
 DIALOG=Xdialog
 
@@ -83,7 +93,8 @@ $DIALOG --title "Hay Update de puppy-es" \
         --infobox "Hay update de Puppy-es.\\n
 
 Usted tiene 1 segundos para leer esto..." 0 0
-fi
 
-sleep 30m
+fi
+sleep 3
+sed -n 86,10p MD5sum.txt > /tmp/md5_update
 done
