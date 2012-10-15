@@ -2,7 +2,7 @@
 <pinboard>
   <backdrop style="Stretched">/usr/share/backgrounds/default.jpg</backdrop>
   <icon x="36" y="374" label="ppm">/usr/share/applications/Puppy-package-manager.desktop</icon>
-  <icon x="1238" y="726" label="papelera">/usr/local/apps/Trash</icon>
+  <icon x="100" y="638" label="papelera">/usr/local/apps/Trash</icon>
   <icon x="32" y="174" label="Chat">/usr/local/bin/defaultchat</icon>
   <icon x="32" y="108" label="Internet">/usr/local/bin/defaultbrowser</icon>
   <icon x="30" y="504" label="Montar">/usr/sbin/pmount</icon>
