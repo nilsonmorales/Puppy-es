@@ -2,7 +2,7 @@
 ###############################
 #       update_notify         #
 # Copyright 2012 - GNU GPL v2 #
-#        Versión 2.2          #
+#        Versión 2.3          #
 ############################### 
 #121012 Fabián Bonetti (@mama21mama)
 #121012 Alejandro (@decoy91)
@@ -38,62 +38,12 @@ $DIALOG --title "Hay Update de puppy-es" \
 		--icon /usr/local/lib/X11/pixmaps/archive48.png \
         --infobox "Hay update de Puppy-es.\\n
        
+Haga clic en update, en el escritorio...\n
+asi se inicia la actualizacion.\n
 
-Usted tiene 20 segundos para leer esto..." 0 0 10000
 
-$DIALOG --title "Hay Update de puppy-es" \
-		--icon /usr/local/lib/X11/pixmaps/archive48.png \
-        --infobox "Hay update de Puppy-es.\\n
+Usted tiene 20 segundos para leer esto..." 0 0 20000
 
-Usted tiene 9 segundos para leer esto..." 0 0
-
-$DIALOG --title "Hay Update de puppy-es" \
-		--icon /usr/local/lib/X11/pixmaps/archive48.png \
-        --infobox "Hay update de Puppy-es.\\n
-
-Usted tiene 8 segundos para leer esto..." 0 0
-
-$DIALOG --title "Hay Update de puppy-es" \
-		--icon /usr/local/lib/X11/pixmaps/archive48.png \
-        --infobox "Hay update de Puppy-es.\\n
-
-Usted tiene 7 segundos para leer esto..." 0 0
-
-$DIALOG --title "Hay Update de puppy-es" \
-		--icon /usr/local/lib/X11/pixmaps/archive48.png \
-        --infobox "Hay update de Puppy-es.\\n
-
-Usted tiene 6 segundos para leer esto..." 0 0
-
-$DIALOG --title "Hay Update de puppy-es" \
-		--icon /usr/local/lib/X11/pixmaps/archive48.png \
-        --infobox "Hay update de Puppy-es.\\n
-
-Usted tiene 5 segundos para leer esto..." 0 0
-
-$DIALOG --title "Hay Update de puppy-es" \
-		--icon /usr/local/lib/X11/pixmaps/archive48.png \
-        --infobox "Hay update de Puppy-es.\\n
-
-Usted tiene 4 segundos para leer esto..." 0 0
-
-$DIALOG --title "Hay Update de puppy-es" \
-		--icon /usr/local/lib/X11/pixmaps/archive48.png \
-        --infobox "Hay update de Puppy-es.\\n
-
-Usted tiene 3 segundos para leer esto..." 0 0
-
-$DIALOG --title "Hay Update de puppy-es" \
-		--icon /usr/local/lib/X11/pixmaps/archive48.png \
-        --infobox "Hay update de Puppy-es.\\n
-
-Usted tiene 2 segundos para leer esto..." 0 0
-
-$DIALOG --title "Hay Update de puppy-es" \
-	--icon "/usr/local/lib/X11/pixmaps/archive48.png" \
-        --infobox "Hay update de Puppy-es.\\n
-
-Usted tiene 1 segundos para leer esto..." 0 0
 
 fi
 sleep 30m

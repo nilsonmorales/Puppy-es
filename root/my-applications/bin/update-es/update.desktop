@@ -1,0 +1,10 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=update puppy-es
+Icon=/usr/local/lib/X11/pixmaps/refresh48.png
+Comment=update puppy-es
+Exec=/root/my-applications/bin/update
+Terminal=false
+Type=Application
+Categories=FileManager
+

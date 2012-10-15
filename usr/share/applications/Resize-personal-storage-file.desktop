@@ -1,0 +1,18 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Redimensiona Archivo Personal de Almacenamiento
+Name[ru]=Увеличить персональный файл
+Name[fr]=Agrandir votre sauvegarde
+Name[de]=Persöhnliche Sicherungsdatei erweitern
+Name[es]=Redimensiona Archivo Personal de Almacenamiento
+Name[hu_HU]=Tárolófájlunk átméretezése
+Name[ja]=個人保存ファイルのリサイズ
+Name[zh_CN]=改变个人存储文件大小
+Name[zh_TW]=改變個人儲存檔大小
+Icon=so.xpm
+Comment=Redimensiona Archivo Personal de Almacenamiento
+Exec=resizepfile.sh
+Terminal=false
+Type=Application
+Categories=Archiving
+GenericName=Redimensiona Archivo Personal de Almacenamiento

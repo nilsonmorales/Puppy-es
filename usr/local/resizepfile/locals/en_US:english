@@ -1,0 +1,66 @@
+#!/bin/bash
+#resizepfile.sh
+#version=1.x
+#language=english
+#translator:don570
+
+set -a
+
+#general heading
+LOC100="Cambiar el tamaño del archivo personal PUPSAVE"
+
+#first xdialog
+LOC200="Lo sentimos, usted no está usando actualmente un persistente personal"
+LOC201="almacenamiento de archivo. Si esta es la primera vez que se ha arrancado,"
+LOC202="por ejemplo, de un CD en vivo, que está actualmente en ejecución"
+LOC203="totalmente en la memoria RAM y se le pedirá que cree un personal"
+LOC204="almacenamiento de archivos cuando finaliza la sesión (apagar el PC o"
+LOC205="reiniciar). Tenga en cuenta que el archivo se llamará pup_save.2fs y"
+LOC206="se creará en un lugar que usted designe."
+LOC207="Si ha realizado una instalación completa de una partición, o instalado"
+LOC208="de tal manera que el almacenamiento personal es toda una partición, entonces"
+LOC209="usted no tiene un archivo ya sea pup_save.2fs."
+LOC210="Pulse Aceptar para salir..."
+
+
+
+#second xdialog
+LOC300="Su archivo personal es" # filename added
+LOC301="tiene" # size given
+LOC302="Mbytes de espacio libre que queda en" # filename added
+LOC303=", de un tamaño total de"  # size given
+LOC304="Mbytes."
+LOC305="el archivo" #filename added
+LOC306="se almacena en la partición" #partition name added
+LOC307="tiene" #size given
+LOC308="Mbytes espacio dejado en" #partition name added
+LOC309="Si usted ve que le está agotando el espacio en"  # name of save file given
+LOC310=", usted puede hacer que sea más grande,"
+LOC311="pero, por supuesto, debe haber suficiente espacio en" #partition name added
+LOC312="TENGA EN CUENTA QUE DESPUÉS DE HABER ELEGIDO UNA OPCIÓN ABAJO,"
+LOC313="No pasará nada. El cambio de tamaño PASARÁ EN REBOOT."
+LOC314="Seleccione una opción para hacer" # name of save file given
+LOC315="más grande por esa cantidad..."
+LOC316="(observar, se trata de un solo sentido, no se puede reducir su tamaño)"
+LOC317="MB grande"
+LOC318="MB grande  (1GB)"
+LOC319="MB grande  (2GB)"
+LOC320="MB grande  (4GB)"
+LOC321="MB grande  (8GB)"
+
+#fourth xdialog
+LOC400="Bueno, usted ha optado por incrementar" # name of save file
+LOC401="por" #size given
+LOC402="Kbytes,"
+LOC403="no obstante que el archivo está en uso actualmente, va a suceder en el reinicio."
+LOC404="notas técnicas:"
+LOC405="
+El aumento de tamaño requerido se ha escrito para presentar pupsaveresize.txt,"
+LOC406="en la partición" #name of partition
+LOC407="(actualmente montado en / mnt / home)."
+LOC408="El pupsaveresize.txt archivo será leído en el arranque y se realizó el cambio de tamaño"
+LOC409="entonces pupsaveresize.txt se eliminarán."
+LOC410="ADVERTENCIA: Si tiene varios archivos pup_save, asegúrese de seleccionar"
+LOC411="la misma que cuando se reinicie."
+LOC412="El único cambio que ocurrirá en el reinicio."
+LOC413="Haga clic en Aceptar para salir..."
