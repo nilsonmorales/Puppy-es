@@ -1,13 +1,18 @@
+Puppy-es Passagio 531-1.3RC
+
+
+*
+*
+
+
+
 Puppy-es Passagio 531-1.2RC
 
-
-
-
-* initrd.gz (volver al que tiene español) [urgente]
-* pupsave antiguo no los toma [urgente]
-* panel cambiado, volver al antiguo que no dice "Escritorio 1" eso ocupa espacio en el panel [urgente]
+* initrd.gz (volver al que tiene español) [solved]
+* pupsave antiguo no los toma [solved]
+* panel cambiado, volver al antiguo que no dice "Escritorio 1" eso ocupa espacio en el panel [solved]
 * este proyecto es comunitario, no es personal. [urgente]
-* Proxima remazterizacion 531-1.3RC [urgente]
+
 
 
 
