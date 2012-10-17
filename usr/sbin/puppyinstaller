@@ -112,38 +112,47 @@ gpartedfixfunc() { #params: $DRVSEL
  GPDRV="$1"
  gparted /dev/$GPDRV &
  sleep 2
- gxmessage -bg '#ba55d3' -center -title "Puppy Universal Installer" "GParted is a partition manager, available in Puppy, a very simple tool
-for deleting, creating and resizing partitions.
+ gxmessage -bg '#ba55d3' -center -title "Instalador Universal Puppy" "GParted
+ es un administrador de particiones, disponible en Puppy, una herramienta muy
+ sencilla para borrar, crear y redimencionar particiones.
 
-Regarding 'ntfs' or 'vfat', of course do not change these to ext2 or ext3 if the
-partition has Windows or DOS installed on it! In the case of USB Flash drives,
-these normally come with a 'fat16' partition which is okay, but you will be
-restricted to saving to a '${DISTRO_FILE_PREFIX}save' file. This is fine and most people opt for
-this, particularly as the drive can be used also to save and transfer files with
-Windows. However, a Flash drive can be changed to ext2/3 and still boots fine,
-with the advantage that the entire partition can be used to save to, rather than
-a '${DISTRO_FILE_PREFIX}save' file. If in doubt, stay with 'vfat'.
+Con respecto a 'ntfs' o 'vfat', por su puesto que no pueden ser cambiadas a ext2
+o ext3, ya que la partición tiene Windows o DOS instalado en ella. En el caso
+de pendrives o Dispositivos de almacenamiento masivo por USB, ellos normalmente
+tienen un sistema de particion 'fat16', pero Usted se limitará a guardar en un 
+archivo '${DISTRO_FILE_PREFIX}save'. Esto está muy bien y la mayoría de las
+personas optán por ello, particularmente pude usar el pendrive para guardar y 
+transferir archivos con Windows. Sin embargo, un pendrive puede ser cambiado a
+ext2/3 y aún así bootear adecuadamente, con la ventaja que la partición entera
+puede ser usada para guardar, antes que un archivo '${DISTRO_FILE_PREFIX}save'.
+Si tienes dudas, mejor dejar 'vfat'.
 
-WARNING: changing the filesystem will wipe everything in the partition!
+PELIGRO: Cambiar el sistema de archivos puede borrar la información de la 
+partición!
 
-One more thing. When you run GParted, right-click on the partition and you will
-see a menu option to 'Manage flags'. Make sure the 'boot' flag is set -- don't
-forget that!
+Una cosa más, Cuando ejecutes GParted, presiona click derecho sobre la partición
+y se mostrará un menu de opciones, para gestionarlo. Asegurese que la opción
+'boot' esté set -- ,no lo olvide!
 
-If you have a USB Flash 'key' drive that you have installed Puppy to but it will
-not boot, it may be that the partition(s) is confusing the PC's BIOS.
-Personally, I was able to fix such a USB drive by wiping the existing partition
-and then create it again using GParted.
-The steps to do this are very simple: when GParted is running,
- 1. delete all partitions on the USB device. 
- 2. Create a new primary FAT16 partition, to fill the entire drive.
- 3. Click the 'Apply' button to write changes to the USB drive.
- 4. Set the 'boot' configuration flag (right-click on partition, 
-    choose 'manage flags'). 
+Si Usted tiene un pendrive 'key' puede hacer la instalación de Puppy en el mismo
+pero esto no asegura el booteo, esto de establecer una partición quizás puede
+confundirlo con el BIOS del CPU.
 
-If GParted is installed, it is now running and you can do the above.
-Quiting GParted will return you to the Puppy Universal Installer...
+Personalmente, he tenido la oportunidad de borrar la partición de un pendrive 
+y creado otra usando GParted.
 
+Los pasos para hacer esto son sencillos: Una vez que GParted esté ejecutado,
+ 1. Elimine todas las particiones que tenga el pendrive.
+ 2. Cree una nueva partición primaria FAT16, que ocupe todo el pendrive.
+ 3. Presione click en 'Apply' para escribir los cambios en el pendrive.
+ 4. Coloque la configuración 'boot' (haciendo click derecho sobre la partición,
+    cambiando 'manage flags').
+
+Si GParted está instalado, se está ejecutando y puedes hacer lo anteriormente
+mencionado.
+Dejar GParted le devolverá el control al Instaldor Universal Puppy...
+
+Una nota final para USB: después de salir de GParted, 
 One final note for USB: after exiting GParted, do a mouse-over the desktop drive
 icon(s) -- if it(they) has not updated, unplug then replug the USB drive." &
  MSGID=$!
