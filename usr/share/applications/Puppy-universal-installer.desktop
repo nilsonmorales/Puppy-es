@@ -1,0 +1,11 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=instalador universal de puppy 
+Name[es]=Puppy-Instalador Universal
+Icon=mini-ray.xpm
+Comment=Puppy universal installer
+Exec=/usr/sbin/puppyinstaller
+Terminal=false
+Type=Application
+Categories=X-SetupUtility
+GenericName=Puppy universal installer
