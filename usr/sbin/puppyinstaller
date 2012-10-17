@@ -171,7 +171,9 @@ fixusbfunc() { #params: $DESTPART $DESTFS
  echo '#!/bin/sh
 DESTPART="$1" #partition being installed to
 DESTFS="$2"   #filesystem of destination partition
-echo "This little section of the Puppy Universal Installer is currently only"
+echo "Esta ejecutandose una pequeña sección del Instalador Universal Puppy"
+echo "para montar el el pendrive, unidad de almacenamiento masivo USB, memoria"
+echo "
 echo "for fixing USB Flash or CF-card-in-IDE-adaptor, after you have gone thru"
 echo "all the steps but it still will not boot."
 echo
