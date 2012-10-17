@@ -1,0 +1,15 @@
+Puppy-es Passaggio 531-1.3RC
+
+
+* Traducir /usr/sbin/puppyinstaller [urgencia alta]
+* Codename mal escrito es passaggio dos "G" [urgencia alta]
+
+
+
+
+Puppy-es Passaggio 531-1.2RC [end]
+
+* initrd.gz (volver al que tiene español) [solved]
+* pupsave antiguo no los toma [solved]
+* panel cambiado, volver al antiguo que no dice "Escritorio 1" eso ocupa espacio en el panel [solved]
+* este proyecto es comunitario, no es personal. [urgencia alta]
