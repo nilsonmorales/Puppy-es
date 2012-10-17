@@ -1,19 +1,15 @@
 Puppy-es Passagio 531-1.3RC
 
 
-*
-*
+* Traducir /usr/sbin/puppyinstaller [urgencia alta]
+* 
 
 
 
-Puppy-es Passagio 531-1.2RC
+
+Puppy-es Passagio 531-1.2RC [end]
 
 * initrd.gz (volver al que tiene español) [solved]
 * pupsave antiguo no los toma [solved]
 * panel cambiado, volver al antiguo que no dice "Escritorio 1" eso ocupa espacio en el panel [solved]
-* este proyecto es comunitario, no es personal. [urgente]
-
-
-
-
-LEER: http://es.wikipedia.org/wiki/Changelog
+* este proyecto es comunitario, no es personal. [urgencia alta]
