@@ -8,7 +8,7 @@ Puppy-es Passaggio 531-1.3RC
 * wallpaper con el codename correcto [urgencia alta]
 * imagen grub4dos con el codename correcto [urgencia alta]
 * imagen del grup incluir codename [urgencia baja]
-
+* modificar el initrd el nombre del pupsave de Passagiosave a Passaggiosave [urgencia alta]
 
 Puppy-es Passaggio 531-1.2RC [end]
 
