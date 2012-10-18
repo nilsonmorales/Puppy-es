@@ -33,12 +33,12 @@ msgstr ""
 #: /usr/sbin/puppyinstaller:1492 /usr/sbin/puppyinstaller:1530
 #: /usr/sbin/puppyinstaller:1536 /usr/sbin/puppyinstaller:1561
 #: /usr/sbin/puppyinstaller:1624 /usr/sbin/puppyinstaller:1641
-msgid "Instalador Universal Puppy"
+msgid "Puppy Universal Installer"
 msgstr ""
 
 #: /usr/sbin/puppyinstaller:255 /usr/sbin/puppyinstaller:261
 #: /usr/sbin/puppyinstaller:272
-msgid "Instalador Universal Puppy"
+msgid "Puppy universal installer"
 msgstr ""
 
 #: /usr/sbin/puppyinstaller:255
@@ -48,72 +48,68 @@ msgstr ""
 #: /usr/sbin/puppyinstaller:255
 #, sh-format
 msgid ""
-"Puppy consiste de 2 a 4 archivos:\\nvmlinuz	El Kernel de Linux\\ninitrd."
-"gz		El disco de memoria inicial.\\n${DISTRO_PUPPYSFS} Este contiene todo el Puppy"
-"archivos (a veces dentro de initrd.gz.\\n			(si se construye dentro de initrd."
-"gz solamente es requerido initrd.gz)\\n${DISTRO_ZDRVSFS} Drivers del Kernel "
-"y firmware adicionales (opcional).\\       (la mayoría de las versiones "
-"tienen una selección utilizable de drivers en ${DISTRO_PUPPYSFS}\\nsi Usted "
-"bootea Puppy desde un live-CD, dichos archivos estarán disponibles en el "
-"mismo.\\nPor otra parte, ellos están en el archivo .iso y pueden ser "
-"extraidos de allí\\ncaso, solo haciendo click en el archivo .iso y podría "
-"ser montada (abierta) en\\nun directorio (sin olvidar hacer click en el "
-"archivo para luego desmontarla!)\\n\\nDonde están los archivos de Puppy?..."
+"Puppy consists of 2 to 4 files:\\nvmlinuz      The Linux kernel\\ninitrd."
+"gz    The initial ramdisk.\\n${DISTRO_PUPPYSFS}  This has all the Puppy "
+"files (sometimes inside initrd.gz).\\n             (if built inside initrd."
+"gz then only initrd.gz is required)\\n${DISTRO_ZDRVSFS} Extra kernel drivers "
+"and firmware (optional).\\n             (most builds have a usable selection "
+"of drivers in ${DISTRO_PUPPYSFS})\\nIf you booted Puppy from a live-CD, "
+"those files will be on it.\\nOtherwise, they are in the .iso file and can be "
+"extracted -- in that\\ncase, just click on the .iso file and it will be "
+"mounted (opened) in\\na directory (do not forget to click on the file later "
+"to unmount it!)\\n\\nWhere are the Puppy files?..."
 msgstr ""
 
 #: /usr/sbin/puppyinstaller:261
 #, sh-format
 msgid ""
-"Por favor inserte el Live-CD de Puppy (si no lo ha hecho) en la unidad."
-"\\Nota, en caso de que su PC tenga dos unidades de CD/DVD, Puppy espera"
-"\\na que el live-CD sea insertado en $CDDRIVE, que se describe como:\\n"
-"$CDDRVINFO \\n\\nDespués de insertar el live-DC, presione click en el"
-"boton OK..."
+"Please insert the Puppy live-CD (if not already) into the drive.\\nNote, in "
+"case your PC has two CD/DVD drives, Puppy is expecting\\nthe live-CD to be "
+"inserted into $CDDRIVE, which is described as:\\n $CDDRVINFO \\n\\nAfter "
+"inserting live-CD, click OK button..."
 msgstr ""
 
 #: /usr/sbin/puppyinstaller:267 /usr/sbin/puppyinstaller:279
-msgid "Instalador Universal Puppy: ERROR"
+msgid "Puppy universal installer: ERROR"
 msgstr ""
 
 #: /usr/sbin/puppyinstaller:267
 msgid ""
-"Lo siento, Puppy no está en el CD.\\nPor favor monte el CD usando uno de los"
-"programas para montar unidades\\n(vea el menú Administradores de ficheros)"
-"luego presione click en el botón OK..."
+"Sorry, Puppy is not on the CD.\\nPlease mount the CD using one of the mount "
+"programs\\n(see File Managers menu) then click OK button..."
 msgstr ""
 
 #: /usr/sbin/puppyinstaller:272
 #, sh-format
 msgid ""
-"Por favor busque los últimos ficheros de Puppy\\nvmlinuz, initrd.gz y "
-"${DISTRO_PUPPYSFS},\\nLuego resalte alguno de ellos\\n y presione click "
-"en el botón OK"
+"Please find the latest Puppy files\\nvmlinuz, initrd.gz and "
+"${DISTRO_PUPPYSFS},\\nTHEN HIGHLIGHT ANY ONE OF THEM\\nand click the OK "
+"button"
 msgstr ""
 
 #: /usr/sbin/puppyinstaller:279
 #, sh-format
 msgid ""
-"Oh estimad@, el 'sano juicio' ha fallado.\\Este archivo: $SRCPATH/"
-"${DISTRO_PUPPYSFS}\\nno existe.\\nLo anterior se supone que es el-"
-"camino-donde-los-archivos-puppy-estan/${DISTRO_PUPPYSFS}\\nPresione"
-"click en el botón OK para cerrar..."
+"Oh dear, a 'sanity check' has failed.\\nThis file: $SRCPATH/"
+"${DISTRO_PUPPYSFS}\\ndoes not exist.\\nThe above is supposed to be path-to-"
+"where-puppy-files-are/${DISTRO_PUPPYSFS}\\nClick OK button to quit..."
 msgstr ""
 
 #: /usr/sbin/puppyinstaller:285
 msgid ""
-"Bienvedid@ al Instalador Universal Puppy!\\nSi deseas instalar Puppy en "
-"un medio extraible, como un pendrive\\no Disco duro USB, Disco CD/DVD, disco "
-"Zip o un disco LS-120, por favor insertelo\\nahora mismo, antes de continuar "
-"con el proceso.\\n\\nINSERTE EL MEDIO AHORA\\nLuego seleccione el medio "
-"donde instalará Puppy: "
+"Welcome to the Puppy Universal Installer!\\nIf you wish to install Puppy to "
+"a removable media, such as a USB Flash\\nor hard drive, CD/DVD disc, Zip "
+"disk or LS-120 disk, please insert it\\nright now, before proceeding.\\n"
+"\\nINSERT MEDIA NOW\\nThen, choose the media that you want to install Puppy "
+"to:"
 msgstr ""
 
 #: /usr/sbin/puppyinstaller:285
-msgid "Pendrive"
+msgid "USB Flash drive"
 msgstr ""
 
 #: /usr/sbin/puppyinstaller:285
-msgid "Disco Duro por USB"
+msgid "USB hard drive"
 msgstr ""
 
 #: /usr/sbin/puppyinstaller:285
