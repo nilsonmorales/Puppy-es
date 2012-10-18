@@ -1,7 +1,13 @@
 [Desktop Entry]
 Encoding=UTF-8
-Name=instalador universal de puppy 
+Name=Puppy universal installer
+Name[ru]=Универсальный установщик
+Name[de]=Puppy Universal Installer
 Name[es]=Puppy-Instalador Universal
+Name[hu_HU]=Puppy univerzális telepítő
+Name[ja]=Puppyユニバーサルインストーラ
+Name[zh_CN]=Puppy 通用安装程序
+Name[zh_TW]=Puppy 通用安裝程式
 Icon=mini-ray.xpm
 Comment=Puppy universal installer
 Exec=/usr/sbin/puppyinstaller
