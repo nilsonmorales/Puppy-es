@@ -1,7 +1,7 @@
 #!/bin/sh 
 #270912 instala update de puppy-es... 
 while [ 1 ];do 
-LANG=C Xdialog --center --title "Update puppy-es" --icon "/usr/local/lib/X11/pixmaps/archive48.png" --yesno "Hola personita, la version del update que tenemos posiblemente mejore el sistema. Si quiere instalar.\\nClick en el boton 'Yes' para descargar e instalar.\\nNota, si mas tarde desea actualizar solo en terminal ejecute 'update'\\n(se puede instalar posteriormente a través del Gestor de paquetes de Puppy)..." 0 0 
+LANG=C Xdialog --center --title "Update puppy-es" --icon "/usr/local/lib/X11/pixmaps/archive48.png" --yesno "Hola, la version del update que tenemos posiblemente mejore el sistema. Si quiere instalar.\\nClick en el boton 'Yes' para descargar e instalar.\\nNota, si mas tarde desea actualizar solo en terminal ejecute 'update'\\n(se puede instalar posteriormente a través del Gestor de paquetes de Puppy)..." 0 0 
 if [ $? -eq 0 ];then 
 mkdir -p /tmp/update 
 cd /tmp/update 
