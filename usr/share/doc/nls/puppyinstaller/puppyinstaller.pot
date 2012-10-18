@@ -3,42 +3,59 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-01-03 23:25+0900\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2012-10-18 13:52-0300\n"
+"Last-Translator: Fabián H Bonetti <mama21mama@mamalibre.com.ar>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: /usr/sbin/puppyinstaller:127 /usr/sbin/puppyinstaller:221
-#: /usr/sbin/puppyinstaller:285 /usr/sbin/puppyinstaller:339
-#: /usr/sbin/puppyinstaller:373 /usr/sbin/puppyinstaller:525
-#: /usr/sbin/puppyinstaller:579 /usr/sbin/puppyinstaller:620
-#: /usr/sbin/puppyinstaller:631 /usr/sbin/puppyinstaller:685
-#: /usr/sbin/puppyinstaller:695 /usr/sbin/puppyinstaller:740
-#: /usr/sbin/puppyinstaller:742 /usr/sbin/puppyinstaller:757
-#: /usr/sbin/puppyinstaller:772 /usr/sbin/puppyinstaller:921
-#: /usr/sbin/puppyinstaller:1086 /usr/sbin/puppyinstaller:1124
-#: /usr/sbin/puppyinstaller:1177 /usr/sbin/puppyinstaller:1195
-#: /usr/sbin/puppyinstaller:1234 /usr/sbin/puppyinstaller:1285
-#: /usr/sbin/puppyinstaller:1302 /usr/sbin/puppyinstaller:1307
-#: /usr/sbin/puppyinstaller:1316 /usr/sbin/puppyinstaller:1325
-#: /usr/sbin/puppyinstaller:1413 /usr/sbin/puppyinstaller:1477
-#: /usr/sbin/puppyinstaller:1492 /usr/sbin/puppyinstaller:1530
-#: /usr/sbin/puppyinstaller:1536 /usr/sbin/puppyinstaller:1561
-#: /usr/sbin/puppyinstaller:1624 /usr/sbin/puppyinstaller:1641
-msgid "Puppy Universal Installer"
+#: /usr/sbin/puppyinstaller:127
+#: /usr/sbin/puppyinstaller:221
+#: /usr/sbin/puppyinstaller:285
+#: /usr/sbin/puppyinstaller:339
+#: /usr/sbin/puppyinstaller:373
+#: /usr/sbin/puppyinstaller:525
+#: /usr/sbin/puppyinstaller:579
+#: /usr/sbin/puppyinstaller:620
+#: /usr/sbin/puppyinstaller:631
+#: /usr/sbin/puppyinstaller:685
+#: /usr/sbin/puppyinstaller:695
+#: /usr/sbin/puppyinstaller:740
+#: /usr/sbin/puppyinstaller:742
+#: /usr/sbin/puppyinstaller:757
+#: /usr/sbin/puppyinstaller:772
+#: /usr/sbin/puppyinstaller:921
+#: /usr/sbin/puppyinstaller:1086
+#: /usr/sbin/puppyinstaller:1124
+#: /usr/sbin/puppyinstaller:1177
+#: /usr/sbin/puppyinstaller:1195
+#: /usr/sbin/puppyinstaller:1234
+#: /usr/sbin/puppyinstaller:1285
+#: /usr/sbin/puppyinstaller:1302
+#: /usr/sbin/puppyinstaller:1307
+#: /usr/sbin/puppyinstaller:1316
+#: /usr/sbin/puppyinstaller:1325
+#: /usr/sbin/puppyinstaller:1413
+#: /usr/sbin/puppyinstaller:1477
+#: /usr/sbin/puppyinstaller:1492
+#: /usr/sbin/puppyinstaller:1530
+#: /usr/sbin/puppyinstaller:1536
+#: /usr/sbin/puppyinstaller:1561
+#: /usr/sbin/puppyinstaller:1624
+#: /usr/sbin/puppyinstaller:1641
+msgid "Instalador Universal Puppy"
 msgstr ""
 
-#: /usr/sbin/puppyinstaller:255 /usr/sbin/puppyinstaller:261
+#: /usr/sbin/puppyinstaller:255
+#: /usr/sbin/puppyinstaller:261
 #: /usr/sbin/puppyinstaller:272
-msgid "Puppy universal installer"
+msgid "Instalador Universal Puppy"
 msgstr ""
 
 #: /usr/sbin/puppyinstaller:255
@@ -48,68 +65,77 @@ msgstr ""
 #: /usr/sbin/puppyinstaller:255
 #, sh-format
 msgid ""
-"Puppy consists of 2 to 4 files:\\nvmlinuz      The Linux kernel\\ninitrd."
-"gz    The initial ramdisk.\\n${DISTRO_PUPPYSFS}  This has all the Puppy "
-"files (sometimes inside initrd.gz).\\n             (if built inside initrd."
-"gz then only initrd.gz is required)\\n${DISTRO_ZDRVSFS} Extra kernel drivers "
-"and firmware (optional).\\n             (most builds have a usable selection "
-"of drivers in ${DISTRO_PUPPYSFS})\\nIf you booted Puppy from a live-CD, "
-"those files will be on it.\\nOtherwise, they are in the .iso file and can be "
-"extracted -- in that\\ncase, just click on the .iso file and it will be "
-"mounted (opened) in\\na directory (do not forget to click on the file later "
-"to unmount it!)\\n\\nWhere are the Puppy files?..."
+"Puppy consiste de 2 a 4 archivos:\\n"
+"vmlinuz	El Kernel de Linux\\n"
+"initrd.gz		El disco de memoria inicial.\\n"
+"${DISTRO_PUPPYSFS} Este contiene todo el Puppyarchivos (a veces dentro de initrd.gz.\\n"
+"			(si se construye dentro de initrd.gz solamente es requerido initrd.gz)\\n"
+"${DISTRO_ZDRVSFS} Drivers del Kernel y firmware adicionales (opcional).\\       (la mayoría de las versiones tienen una selección utilizable de drivers en ${DISTRO_PUPPYSFS}\\n"
+"si Usted bootea Puppy desde un live-CD, dichos archivos estarán disponibles en el mismo.\\n"
+"Por otra parte, ellos están en el archivo .iso y pueden ser extraidos de allí\\n"
+"caso, solo haciendo click en el archivo .iso y podría ser montada (abierta) en\\n"
+"un directorio (sin olvidar hacer click en el archivo para luego desmontarla!)\\n"
+"\\n"
+"Donde están los archivos de Puppy?..."
 msgstr ""
 
 #: /usr/sbin/puppyinstaller:261
 #, sh-format
 msgid ""
-"Please insert the Puppy live-CD (if not already) into the drive.\\nNote, in "
-"case your PC has two CD/DVD drives, Puppy is expecting\\nthe live-CD to be "
-"inserted into $CDDRIVE, which is described as:\\n $CDDRVINFO \\n\\nAfter "
-"inserting live-CD, click OK button..."
+"Por favor inserte el Live-CD de Puppy (si no lo ha hecho) en la unidad.\\Nota, en caso de que su PC tenga dos unidades de CD/DVD, Puppy espera\\n"
+"a que el live-CD sea insertado en $CDDRIVE, que se describe como:\\n"
+"$CDDRVINFO \\n"
+"\\n"
+"Después de insertar el live-DC, presione click en elboton OK..."
 msgstr ""
 
-#: /usr/sbin/puppyinstaller:267 /usr/sbin/puppyinstaller:279
-msgid "Puppy universal installer: ERROR"
+#: /usr/sbin/puppyinstaller:267
+#: /usr/sbin/puppyinstaller:279
+msgid "Instalador Universal Puppy: ERROR"
 msgstr ""
 
 #: /usr/sbin/puppyinstaller:267
 msgid ""
-"Sorry, Puppy is not on the CD.\\nPlease mount the CD using one of the mount "
-"programs\\n(see File Managers menu) then click OK button..."
+"Lo siento, Puppy no está en el CD.\\n"
+"Por favor monte el CD usando uno de losprogramas para montar unidades\\n"
+"(vea el menú Administradores de ficheros)luego presione click en el botón OK..."
 msgstr ""
 
 #: /usr/sbin/puppyinstaller:272
 #, sh-format
 msgid ""
-"Please find the latest Puppy files\\nvmlinuz, initrd.gz and "
-"${DISTRO_PUPPYSFS},\\nTHEN HIGHLIGHT ANY ONE OF THEM\\nand click the OK "
-"button"
+"Por favor busque los últimos ficheros de Puppy\\n"
+"vmlinuz, initrd.gz y ${DISTRO_PUPPYSFS},\\n"
+"Luego resalte alguno de ellos\\n"
+" y presione click en el botón OK"
 msgstr ""
 
 #: /usr/sbin/puppyinstaller:279
 #, sh-format
 msgid ""
-"Oh dear, a 'sanity check' has failed.\\nThis file: $SRCPATH/"
-"${DISTRO_PUPPYSFS}\\ndoes not exist.\\nThe above is supposed to be path-to-"
-"where-puppy-files-are/${DISTRO_PUPPYSFS}\\nClick OK button to quit..."
+"Oh estimad@, el 'sano juicio' ha fallado.\\Este archivo: $SRCPATH/${DISTRO_PUPPYSFS}\\n"
+"no existe.\\n"
+"Lo anterior se supone que es el-camino-donde-los-archivos-puppy-estan/${DISTRO_PUPPYSFS}\\n"
+"Presioneclick en el botón OK para cerrar..."
 msgstr ""
 
 #: /usr/sbin/puppyinstaller:285
 msgid ""
-"Welcome to the Puppy Universal Installer!\\nIf you wish to install Puppy to "
-"a removable media, such as a USB Flash\\nor hard drive, CD/DVD disc, Zip "
-"disk or LS-120 disk, please insert it\\nright now, before proceeding.\\n"
-"\\nINSERT MEDIA NOW\\nThen, choose the media that you want to install Puppy "
-"to:"
+"Bienvedid@ al Instalador Universal Puppy!\\n"
+"Si deseas instalar Puppy en un medio extraible, como un pendrive\\n"
+"o Disco duro USB, Disco CD/DVD, disco Zip o un disco LS-120, por favor insertelo\\n"
+"ahora mismo, antes de continuar con el proceso.\\n"
+"\\n"
+"INSERTE EL MEDIO AHORA\\n"
+"Luego seleccione el medio donde instalará Puppy: "
 msgstr ""
 
 #: /usr/sbin/puppyinstaller:285
-msgid "USB Flash drive"
+msgid "Pendrive"
 msgstr ""
 
 #: /usr/sbin/puppyinstaller:285
-msgid "USB hard drive"
+msgid "Disco Duro por USB"
 msgstr ""
 
 #: /usr/sbin/puppyinstaller:285
@@ -140,22 +166,27 @@ msgstr ""
 msgid "CD drive"
 msgstr ""
 
-#: /usr/sbin/puppyinstaller:339 /usr/sbin/puppyinstaller:373
+#: /usr/sbin/puppyinstaller:339
+#: /usr/sbin/puppyinstaller:373
 #: /usr/sbin/puppyinstaller:568
 msgid "QUIT"
-msgstr ""
+msgstr "SALIR"
 
 #: /usr/sbin/puppyinstaller:339
 #, sh-format
 msgid ""
-"Your computer has these CD/DVD drives:\\n$SELECTIONS \\n\\nHowever, you "
-"cannot install Puppy to a CD/DVD in the same way as a\\nhard drive, USB "
-"Flash drive or Zip drive, as the CD/DVD is not\\ndirectly writable. For the "
-"CD/DVD, you need to do what is called\\n'remastering' and Puppy has a "
-"program for this, called 'Remaster\\nPuppy live-CD', found in the Setup "
-"menu. This program enables\\nyou to create your own custom live-CD/DVD."
-"\\nNote, you will need a new blank CD-R or DVD-R (not +R).\\n\\nClick button "
-"to quit..."
+"Your computer has these CD/DVD drives:\\n"
+"$SELECTIONS \\n"
+"\\n"
+"However, you cannot install Puppy to a CD/DVD in the same way as a\\n"
+"hard drive, USB Flash drive or Zip drive, as the CD/DVD is not\\n"
+"directly writable. For the CD/DVD, you need to do what is called\\n"
+"'remastering' and Puppy has a program for this, called 'Remaster\\n"
+"Puppy live-CD', found in the Setup menu. This program enables\\n"
+"you to create your own custom live-CD/DVD.\\n"
+"Note, you will need a new blank CD-R or DVD-R (not +R).\\n"
+"\\n"
+"Click button to quit..."
 msgstr ""
 
 #: /usr/sbin/puppyinstaller:367
@@ -171,23 +202,15 @@ msgid "Install Puppy to"
 msgstr ""
 
 #: /usr/sbin/puppyinstaller:460
-msgid ""
-"IMPORTANT: If you use GParted, after creating the partition be sure to set "
-"the 'boot' flag (right-click: Manage flags). Also, for a USB Flash drive "
-"choose fat16 filesystem as easier to boot from (than fat32) -- however a "
-"ext2 or ext3 partition will also work."
+msgid "IMPORTANT: If you use GParted, after creating the partition be sure to set the 'boot' flag (right-click: Manage flags). Also, for a USB Flash drive choose fat16 filesystem as easier to boot from (than fat32) -- however a ext2 or ext3 partition will also work."
 msgstr ""
 
 #: /usr/sbin/puppyinstaller:463
-msgid ""
-"IMPORTANT: If you use GParted, after creating the partition be sure to set "
-"the 'boot' flag (right-click: Manage flags)."
+msgid "IMPORTANT: If you use GParted, after creating the partition be sure to set the 'boot' flag (right-click: Manage flags)."
 msgstr ""
 
 #: /usr/sbin/puppyinstaller:464
-msgid ""
-"Extra note: Gparted may show invalid partitions on the drive, marked with a "
-"'!' icon -- delete it/them and recreate a partition (and make it bootable)"
+msgid "Extra note: Gparted may show invalid partitions on the drive, marked with a '!' icon -- delete it/them and recreate a partition (and make it bootable)"
 msgstr ""
 
 #: /usr/sbin/puppyinstaller:485
@@ -196,40 +219,22 @@ msgstr ""
 
 #: /usr/sbin/puppyinstaller:487
 #, sh-format
-msgid ""
-"WARNING: Notice the filesystem in the intended destination, is that what you "
-"want? In particular, if the f.s. is 'vfat' or 'ntfs' you might want to "
-"replace these with a Linux ext2 or ext3 f.s. if the partition can be taken "
-"over totally for Puppy's use. If you are installing to an internal drive of "
-"a PC, it is highly recommended that the f.s. be a Linux ext2 or ext3. Puppy "
-"can install to vfat/ntfs but limited to 'frugal' with '${DISTRO_FILE_PREFIX}"
-"save' only. Ntfs is particularly limited, slow and also has severe bootup "
-"options, so get rid of it if at all possible. Click the button to run "
-"GParted, which will enable you to examine and modify the partitions."
+msgid "WARNING: Notice the filesystem in the intended destination, is that what you want? In particular, if the f.s. is 'vfat' or 'ntfs' you might want to replace these with a Linux ext2 or ext3 f.s. if the partition can be taken over totally for Puppy's use. If you are installing to an internal drive of a PC, it is highly recommended that the f.s. be a Linux ext2 or ext3. Puppy can install to vfat/ntfs but limited to 'frugal' with '${DISTRO_FILE_PREFIX}save' only. Ntfs is particularly limited, slow and also has severe bootup options, so get rid of it if at all possible. Click the button to run GParted, which will enable you to examine and modify the partitions."
 msgstr ""
 
-#: /usr/sbin/puppyinstaller:496 /usr/sbin/puppyinstaller:510
+#: /usr/sbin/puppyinstaller:496
+#: /usr/sbin/puppyinstaller:510
 msgid "Superfloppy"
 msgstr ""
 
 #: /usr/sbin/puppyinstaller:498
 #, sh-format
-msgid ""
-"WARNING: NOT NORMALLY RECOMMENDED. Do you want to install Puppy in "
-"Superfloppy mode, that is, no MBR and no partitions? ...in that case, the "
-"drive will be accessed as /dev/$DRVSEL, without a partition number. This may "
-"be a good choice for booting USB Flash drive from PC with a quirky BIOS. "
-"Click button if yes:"
+msgid "WARNING: NOT NORMALLY RECOMMENDED. Do you want to install Puppy in Superfloppy mode, that is, no MBR and no partitions? ...in that case, the drive will be accessed as /dev/$DRVSEL, without a partition number. This may be a good choice for booting USB Flash drive from PC with a quirky BIOS. Click button if yes:"
 msgstr ""
 
 #: /usr/sbin/puppyinstaller:512
 #, sh-format
-msgid ""
-"The drive is currently in Superfloppy mode and has no MBR and no partitions. "
-"It is accessed as /dev/$DRVSEL, without a partition number (this may be a "
-"good choice for booting USB Flash drive from PC with a quirky BIOS). Do you "
-"want to partition the drive so that it has a /dev/${DRVSEL}1 partition, in "
-"which Puppy can be installed? If so, click button:"
+msgid "The drive is currently in Superfloppy mode and has no MBR and no partitions. It is accessed as /dev/$DRVSEL, without a partition number (this may be a good choice for booting USB Flash drive from PC with a quirky BIOS). Do you want to partition the drive so that it has a /dev/${DRVSEL}1 partition, in which Puppy can be installed? If so, click button:"
 msgstr ""
 
 #: /usr/sbin/puppyinstaller:527
@@ -251,41 +256,35 @@ msgstr ""
 #: /usr/sbin/puppyinstaller:568
 #, sh-format
 msgid ""
-"A partition sanity check before continuing:\\n$SANITYMSG1 \\n$SANITYMSG2 \\n"
-"$SANITYMSG3 \\n\\nIf the above report is that the partition is mounted, you "
-"need to unmount it\\nright now, but if report is it cannot be unmounted, "
-"then there may be install\\ndifficulties -- certainly, in the case of "
-"install to hard drive you will only\\nbe able to do an option1 install "
-"(explained further on).\\nIf the partition has ${DISTRO_FILE_PREFIX}save.3fs "
-"in it, that is the reason it cannot be\\nunmounted -- it is currently in use "
-"by Puppy. If booting Puppy from live-CD,\\nif ${DISTRO_FILE_PREFIX}save.3fs "
-"does not exist then Puppy will run totally in RAM, which will\\nsolve the "
-"problem -- but you should not delete or rename ${DISTRO_FILE_PREFIX}save.3fs "
-"right\\nnow as it is in use. Instead, boot some other OS then rename the "
-"file, then\\nboot Puppy live-CD.\\n\\nBottom-line, unmount the partition "
-"now, if you can, otherwise CONTINUE script\\nwith the restricted install "
-"choice, or QUIT script now and try to fix the\\nproblem of the partition "
-"getting mounted..."
+"A partition sanity check before continuing:\\n"
+"$SANITYMSG1 \\n"
+"$SANITYMSG2 \\n"
+"$SANITYMSG3 \\n"
+"\\n"
+"If the above report is that the partition is mounted, you need to unmount it\\n"
+"right now, but if report is it cannot be unmounted, then there may be install\\n"
+"difficulties -- certainly, in the case of install to hard drive you will only\\n"
+"be able to do an option1 install (explained further on).\\n"
+"If the partition has ${DISTRO_FILE_PREFIX}save.3fs in it, that is the reason it cannot be\\n"
+"unmounted -- it is currently in use by Puppy. If booting Puppy from live-CD,\\n"
+"if ${DISTRO_FILE_PREFIX}save.3fs does not exist then Puppy will run totally in RAM, which will\\n"
+"solve the problem -- but you should not delete or rename ${DISTRO_FILE_PREFIX}save.3fs right\\n"
+"now as it is in use. Instead, boot some other OS then rename the file, then\\n"
+"boot Puppy live-CD.\\n"
+"\\n"
+"Bottom-line, unmount the partition now, if you can, otherwise CONTINUE script\\n"
+"with the restricted install choice, or QUIT script now and try to fix the\\n"
+"problem of the partition getting mounted..."
 msgstr ""
 
 #: /usr/sbin/puppyinstaller:581
 #, sh-format
-msgid ""
-"You have chosen to format /dev/${DESTPART} as a Superfloppy. You now need to "
-"choose whether to create a vfat or a ext3 filesystem on the drive. Ext3 is "
-"the most flexible (and recommended) choice, however if you need to be able "
-"to read the drive from Windows then choose vfat. Note, however, there are "
-"tools for accessing ext2/3 drives in Windows."
+msgid "You have chosen to format /dev/${DESTPART} as a Superfloppy. You now need to choose whether to create a vfat or a ext3 filesystem on the drive. Ext3 is the most flexible (and recommended) choice, however if you need to be able to read the drive from Windows then choose vfat. Note, however, there are tools for accessing ext2/3 drives in Windows."
 msgstr ""
 
 #: /usr/sbin/puppyinstaller:582
 #, sh-format
-msgid ""
-"A further clarification: if you choose ext3, then the entire drive will be "
-"immediately available for personal data storage, whereas if you choose vfat "
-"this installer will have to create a file with a ext3 filesystem inside it "
-"(${DISTRO_FILE_PREFIX}save.3fs) -- that file will contain all your personal "
-"files. Press FORMAT_ext3 or FORMAT_vfat button to commence formatting..."
+msgid "A further clarification: if you choose ext3, then the entire drive will be immediately available for personal data storage, whereas if you choose vfat this installer will have to create a file with a ext3 filesystem inside it (${DISTRO_FILE_PREFIX}save.3fs) -- that file will contain all your personal files. Press FORMAT_ext3 or FORMAT_vfat button to commence formatting..."
 msgstr ""
 
 #: /usr/sbin/puppyinstaller:585
@@ -298,29 +297,16 @@ msgstr ""
 
 #: /usr/sbin/puppyinstaller:633
 #, sh-format
-msgid ""
-"You have chosen to format /dev/${DRVSEL} with a MBR and a partition. You now "
-"need to choose whether to create a vfat or a ext3 filesystem on the "
-"partition. Ext3 is the most flexible (and recommended) choice, however if "
-"you need to be able to read the drive from Windows then choose vfat. Note, "
-"however, there are tools for accessing ext2/3 drives in Windows."
+msgid "You have chosen to format /dev/${DRVSEL} with a MBR and a partition. You now need to choose whether to create a vfat or a ext3 filesystem on the partition. Ext3 is the most flexible (and recommended) choice, however if you need to be able to read the drive from Windows then choose vfat. Note, however, there are tools for accessing ext2/3 drives in Windows."
 msgstr ""
 
 #: /usr/sbin/puppyinstaller:634
 #, sh-format
-msgid ""
-"A further clarification: if you choose ext3, then the entire partition will "
-"be immediately available for personal data storage, whereas if you choose "
-"vfat then Puppy will have to create a file with a ext2 filesystem inside it "
-"(${DISTRO_FILE_PREFIX}save.2fs) -- that file will contain all your personal "
-"files."
+msgid "A further clarification: if you choose ext3, then the entire partition will be immediately available for personal data storage, whereas if you choose vfat then Puppy will have to create a file with a ext2 filesystem inside it (${DISTRO_FILE_PREFIX}save.2fs) -- that file will contain all your personal files."
 msgstr ""
 
 #: /usr/sbin/puppyinstaller:635
-msgid ""
-"USB Flash drives: it is most common to create a vfat (fat16) partition on "
-"these, for Windows interchangeability and some older BIOSes boot only if see "
-"a fat16 f.s."
+msgid "USB Flash drives: it is most common to create a vfat (fat16) partition on these, for Windows interchangeability and some older BIOSes boot only if see a fat16 f.s."
 msgstr ""
 
 #: /usr/sbin/puppyinstaller:637
@@ -328,69 +314,64 @@ msgid "Click button to run GParted..."
 msgstr ""
 
 #: /usr/sbin/puppyinstaller:687
-msgid ""
-"You have chosen to install Puppy to the entire drive, which is what we call "
-"Superfloppy mode, in which there is no MBR (Master Boot Record) and no "
-"partitions. This may be a good choice for Flash memory, especially USB "
-"Flash, that the PC BIOS has trouble booting from."
+msgid "You have chosen to install Puppy to the entire drive, which is what we call Superfloppy mode, in which there is no MBR (Master Boot Record) and no partitions. This may be a good choice for Flash memory, especially USB Flash, that the PC BIOS has trouble booting from."
 msgstr ""
 
 #: /usr/sbin/puppyinstaller:688
 #, sh-format
-msgid ""
-"The target drive is ${DESTPART}, which has a ${DESTFS}, of size ${DESTSIZM}"
-"M. Press OK button to install Puppy to the drive..."
+msgid "The target drive is ${DESTPART}, which has a ${DESTFS}, of size ${DESTSIZM}M. Press OK button to install Puppy to the drive..."
 msgstr ""
 
 #: /usr/sbin/puppyinstaller:697
 #, sh-format
-msgid ""
-"You have chosen to install Puppy to partition /dev/${DESTPART}, which has a "
-"${DESTFS} filesystem and the size is ${DESTSIZM}M."
+msgid "You have chosen to install Puppy to partition /dev/${DESTPART}, which has a ${DESTFS} filesystem and the size is ${DESTSIZM}M."
 msgstr ""
 
 #: /usr/sbin/puppyinstaller:698
-msgid ""
-"Press OK button to install Puppy (note, there will be one or two more dialog "
-"windows before you have to commit to the actual install)..."
+msgid "Press OK button to install Puppy (note, there will be one or two more dialog windows before you have to commit to the actual install)..."
 msgstr ""
 
 #: /usr/sbin/puppyinstaller:740
 msgid ""
-"The bootstrap loader code is missing from the MBR (Master Boot Record),"
-"\\nmeaning that the USB drive will not boot. Please choose one of the"
-"\\nfollowing to fix this. Personally, I have had success with mbr.bin."
+"The bootstrap loader code is missing from the MBR (Master Boot Record),\\n"
+"meaning that the USB drive will not boot. Please choose one of the\\n"
+"following to fix this. Personally, I have had success with mbr.bin."
 msgstr ""
 
-#: /usr/sbin/puppyinstaller:740 /usr/sbin/puppyinstaller:742
+#: /usr/sbin/puppyinstaller:740
+#: /usr/sbin/puppyinstaller:742
 msgid "Bootstrap loader code, created by JustGreg"
 msgstr ""
 
-#: /usr/sbin/puppyinstaller:740 /usr/sbin/puppyinstaller:742
+#: /usr/sbin/puppyinstaller:740
+#: /usr/sbin/puppyinstaller:742
 msgid "From the Syslinux package"
 msgstr ""
 
-#: /usr/sbin/puppyinstaller:740 /usr/sbin/puppyinstaller:742
+#: /usr/sbin/puppyinstaller:740
+#: /usr/sbin/puppyinstaller:742
 msgid "From the makebootfat package"
 msgstr ""
 
-#: /usr/sbin/puppyinstaller:740 /usr/sbin/puppyinstaller:742
+#: /usr/sbin/puppyinstaller:740
+#: /usr/sbin/puppyinstaller:742
 msgid "From spblinux, created by Christian Ostheimer"
 msgstr ""
 
 #: /usr/sbin/puppyinstaller:742
 #, sh-format
 msgid ""
-"The MBR (Master Boot Record) in the USB drive is probably okay as-is, so "
-"choose\\nthe first option. However, if you cannot get the drive to boot, and "
-"you are\\nsure that the BIOS settings are not to blame and the PC is capable "
-"of booting\\nfrom USB, then try one of these alternative MBRs.\\nNote, if "
-"you choose to change the MBR, the old first 446 bytes (the\\nbootstrap "
-"loader part) of the MBR will be backed up to /tmp/oldmbr.bin\\nNote, you can "
-"install these MBRs directly, without running this\\nInstaller program again: "
-"they are located in /usr/lib/syslinux,\\nand you can use the dd program to "
-"copy them.\\nExample: dd if=spb2_mbr.bin of=/dev/${DESTDRV}\\nNote, "
-"personally I have had success with mbr.bin."
+"The MBR (Master Boot Record) in the USB drive is probably okay as-is, so choose\\n"
+"the first option. However, if you cannot get the drive to boot, and you are\\n"
+"sure that the BIOS settings are not to blame and the PC is capable of booting\\n"
+"from USB, then try one of these alternative MBRs.\\n"
+"Note, if you choose to change the MBR, the old first 446 bytes (the\\n"
+"bootstrap loader part) of the MBR will be backed up to /tmp/oldmbr.bin\\n"
+"Note, you can install these MBRs directly, without running this\\n"
+"Installer program again: they are located in /usr/lib/syslinux,\\n"
+"and you can use the dd program to copy them.\\n"
+"Example: dd if=spb2_mbr.bin of=/dev/${DESTDRV}\\n"
+"Note, personally I have had success with mbr.bin."
 msgstr ""
 
 #: /usr/sbin/puppyinstaller:742
@@ -404,8 +385,7 @@ msgstr ""
 #: /usr/sbin/puppyinstaller:757
 #, sh-format
 msgid ""
-"Slight problem. It seems that partition ${DESTPART} does not have it's "
-"'boot'\n"
+"Slight problem. It seems that partition ${DESTPART} does not have it's 'boot'\n"
 "flag set, which is required to make it bootable. Recommended to click the\n"
 "'GParted' button now to run GParted, then right-click on the partition and\n"
 "choose 'Manage flags' then set 'boot' flag.\n"
@@ -417,11 +397,14 @@ msgstr ""
 
 #: /usr/sbin/puppyinstaller:772
 msgid ""
-"Please just accept the default here, 'JUST KEEP GOING'.\\nPLEASE MAKE SURE "
-"TOP ENTRY HIGHLIGHTED THEN CLICK OK BUTTON\\n\\nHowever, if you have tried "
-"this Puppy Universal Installer\\nbut Puppy will not boot, you can try one of "
-"the other choices here.\\n\\nPersonally, I have had success with using "
-"GParted to wipe and\\nrecreate the partition..."
+"Please just accept the default here, 'JUST KEEP GOING'.\\n"
+"PLEASE MAKE SURE TOP ENTRY HIGHLIGHTED THEN CLICK OK BUTTON\\n"
+"\\n"
+"However, if you have tried this Puppy Universal Installer\\n"
+"but Puppy will not boot, you can try one of the other choices here.\\n"
+"\\n"
+"Personally, I have had success with using GParted to wipe and\\n"
+"recreate the partition..."
 msgstr ""
 
 #: /usr/sbin/puppyinstaller:772
@@ -466,18 +449,15 @@ msgstr ""
 #: /usr/sbin/puppyinstaller:1124
 #, sh-format
 msgid ""
-"You have chosen to install to /dev/$DESTPART, which appears to be an "
-"internal\n"
+"You have chosen to install to /dev/$DESTPART, which appears to be an internal\n"
 "hard drive ($FINALPMEDIA).\n"
 "$PREVPUPMSG \n"
 "\n"
 "There are two ways to install Puppy to the partition:\n"
 "\n"
 "1. FRUGAL (recommended)\n"
-"Copies the files vmlinuz, initrd.gz, ${DISTRO_PUPPYSFS} and "
-"${DISTRO_ZDRVSFS} to the\n"
-"partition, saving your personal settings inside a ${DISTRO_FILE_PREFIX}save "
-"file (like when\n"
+"Copies the files vmlinuz, initrd.gz, ${DISTRO_PUPPYSFS} and ${DISTRO_ZDRVSFS} to the\n"
+"partition, saving your personal settings inside a ${DISTRO_FILE_PREFIX}save file (like when\n"
 "running from CD) and leaving the previous contents of the partition\n"
 "untouched. PROS:\n"
 "- Can coexist with another distro installed to the same partition.\n"
@@ -489,8 +469,7 @@ msgid ""
 "- Can save to entire partition if Linux f.s. and no need to coexist.\n"
 "\n"
 "2. FULL\n"
-"A normal Linux installation, requiring usage of the entire partition by "
-"Puppy.\n"
+"A normal Linux installation, requiring usage of the entire partition by Puppy.\n"
 "\n"
 "Note: FRUGAL option, if install to a FAT or NTFS partition, there is an\n"
 "extra boot option: WakePup2, using a floppy disk. Otherwise, GRUB is\n"
@@ -506,8 +485,7 @@ msgstr ""
 msgid ""
 "You have chosen a frugal installation. As you are installing Puppy to a\n"
 "partition with a Linux filesystem (${DESTFS}), the first time that you run\n"
-"Puppy and shutdown you will be offered to save the session to either a "
-"single\n"
+"Puppy and shutdown you will be offered to save the session to either a single\n"
 "file or to the entire partition.\n"
 "\n"
 "A single file has convenience for backup and there can be multiple session\n"
@@ -517,8 +495,7 @@ msgid ""
 "next dialog in this Puppy Universal Installer...\n"
 "\n"
 "The next dialog will ask if you want to install Puppy into a sub-directory.\n"
-"If you intend to, or might want to, save the session to entire partition, "
-"do\n"
+"If you intend to, or might want to, save the session to entire partition, do\n"
 "NOT install to a sub-directory, leave the folder field empty..."
 msgstr ""
 
@@ -529,8 +506,7 @@ msgid ""
 "mounted on path ${DESTMNTPT}. As this will be a frugal install, you can\n"
 "choose to place the Puppy files in a folder. This is very convenient if you\n"
 "want to have more than one installation of Puppy. Even if you only have one\n"
-"installation, it may be good to have all the Puppy files in their own "
-"folder\n"
+"installation, it may be good to have all the Puppy files in their own folder\n"
 "and so not causing any potential conflicts with other files at the top '/'\n"
 "level (ex: a pre-existing full Linux install may have 'initrd.gz' at '/').\n"
 "\n"
@@ -565,12 +541,12 @@ msgid ""
 "Grub bootloader."
 msgstr ""
 
-#: /usr/sbin/puppyinstaller:1255 /usr/sbin/puppyinstaller:1465
+#: /usr/sbin/puppyinstaller:1255
+#: /usr/sbin/puppyinstaller:1465
 #, sh-format
 msgid ""
 "\n"
-"WARNING: If your PC has a mix of IDE and SATA hard drives, then (hd"
-"${GRUB_DRVN}${GRUB_PARTN})\n"
+"WARNING: If your PC has a mix of IDE and SATA hard drives, then (hd${GRUB_DRVN}${GRUB_PARTN})\n"
 "may be wrong. GRUB numbers drives as hd<drive>,<partition> where\n"
 "<drive> and <partition> numbering starts from zero. The problem is\n"
 "that GRUB sees IDE drives first (hd0,), whereas if you look at Pmount\n"
@@ -626,12 +602,15 @@ msgstr ""
 #: /usr/sbin/puppyinstaller:1307
 #, sh-format
 msgid ""
-"There is already a version of Puppy installed in $DESTPART.\\nDo you want to "
-"upgrade, or totally wipe the partition?\\n\\nFINAL SANITY CHECK: ARE YOU "
-"SURE $DESTPART IS THE RIGHT PARTITION?\\n(note, $DESTPART is currently "
-"mounted on $DESTMNTPT -- okay?)\\n\\nSelect UPGRADE button to upgrade..."
-"\\nSelect WIPE button to wipe partition...\\nClick window Close box to "
-"quit..."
+"There is already a version of Puppy installed in $DESTPART.\\n"
+"Do you want to upgrade, or totally wipe the partition?\\n"
+"\\n"
+"FINAL SANITY CHECK: ARE YOU SURE $DESTPART IS THE RIGHT PARTITION?\\n"
+"(note, $DESTPART is currently mounted on $DESTMNTPT -- okay?)\\n"
+"\\n"
+"Select UPGRADE button to upgrade...\\n"
+"Select WIPE button to wipe partition...\\n"
+"Click window Close box to quit..."
 msgstr ""
 
 #: /usr/sbin/puppyinstaller:1316
@@ -660,8 +639,8 @@ msgstr ""
 #: /usr/sbin/puppyinstaller:1477
 #, sh-format
 msgid ""
-"If all went well, Puppy has been installed to $DESTPART.\\nThe text-editor "
-"window shows text that you can insert into the menu.lst\n"
+"If all went well, Puppy has been installed to $DESTPART.\\n"
+"The text-editor window shows text that you can insert into the menu.lst\n"
 "file if you have GRUB or GRUB4DOS inststalled.\n"
 "\n"
 "If your PC does not have GRUB, GRUB4DOS, LILO or any other boot manager\n"
@@ -682,28 +661,35 @@ msgstr ""
 #: /usr/sbin/puppyinstaller:1492
 #, sh-format
 msgid ""
-"If all went well, Puppy has been installed to $DESTPART.\\nBut, now we have "
-"the sometimes-difficult part, how to make Puppy bootable.\\nYou can do one, "
-"or both, of these:\\n\\nBoot disk: Use a floppy disk or USB pen drive to "
-"boot Puppy.\\nGRUB:      Install GRUB in the hard drive (or update existing "
-"GRUB).\\n\\nClick 'Boot from USB' if you want to sacrifice a usb Flash pen "
-"drive as a\\n'boot disk'. This Universal Installer script will return to "
-"this dialog\\nwindow after creating the USB 'boot disk'.\\nNote, you would "
-"probably only choose this if your PC does not have a floppy\\ndrive and you "
-"do not want to install GRUB to the hard drive.\\n\\nClick 'Install/update "
-"GRUB' to install (or update) the GRUB boot manager.\\nYou will be given the "
-"opportunity to create a floppy 'boot disk' as well\\nas install GRUB to the "
-"hard drive.\\n\\nFOR USB BOOT DISK CHOICE, PLEASE INSERT IT RIGHT NOW BEFORE "
-"PROCEEDING!\\n (must have FAT16 f.s., and any files in it will be deleted)"
-"\\n IT MUST ALSO BE UNMOUNTED -- BE SURE BEFORE PROCEEDING"
+"If all went well, Puppy has been installed to $DESTPART.\\n"
+"But, now we have the sometimes-difficult part, how to make Puppy bootable.\\n"
+"You can do one, or both, of these:\\n"
+"\\n"
+"Boot disk: Use a floppy disk or USB pen drive to boot Puppy.\\n"
+"GRUB:      Install GRUB in the hard drive (or update existing GRUB).\\n"
+"\\n"
+"Click 'Boot from USB' if you want to sacrifice a usb Flash pen drive as a\\n"
+"'boot disk'. This Universal Installer script will return to this dialog\\n"
+"window after creating the USB 'boot disk'.\\n"
+"Note, you would probably only choose this if your PC does not have a floppy\\n"
+"drive and you do not want to install GRUB to the hard drive.\\n"
+"\\n"
+"Click 'Install/update GRUB' to install (or update) the GRUB boot manager.\\n"
+"You will be given the opportunity to create a floppy 'boot disk' as well\\n"
+"as install GRUB to the hard drive.\\n"
+"\\n"
+"FOR USB BOOT DISK CHOICE, PLEASE INSERT IT RIGHT NOW BEFORE PROCEEDING!\\n"
+" (must have FAT16 f.s., and any files in it will be deleted)\\n"
+" IT MUST ALSO BE UNMOUNTED -- BE SURE BEFORE PROCEEDING"
 msgstr ""
 
 #: /usr/sbin/puppyinstaller:1530
 #, sh-format
 msgid ""
-"Please confirm that you want to make '$BOOTPART' into a boot disk for Puppy."
-"\\nIf Puppy has mis-identified the device, then answer 'No' here...\\n"
-"\\nClick 'Yes' button if correct device..."
+"Please confirm that you want to make '$BOOTPART' into a boot disk for Puppy.\\n"
+"If Puppy has mis-identified the device, then answer 'No' here...\\n"
+"\\n"
+"Click 'Yes' button if correct device..."
 msgstr ""
 
 #: /usr/sbin/puppyinstaller:1536
@@ -729,7 +715,8 @@ msgid ""
 "(EX: if an IDE drive is hd1,0 (sdb1), may need to be changed to hd0,0)"
 msgstr ""
 
-#: /usr/sbin/puppyinstaller:1589 /usr/sbin/puppyinstaller:1610
+#: /usr/sbin/puppyinstaller:1589
+#: /usr/sbin/puppyinstaller:1610
 #: /usr/sbin/puppyinstaller:1628
 msgid "Universal Installer"
 msgstr ""
@@ -759,8 +746,7 @@ msgstr ""
 msgid ""
 "...for your convenience, this text has been written to /tmp/NEWGRUBTEXT\n"
 "\n"
-"WARNING: If your PC has a mix of IDE and SATA hard drives, then (hd"
-"${GRUB_DRVN}${GRUB_PARTN})\n"
+"WARNING: If your PC has a mix of IDE and SATA hard drives, then (hd${GRUB_DRVN}${GRUB_PARTN})\n"
 "may be wrong. GRUB numbers drives as hd<drive>,<partition> where\n"
 "<drive> and <partition> numbering starts from zero. The problem is\n"
 "that GRUB sees IDE drives first (hd0,), whereas if you look at Pmount\n"
@@ -783,20 +769,22 @@ msgstr ""
 
 #: /usr/sbin/puppyinstaller:1624
 msgid ""
-"The grubconfig script is about to be executed.\\nJust accept the defaults. "
-"The very first question will ask if you\\nwant to do a simple installation, "
-"and you accept that option, which\\nis the default. The only place where I "
-"suggest you deviate from the\\ndefault, is when it asks where to install "
-"Grub, choose MBR."
+"The grubconfig script is about to be executed.\\n"
+"Just accept the defaults. The very first question will ask if you\\n"
+"want to do a simple installation, and you accept that option, which\\n"
+"is the default. The only place where I suggest you deviate from the\\n"
+"default, is when it asks where to install Grub, choose MBR."
 msgstr ""
 
 #: /usr/sbin/puppyinstaller:1628
 msgid ""
-"If you have already run grubconfig to create a boot floppy or installed\\nto "
-"h.d., click 'Yes' button to rerun grubconfig script to either create"
-"\\nanother boot floppy or install or reinstall GRUB to the hard drive.\\nIf "
-"choose 'Yes', just accept all the defaults as before.\\n\\nClick 'Yes' to "
-"rerun grubconfig...\\nClick 'No' if installation finished..."
+"If you have already run grubconfig to create a boot floppy or installed\\n"
+"to h.d., click 'Yes' button to rerun grubconfig script to either create\\n"
+"another boot floppy or install or reinstall GRUB to the hard drive.\\n"
+"If choose 'Yes', just accept all the defaults as before.\\n"
+"\\n"
+"Click 'Yes' to rerun grubconfig...\\n"
+"Click 'No' if installation finished..."
 msgstr ""
 
 #: /usr/sbin/puppyinstaller:1641
@@ -806,3 +794,4 @@ msgstr ""
 #: /usr/sbin/puppyinstaller:1648
 msgid "not yet implemented"
 msgstr ""
+
