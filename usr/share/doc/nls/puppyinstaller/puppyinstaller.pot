@@ -101,19 +101,19 @@ msgstr ""
 
 #: /usr/sbin/puppyinstaller:285
 msgid ""
-"Welcome to the Puppy Universal Installer!\\nIf you wish to install Puppy to "
-"a removable media, such as a USB Flash\\nor hard drive, CD/DVD disc, Zip "
-"disk or LS-120 disk, please insert it\\nright now, before proceeding.\\n"
-"\\nINSERT MEDIA NOW\\nThen, choose the media that you want to install Puppy "
-"to:"
+"Bienvedid@ al Instalador Universal Puppy!\\nSi deseas instalar Puppy en "
+"un medio extraible, como un pendrive\\no Disco duro USB, Disco CD/DVD, disco "
+"Zip o un disco LS-120, por favor insertelo\\nahora mismo, antes de continuar "
+"con el proceso.\\n\\nINSERTE EL MEDIO AHORA\\nLuego seleccione el medio "
+"donde instalará Puppy: "
 msgstr ""
 
 #: /usr/sbin/puppyinstaller:285
-msgid "USB Flash drive"
+msgid "Pendrive"
 msgstr ""
 
 #: /usr/sbin/puppyinstaller:285
-msgid "USB hard drive"
+msgid "Disco Duro por USB"
 msgstr ""
 
 #: /usr/sbin/puppyinstaller:285
