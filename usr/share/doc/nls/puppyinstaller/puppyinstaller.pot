@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-01-03 23:25+0900\n"
-"PO-Revision-Date: 2012-10-18 13:52-0300\n"
+"PO-Revision-Date: 2012-10-19 15:56-0300\n"
 "Last-Translator: Fabián H Bonetti <mama21mama@mamalibre.com.ar>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -49,14 +49,14 @@ msgstr ""
 #: /usr/sbin/puppyinstaller:1561
 #: /usr/sbin/puppyinstaller:1624
 #: /usr/sbin/puppyinstaller:1641
-msgid "Instalador Universal Puppy"
-msgstr ""
+msgid "Puppy Universal Installer"
+msgstr "Puppy Universal Instalador"
 
 #: /usr/sbin/puppyinstaller:255
 #: /usr/sbin/puppyinstaller:261
 #: /usr/sbin/puppyinstaller:272
-msgid "Instalador Universal Puppy"
-msgstr ""
+msgid "Puppy universal installer"
+msgstr "Puppy Universal Instalador"
 
 #: /usr/sbin/puppyinstaller:255
 msgid "DIRECTORY"
@@ -65,77 +65,80 @@ msgstr ""
 #: /usr/sbin/puppyinstaller:255
 #, sh-format
 msgid ""
-"Puppy consiste de 2 a 4 archivos:\\n"
-"vmlinuz	El Kernel de Linux\\n"
-"initrd.gz		El disco de memoria inicial.\\n"
-"${DISTRO_PUPPYSFS} Este contiene todo el Puppyarchivos (a veces dentro de initrd.gz.\\n"
-"			(si se construye dentro de initrd.gz solamente es requerido initrd.gz)\\n"
-"${DISTRO_ZDRVSFS} Drivers del Kernel y firmware adicionales (opcional).\\       (la mayoría de las versiones tienen una selección utilizable de drivers en ${DISTRO_PUPPYSFS}\\n"
-"si Usted bootea Puppy desde un live-CD, dichos archivos estarán disponibles en el mismo.\\n"
-"Por otra parte, ellos están en el archivo .iso y pueden ser extraidos de allí\\n"
-"caso, solo haciendo click en el archivo .iso y podría ser montada (abierta) en\\n"
-"un directorio (sin olvidar hacer click en el archivo para luego desmontarla!)\\n"
+"Puppy consists of 2 to 4 files:\\n"
+"vmlinuz      The Linux kernel\\n"
+"initrd.gz    The initial ramdisk.\\n"
+"${DISTRO_PUPPYSFS}  This has all the Puppy files (sometimes inside initrd.gz).\\n"
+"             (if built inside initrd.gz then only initrd.gz is required)\\n"
+"${DISTRO_ZDRVSFS} Extra kernel drivers and firmware (optional).\\n"
+"             (most builds have a usable selection of drivers in ${DISTRO_PUPPYSFS})\\n"
+"If you booted Puppy from a live-CD, those files will be on it.\\n"
+"Otherwise, they are in the .iso file and can be extracted -- in that\\n"
+"case, just click on the .iso file and it will be mounted (opened) in\\n"
+"a directory (do not forget to click on the file later to unmount it!)\\n"
 "\\n"
-"Donde están los archivos de Puppy?..."
+"Where are the Puppy files?..."
 msgstr ""
 
 #: /usr/sbin/puppyinstaller:261
 #, sh-format
 msgid ""
-"Por favor inserte el Live-CD de Puppy (si no lo ha hecho) en la unidad.\\Nota, en caso de que su PC tenga dos unidades de CD/DVD, Puppy espera\\n"
-"a que el live-CD sea insertado en $CDDRIVE, que se describe como:\\n"
-"$CDDRVINFO \\n"
+"Please insert the Puppy live-CD (if not already) into the drive.\\n"
+"Note, in case your PC has two CD/DVD drives, Puppy is expecting\\n"
+"the live-CD to be inserted into $CDDRIVE, which is described as:\\n"
+" $CDDRVINFO \\n"
 "\\n"
-"Después de insertar el live-DC, presione click en elboton OK..."
+"After inserting live-CD, click OK button..."
 msgstr ""
 
 #: /usr/sbin/puppyinstaller:267
 #: /usr/sbin/puppyinstaller:279
-msgid "Instalador Universal Puppy: ERROR"
-msgstr ""
+msgid "Puppy universal installer: ERROR"
+msgstr "Puppy Universal Instalador: ERROR"
 
 #: /usr/sbin/puppyinstaller:267
 msgid ""
-"Lo siento, Puppy no está en el CD.\\n"
-"Por favor monte el CD usando uno de losprogramas para montar unidades\\n"
-"(vea el menú Administradores de ficheros)luego presione click en el botón OK..."
+"Sorry, Puppy is not on the CD.\\n"
+"Please mount the CD using one of the mount programs\\n"
+"(see File Managers menu) then click OK button..."
 msgstr ""
 
 #: /usr/sbin/puppyinstaller:272
 #, sh-format
 msgid ""
-"Por favor busque los últimos ficheros de Puppy\\n"
-"vmlinuz, initrd.gz y ${DISTRO_PUPPYSFS},\\n"
-"Luego resalte alguno de ellos\\n"
-" y presione click en el botón OK"
+"Please find the latest Puppy files\\n"
+"vmlinuz, initrd.gz and ${DISTRO_PUPPYSFS},\\n"
+"THEN HIGHLIGHT ANY ONE OF THEM\\n"
+"and click the OK button"
 msgstr ""
 
 #: /usr/sbin/puppyinstaller:279
 #, sh-format
 msgid ""
-"Oh estimad@, el 'sano juicio' ha fallado.\\Este archivo: $SRCPATH/${DISTRO_PUPPYSFS}\\n"
-"no existe.\\n"
-"Lo anterior se supone que es el-camino-donde-los-archivos-puppy-estan/${DISTRO_PUPPYSFS}\\n"
-"Presioneclick en el botón OK para cerrar..."
+"Oh dear, a 'sanity check' has failed.\\n"
+"This file: $SRCPATH/${DISTRO_PUPPYSFS}\\n"
+"does not exist.\\n"
+"The above is supposed to be path-to-where-puppy-files-are/${DISTRO_PUPPYSFS}\\n"
+"Click OK button to quit..."
 msgstr ""
 
 #: /usr/sbin/puppyinstaller:285
 msgid ""
-"Bienvedid@ al Instalador Universal Puppy!\\n"
-"Si deseas instalar Puppy en un medio extraible, como un pendrive\\n"
-"o Disco duro USB, Disco CD/DVD, disco Zip o un disco LS-120, por favor insertelo\\n"
-"ahora mismo, antes de continuar con el proceso.\\n"
+"Welcome to the Puppy Universal Installer!\\n"
+"If you wish to install Puppy to a removable media, such as a USB Flash\\n"
+"or hard drive, CD/DVD disc, Zip disk or LS-120 disk, please insert it\\n"
+"right now, before proceeding.\\n"
 "\\n"
-"INSERTE EL MEDIO AHORA\\n"
-"Luego seleccione el medio donde instalará Puppy: "
+"INSERT MEDIA NOW\\n"
+"Then, choose the media that you want to install Puppy to:"
 msgstr ""
 
 #: /usr/sbin/puppyinstaller:285
-msgid "Pendrive"
+msgid "USB Flash drive"
 msgstr ""
 
 #: /usr/sbin/puppyinstaller:285
-msgid "Disco Duro por USB"
+msgid "USB hard drive"
 msgstr ""
 
 #: /usr/sbin/puppyinstaller:285
@@ -251,7 +254,7 @@ msgstr ""
 
 #: /usr/sbin/puppyinstaller:568
 msgid "CONTINUE"
-msgstr ""
+msgstr "CONTINUAR"
 
 #: /usr/sbin/puppyinstaller:568
 #, sh-format
@@ -656,7 +659,7 @@ msgstr ""
 
 #: /usr/sbin/puppyinstaller:1492
 msgid "Install/update GRUB"
-msgstr ""
+msgstr "Instalar/actualizar GRUB"
 
 #: /usr/sbin/puppyinstaller:1492
 #, sh-format
@@ -719,15 +722,15 @@ msgstr ""
 #: /usr/sbin/puppyinstaller:1610
 #: /usr/sbin/puppyinstaller:1628
 msgid "Universal Installer"
-msgstr ""
+msgstr "Instalador Universal"
 
 #: /usr/sbin/puppyinstaller:1589
 msgid "UPDATE"
-msgstr ""
+msgstr "ACTUALIZAR"
 
 #: /usr/sbin/puppyinstaller:1589
 msgid "INSTALL"
-msgstr ""
+msgstr "INSTALAR"
 
 #: /usr/sbin/puppyinstaller:1589
 #, sh-format
