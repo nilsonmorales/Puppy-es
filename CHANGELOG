@@ -5,7 +5,7 @@ Puppy-es Passaggio 531-1.3RC
 * Codename mal escrito es passaggio dos "G" [solved]
 * editar codename a Passaggio y con ello el sfs , DISTRO_SPECS [solved]
 * mejorando texto, quedo mas normal /root/my-applications/bin/update [solved]
-* wallpaper con el codename correcto [urgencia alta]
+* wallpaper con el codename correcto [solved]
 * imagen grub4dos con el codename correcto [urgencia alta]
 * imagen del grup incluir codename [urgencia baja]
 * modificar el initrd el nombre del pupsave de Passagiosave a Passaggiosave [urgencia alta]
