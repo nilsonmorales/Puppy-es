@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-01-03 23:25+0900\n"
-"PO-Revision-Date: 2012-10-19 18:52-0300\n"
+"PO-Revision-Date: 2012-10-20 09:21-0300\n"
 "Last-Translator: Fabián H Bonetti <mama21mama@mamalibre.com.ar>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -133,6 +133,10 @@ msgid ""
 "THEN HIGHLIGHT ANY ONE OF THEM\\n"
 "and click the OK button"
 msgstr ""
+"Por favor, encontrar los últimos archivos de Puppy\\n"
+"vmlinuz, initrd.gz y ${DISTRO_PUPPYSFS},\\n"
+"A CONTINUACIÓN, RESALTE ALGUNO DE ELLOS\\n"
+"y haga clic en el botón OK"
 
 #: /usr/sbin/puppyinstaller:279
 #, sh-format
@@ -143,6 +147,11 @@ msgid ""
 "The above is supposed to be path-to-where-puppy-files-are/${DISTRO_PUPPYSFS}\\n"
 "Click OK button to quit..."
 msgstr ""
+"¡Dios mío, una 'comprobación de validez' ha fallado.\\n"
+"Este archivo: $SRCPATH/${DISTRO_PUPPYSFS}\\n"
+"no existe.\\n"
+"Lo anterior se supone que es path-donde-puppy-archivos-esta/${DISTRO_PUPPYSFS}\\n"
+"Haga clic en el botón OK para salir..."
 
 #: /usr/sbin/puppyinstaller:285
 msgid ""
@@ -155,9 +164,12 @@ msgid ""
 "Then, choose the media that you want to install Puppy to:"
 msgstr ""
 "Bienvenido al Puppy Universal Instalador!\\n"
-"Si desea instalar Puppy en un medio extraíble, como una memoria USB\\n"
-"o el disco duro, CD / DVD, disco Zip o disco LS-120, por favor insertelo\\n"
+"Si desea instalar Puppy en un medio extraíble, como una memoria USB Flash\\n"
+"o el hard disk, CD/DVD, disco Zip o disco LS-120, por favor insertelo\\n"
 "en este momento, antes de proceder.\\n"
+"\\n"
+"INSERTAR EL MEDIO AHORA\\n"
+"Luego, escoja el medio que desee instalar Puppy a:"
 
 #: /usr/sbin/puppyinstaller:285
 msgid "USB Flash drive"
@@ -169,27 +181,27 @@ msgstr ""
 
 #: /usr/sbin/puppyinstaller:285
 msgid "USB CF Flash drive, later move CF card to IDE/SATA internal adaptor"
-msgstr ""
+msgstr "USB CF Flash drive, después mover tarjeta CF a IDE/SATA adaptador interno"
 
 #: /usr/sbin/puppyinstaller:285
 msgid "Internal USB Flash drive (ex: uDiskOnChip)"
-msgstr ""
+msgstr "Interno USB Flash drive (ej: uDiskOnChip)"
 
 #: /usr/sbin/puppyinstaller:285
 msgid "Internal IDE/SATA Flash drive (ex: CF card in IDE adaptor)"
-msgstr ""
+msgstr "Interno IDE/SATA Flash drive (ej: CF tarjeta adaptador IDE)"
 
 #: /usr/sbin/puppyinstaller:285
 msgid "Internal ZIP or LS120 drive"
-msgstr ""
+msgstr "ZIP interna o la unidad LS120"
 
 #: /usr/sbin/puppyinstaller:285
 msgid "Internal (IDE or SATA) hard drive"
-msgstr ""
+msgstr "Interno (IDE o SATA) hard disk"
 
 #: /usr/sbin/puppyinstaller:285
 msgid "Ancient true-SCSI hard drive"
-msgstr ""
+msgstr "Ancient verdadero hard disk SCSI"
 
 #: /usr/sbin/puppyinstaller:285
 msgid "CD drive"
@@ -217,39 +229,51 @@ msgid ""
 "\\n"
 "Click button to quit..."
 msgstr ""
+"El equipo consta de las siguientes unidades de CD/DVD:\\n"
+"$SELECTIONS \\n"
+"\\n"
+"Sin embargo, no se puede instalar Puppy en un CD/DVD en la misma forma que un\\n"
+"hard disk, unidad flash USB o una unidad Zip, ya que el CD/DVD no es\\n"
+"directamente de escritura. Para el CD / DVD, que tiene que hacer lo que se llama\\n"
+"'remasterización' y Puppy tiene un programa para esto, llamado 'Remaster\\n"
+"Puppy live-CD', que se encuentra en el menú de configuración. Este programa tr permite\\n"
+"crear tu propia live-CD/DVD.\\n"
+"Tenga en cuenta que se necesita un nuevo disco CD-R o DVD-R (no +R).\\n"
+"\\n"
+"Haga clic en el botón para salir..."
 
 #: /usr/sbin/puppyinstaller:367
 msgid "Not yet implemented"
-msgstr ""
+msgstr "Todavía no se ha implementado"
 
 #: /usr/sbin/puppyinstaller:373
 msgid "Nothing to choose. If a plugin device, did you plug it in?"
-msgstr ""
+msgstr "No hay nada que elegir. Si un dispositivo plug-in, lo que lo conecte?"
 
 #: /usr/sbin/puppyinstaller:451
 msgid "Install Puppy to"
-msgstr ""
+msgstr "Instalar Puppy"
 
 #: /usr/sbin/puppyinstaller:460
 msgid "IMPORTANT: If you use GParted, after creating the partition be sure to set the 'boot' flag (right-click: Manage flags). Also, for a USB Flash drive choose fat16 filesystem as easier to boot from (than fat32) -- however a ext2 or ext3 partition will also work."
-msgstr ""
+msgstr "IMPORTANTE: Si utiliza GParted, después de crear la partición asegúrese de ajustar el 'boot' flag (botón derecho del ratón: Gestionar las flags). Además, para una unidad USB Flash elegir sistema de archivos FAT16 como más fácil de arrancar (que fat32) -- sin embargo una partición ext2 o ext3 también funcionará."
 
 #: /usr/sbin/puppyinstaller:463
 msgid "IMPORTANT: If you use GParted, after creating the partition be sure to set the 'boot' flag (right-click: Manage flags)."
-msgstr ""
+msgstr "IMPORTANTE: Si utiliza GParted, después de crear la partición asegúrese de ajustar el 'boot' flag (botón derecho del ratón: Gestionar las flags)."
 
 #: /usr/sbin/puppyinstaller:464
 msgid "Extra note: Gparted may show invalid partitions on the drive, marked with a '!' icon -- delete it/them and recreate a partition (and make it bootable)"
-msgstr ""
+msgstr "Nota extra: Gparted puede mostrar las particiones no válidas en el disco, marcado con un '!' icono -- borrarlo/ellos y crear una partición (y que sea arrancable)"
 
 #: /usr/sbin/puppyinstaller:485
 msgid "Filesystem in partition"
-msgstr ""
+msgstr "Sistema de archivos en la partición"
 
 #: /usr/sbin/puppyinstaller:487
 #, sh-format
 msgid "WARNING: Notice the filesystem in the intended destination, is that what you want? In particular, if the f.s. is 'vfat' or 'ntfs' you might want to replace these with a Linux ext2 or ext3 f.s. if the partition can be taken over totally for Puppy's use. If you are installing to an internal drive of a PC, it is highly recommended that the f.s. be a Linux ext2 or ext3. Puppy can install to vfat/ntfs but limited to 'frugal' with '${DISTRO_FILE_PREFIX}save' only. Ntfs is particularly limited, slow and also has severe bootup options, so get rid of it if at all possible. Click the button to run GParted, which will enable you to examine and modify the partitions."
-msgstr ""
+msgstr "ADVERTENCIA: Observe el sistema de archivos en el destino deseado, es eso lo que quieres? En particular, si el s.a. es 'vfat' o 'ntfs' es posible que desee reemplazar éstos con una ext2 de Linux o ext3 s.a. si la partición puede ser asumida totalmente por el uso de Puppy. Si va a instalar una unidad interna de un PC, es muy recomendable que el sistema de archivo sea un Linux ext2 o ext3. Puppy puede instalar para vfat/ntfs, pero sin limitarse a 'frugal' con '${DISTRO_FILE_PREFIX}save' solamente. NTFS es particularmente limitado, lento y también tiene opciones de graves arranque, por lo que deshacerse de ella si es posible. Haga clic en el botón para ejecutar GParted, que le permitirá examinar y modificar las particiones."
 
 #: /usr/sbin/puppyinstaller:496
 #: /usr/sbin/puppyinstaller:510
@@ -259,24 +283,24 @@ msgstr ""
 #: /usr/sbin/puppyinstaller:498
 #, sh-format
 msgid "WARNING: NOT NORMALLY RECOMMENDED. Do you want to install Puppy in Superfloppy mode, that is, no MBR and no partitions? ...in that case, the drive will be accessed as /dev/$DRVSEL, without a partition number. This may be a good choice for booting USB Flash drive from PC with a quirky BIOS. Click button if yes:"
-msgstr ""
+msgstr "ADVERTENCIA: NO SE RECOMIENDA NORMALMENTE. ¿Quieres instalar Puppy en modo Superfloppy, es decir, no MBR y no particiones? ...en ese caso, la unidad se acceden como /dev/$DRVSEL, sin un número de partición. Esto puede ser una buena opción para arrancar desde USB Flash Drive PC con un BIOS quirky. Haga clic en el botón en caso si:"
 
 #: /usr/sbin/puppyinstaller:512
 #, sh-format
 msgid "The drive is currently in Superfloppy mode and has no MBR and no partitions. It is accessed as /dev/$DRVSEL, without a partition number (this may be a good choice for booting USB Flash drive from PC with a quirky BIOS). Do you want to partition the drive so that it has a /dev/${DRVSEL}1 partition, in which Puppy can be installed? If so, click button:"
-msgstr ""
+msgstr "La unidad está en modo Superfloppy y no tiene MBR y las particiones no. Se accede como /dev/$DRVSEL, sin un número de partición (esto puede ser una buena opción para arrancar la unidad Flash USB de PC con una quirky BIOS). ¿Desea particionar el disco para que tenga un /dev/${DRVSEL}1 partición, en la que puede instalarse el Puppy? Si es así, haga clic en el botón:"
 
 #: /usr/sbin/puppyinstaller:527
 msgid "Here is what Puppy has found out about the chosen drive:"
-msgstr ""
+msgstr "Aquí está lo que Puppy ha encontrado acerca de la unidad elegida:"
 
 #: /usr/sbin/puppyinstaller:533
 msgid "Go back and choose a different drive"
-msgstr ""
+msgstr "Retroceder y elegir una unidad diferente"
 
 #: /usr/sbin/puppyinstaller:568
 msgid "Puppy universal installer: SANITY CHECK"
-msgstr ""
+msgstr "Puppy universal instalador: COMPROBACIÓN"
 
 #: /usr/sbin/puppyinstaller:568
 msgid "CONTINUE"
@@ -305,16 +329,35 @@ msgid ""
 "with the restricted install choice, or QUIT script now and try to fix the\\n"
 "problem of the partition getting mounted..."
 msgstr ""
+"Una comprobación de partición antes de continuar:\\n"
+"$SANITYMSG1 \\n"
+"$SANITYMSG2 \\n"
+"$SANITYMSG3 \\n"
+"\\n"
+"Si el informe anterior es que la partición está montada, es necesario desmontarlo\\n"
+"en este momento, pero si el informe es que no se puede desmontar, entonces no puede ser instalado\\n"
+"dificultades -- Ciertamente, en el caso de instalar en el disco duro que sólo será\\n"
+"capaz de hacer una instalación option1 (explicado más adelante).\\n"
+"Si la partición tiene ${DISTRO_FILE_PREFIX}save.3fs en él, que es la razón por la que no se puede\\n"
+"desmontar -- que está actualmente en uso por Puppy. Si arranca Puppy desde live-CD,\\n"
+"${DISTRO_FILE_PREFIX}save.3fs si no existe, entonces Puppy se ejecutará totalmente en la memoria RAM, que va\\n"
+"a resolver el problema-- pero no se debe borrar o cambiar el nombre de la derecha ${DISTRO_FILE_PREFIX}save.3fs\\n"
+"ahora que está en uso. En su lugar, arrancar otro sistema operativo cambie el nombre del archivo,\\n"
+"a continuación, arrancar Puppy live-CD.\\n"
+"\\n"
+"Bottom-line, desmontar la partición ahora, si se puede, si no, continúe script\\n"
+"con la opción de instalación restringida, o SALIR del script ahora y tratar de arreglar el\\n"
+"problema de conseguir la partición montada..."
 
 #: /usr/sbin/puppyinstaller:581
 #, sh-format
 msgid "You have chosen to format /dev/${DESTPART} as a Superfloppy. You now need to choose whether to create a vfat or a ext3 filesystem on the drive. Ext3 is the most flexible (and recommended) choice, however if you need to be able to read the drive from Windows then choose vfat. Note, however, there are tools for accessing ext2/3 drives in Windows."
-msgstr ""
+msgstr "Ha elegido el formato /dev/${DESTPART} como Superfloppy. Ahora tiene que elegir si desea crear un sistema de archivos vfat o ext3 en el disco. Ext3 es el más flexible (y recomendado) opción, sin embargo, si usted necesita ser capaz de leer el disco de Windows a continuación, elija vfat. Tenga en cuenta, sin embargo, existen herramientas para acceder a ext2/3 unidades de disco en Windows."
 
 #: /usr/sbin/puppyinstaller:582
 #, sh-format
 msgid "A further clarification: if you choose ext3, then the entire drive will be immediately available for personal data storage, whereas if you choose vfat this installer will have to create a file with a ext3 filesystem inside it (${DISTRO_FILE_PREFIX}save.3fs) -- that file will contain all your personal files. Press FORMAT_ext3 or FORMAT_vfat button to commence formatting..."
-msgstr ""
+msgstr "Una aclaración: si elige ext3, el disco entero estará inmediatamente disponible para el almacenamiento de datos personales, mientras que si elige vfat este instalador tendrá que crear un archivo con un sistema de ficheros ext3 en su interior (${DISTRO_FILE_PREFIX}save.3fs) -- ese archivo contendrá todos sus archivos personales. Pulse el botón de FORMAT_ext3 o FORMAT_vfat para iniciar el formato..."
 
 #: /usr/sbin/puppyinstaller:585
 msgid "FORMAT_ext3"
