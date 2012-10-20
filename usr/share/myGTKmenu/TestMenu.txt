@@ -247,7 +247,7 @@ Submenu = Herramientas
 #	 cmd = gadmin-rsync
 #	 icon = /usr/share/pixmaps/gadmin-rsync.png
 	 
-#	 item = Pbackup-Respaldo y Sincronizaci�n
+#	 item = Pbackup-Respaldo y Sincronización
 #	 cmd = pbackup
 #	 icon = /usr/local/lib/X11/mini-icons/mini-diskette.xpm
 	 
@@ -298,7 +298,7 @@ Submenu = Sistema de Archivos
 #	  cmd=searchmonkey
 #	  icon=/usr/share/pixmaps/searchmonkey.png
 	  
-Submenu = Gr�ficos
+Submenu = Gráficos
 	icon = /usr/local/lib/X11/pixmaps/paint48.png
 	
 	item = Visor de fotografias
