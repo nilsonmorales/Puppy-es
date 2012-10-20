@@ -1,0 +1,9 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Aplicaciones favoritas
+Icon=/usr/share/tint2/menutint2.png
+Comment=ROX-Filer file manager
+Exec=/usr/share/myGTKmenu/myGtkMenu
+Terminal=false
+Type=Application
+Categories=FileManager
