@@ -1,5 +1,5 @@
-Todos los archivos aqui presente se distribuiran con la 
-licencia GPL v3.0 sitada en el archivo COPYING, no aquellos 
+Todos los archivos aqui presente se distribuiran con la
+licencia GPL v3.0 sitada en el archivo COPYING, no aquellos
 archivos que indiquen licencia GPL compatible diferente.
 
 Puppy-es
