@@ -55,7 +55,7 @@ Submenu = Escritorio
 #	cmd = /usr/local/PupControl/SS-control
 #    icon= /usr/local/PupControl/icons/screen20.png
     
-#    item = Ajusta tama�o de fuentes
+#    item = Ajusta tamaño de fuentes
 #	cmd = /usr/sbin/set-xftdpi
 #    icon = /usr/local/lib/X11/mini-icons/mini-x.xpm
     
