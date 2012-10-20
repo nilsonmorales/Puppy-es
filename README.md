@@ -1,6 +1,7 @@
 Puppy-es
 =========
 Esto sera el proximo archivo .pet de update
+o este posiblemente en un nueva iso.
 
 
 
@@ -21,6 +22,10 @@ Algunas características en proceso de traducción total al español
     Trabajo y mantenimiento por miembros en español del canal irc #puppy-es
 
 Se acordó trabajar en dos ramas una para equipos antiguos y otro para maquinas mas recientes.
+
+Todos los archivos aqui presente se distribuiran con la 
+licencia GPL v3.0 sitada en el archivo COPYING, no aquellos 
+archivos que indiquen licencia GPL compatible diferente.
 
 Web del Proyecto
 http://puppyes.com.ar/
