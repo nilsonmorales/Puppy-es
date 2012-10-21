@@ -1,7 +1,7 @@
 Puppy-es Passaggio 531-1.3RC
 
 
-* Traducir  con "poedit" o con tu "editor favorito" /usr/share/doc/nls/puppyinstaller/puppyinstaller.pot [urgencia alta]
+* Traducir /usr/share/doc/nls/puppyinstaller/puppyinstaller.pot al menor cambio hacer "push"[urgencia alta]
 * Codename mal escrito es passaggio dos "G" [solved]
 * editar codename a Passaggio y con ello el sfs , DISTRO_SPECS [solved]
 * mejorando texto, quedo mas normal /root/my-applications/bin/update [solved]
