@@ -475,9 +475,9 @@ Submenu = Internet
 Submenu = Multimedia
 	icon = /usr/local/lib/X11/pixmaps/multimedia48.png
 
-	item = Alsa Mixer
-	cmd =alsamixer
-	icon = /usr/local/lib/X11/mini-icons/mini-sound.xpm
+#	item = Alsa Mixer
+#	cmd =alsamixer
+#	icon = /usr/local/lib/X11/mini-icons/mini-sound.xpm
 	
 	item = Musica
 	cmd =/usr/local/bin/defaultaudioplayer

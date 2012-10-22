@@ -1,7 +1,7 @@
 [Desktop Entry]
 Encoding=UTF-8
 Name=Aplicaciones favoritas
-Icon=/usr/share/tint2/menutint2.png
+Icon=/usr/local/lib/X11/pixmaps/pet48x.png
 Comment=ROX-Filer file manager
 Exec=/usr/share/myGTKmenu/myGtkMenu
 Terminal=false
