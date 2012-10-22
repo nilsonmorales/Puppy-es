@@ -5,6 +5,7 @@ Proximo update
 * Revisar paqueteria en el repo, si hay paquetes con versiones viejas compilar a nuevos. [urgencia media]
 * Mirar que paquetes faltan en el repo. [urgencia media]
 * Ver que mas se puede traducir y apuntarlo al changelog [urgencia alta]
+* version agregada en  /etc/puppyversion [urgencia baja]
 
 
 update_21102012.pet [end]
