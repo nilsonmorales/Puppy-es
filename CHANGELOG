@@ -1,4 +1,13 @@
-Puppy-es Passaggio 531-1.3RC
+Proximo .pet de update
+
+
+* imagen del grup incluir codename [urgencia baja]
+* Traducir /usr/share/doc/nls/puppyinstaller/puppyinstaller.pot al menor cambio hacer "push"[urgencia alta]
+
+
+
+
+update_21102012.pet
 
 
 * Traducir /usr/share/doc/nls/puppyinstaller/puppyinstaller.pot al menor cambio hacer "push"[urgencia alta]
@@ -9,7 +18,7 @@ Puppy-es Passaggio 531-1.3RC
 * imagen grub4dos con el codename correcto [solved]
 * imagen del grup incluir codename [urgencia baja]
 * modificar el initrd el nombre del pupsave de Passagiosave a Passaggiosave [solved]
-* se modifico el aspecto visual del menu favorito http://cut07.tk/aG7 [urgencia baja]
+* se modifico el aspecto visual del menu favorito http://cut07.tk/aG7 [solved]
 
 Puppy-es Passaggio 531-1.2RC [end]
 
