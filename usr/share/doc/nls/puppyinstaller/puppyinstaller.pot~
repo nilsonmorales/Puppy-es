@@ -361,79 +361,74 @@ msgstr "Una aclaración: si elige ext3, el disco entero estará inmediatamente d
 
 #: /usr/sbin/puppyinstaller:585
 msgid "FORMAT_ext3"
-msgstr "FORMATO_ext3"
+msgstr ""
 
 #: /usr/sbin/puppyinstaller:589
 msgid "FORMAT_vfat"
-msgstr "FORMATO_vfat"
+msgstr ""
 
 #: /usr/sbin/puppyinstaller:633
 #, sh-format
 msgid "You have chosen to format /dev/${DRVSEL} with a MBR and a partition. You now need to choose whether to create a vfat or a ext3 filesystem on the partition. Ext3 is the most flexible (and recommended) choice, however if you need to be able to read the drive from Windows then choose vfat. Note, however, there are tools for accessing ext2/3 drives in Windows."
-msgstr "Usted puede tener un formato preferido /dev/${DRVSEL} con un MBR y una partición. Ahora tiene que elegir entre crear un sistema de archivos vfat o ext3 para su 
-particion. Ext3 es la opción más flexible (y recomendada), sin embargo, si Usted necesita leer la unidad en Windows elija vfat. Nota, de todos modos existen herramientas
-para acceder en la unidad aún con sistema de archivos ext2/3 bajo Windows."
+msgstr ""
 
 #: /usr/sbin/puppyinstaller:634
 #, sh-format
 msgid "A further clarification: if you choose ext3, then the entire partition will be immediately available for personal data storage, whereas if you choose vfat then Puppy will have to create a file with a ext2 filesystem inside it (${DISTRO_FILE_PREFIX}save.2fs) -- that file will contain all your personal files."
-msgstr "Una aclaración: Si Usted elige ext3, toda la partición estará disponible para almacenamiento de datos personales, mientras que si Usted seleccionó vfat como formato,
-entonces Puppy tiene que crear un archivo con el sistema de fichero ext2 en su interior (${DISTRO_FILE_PREFIX}save.2fs) -- ese archivo contendrá su información personal."
+msgstr ""
 
 #: /usr/sbin/puppyinstaller:635
 msgid "USB Flash drives: it is most common to create a vfat (fat16) partition on these, for Windows interchangeability and some older BIOSes boot only if see a fat16 f.s."
-msgstr "Pendrives: En ellos es más común crear un sistema de ficheros vfat (fat16), para intercambios con Windows o BIOS antigua podrá botearlo solo si ve que el archivo es fat16 f.s."
+msgstr ""
 
 #: /usr/sbin/puppyinstaller:637
 msgid "Click button to run GParted..."
-msgstr "Presione el botón para iniciar GParted"
+msgstr ""
 
 #: /usr/sbin/puppyinstaller:687
 msgid "You have chosen to install Puppy to the entire drive, which is what we call Superfloppy mode, in which there is no MBR (Master Boot Record) and no partitions. This may be a good choice for Flash memory, especially USB Flash, that the PC BIOS has trouble booting from."
-msgstr "Ha elegido instalar Puppy en toda la unidad, esto es lo que nosotros llamamos modo Superfloppy, en donde no hay MBR (Master Boot Record) y sin particiones. Esto puede ser mejor elección para memorias Flash, especialmente USB Flash, en las PC que no presentan ese soporte de arranque desde la BIOS."
+msgstr ""
 
 #: /usr/sbin/puppyinstaller:688
 #, sh-format
 msgid "The target drive is ${DESTPART}, which has a ${DESTFS}, of size ${DESTSIZM}M. Press OK button to install Puppy to the drive..."
-msgstr "La unidad de destino es ${DESTPART}, que tiene un ${DESTFS}, de tamaño ${DESTSIZM}M. Presiona el botón de OK para instalar Puppy en el dispositivo."
+msgstr ""
 
 #: /usr/sbin/puppyinstaller:697
 #, sh-format
 msgid "You have chosen to install Puppy to partition /dev/${DESTPART}, which has a ${DESTFS} filesystem and the size is ${DESTSIZM}M."
-msgstr "Usted ha elegido instalar Puppy en la partición /dev/${DESTPART}, que tiene un sistema de ficheros ${DESTFS} y el tamaño es ${DESTSIZM}M"
+msgstr ""
 
 #: /usr/sbin/puppyinstaller:698
 msgid "Press OK button to install Puppy (note, there will be one or two more dialog windows before you have to commit to the actual install)..."
-msgstr "Presione el botón OK para instalar Puppy (nota, habrán una o dos ventanas de diálogos antes de realizar la instalación)..."
+msgstr ""
 
 #: /usr/sbin/puppyinstaller:740
 msgid ""
 "The bootstrap loader code is missing from the MBR (Master Boot Record),\\n"
 "meaning that the USB drive will not boot. Please choose one of the\\n"
 "following to fix this. Personally, I have had success with mbr.bin."
-msgstr "El código bootstrap está ausente para el MBR (Master Boot Record), \\n"
-       "Lo que significa que el pendrive no boteará. Por favor elija una de las \\n"
-	   "siguientes para solucionarlo. Personalmente he tenido éxito con mbr.bin."
+msgstr ""
 
 #: /usr/sbin/puppyinstaller:740
 #: /usr/sbin/puppyinstaller:742
 msgid "Bootstrap loader code, created by JustGreg"
-msgstr "Lectura del código Bootstrap, creado por JustGreg"
+msgstr ""
 
 #: /usr/sbin/puppyinstaller:740
 #: /usr/sbin/puppyinstaller:742
 msgid "From the Syslinux package"
-msgstr "Del paquete Syslinux"
+msgstr ""
 
 #: /usr/sbin/puppyinstaller:740
 #: /usr/sbin/puppyinstaller:742
 msgid "From the makebootfat package"
-msgstr "Del paquete makebootfat"
+msgstr ""
 
 #: /usr/sbin/puppyinstaller:740
 #: /usr/sbin/puppyinstaller:742
 msgid "From spblinux, created by Christian Ostheimer"
-msgstr "De spblinux, creado por Christian Ostheimer"
+msgstr ""
 
 #: /usr/sbin/puppyinstaller:742
 #, sh-format
