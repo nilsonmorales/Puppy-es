@@ -173,7 +173,7 @@ msgstr ""
 
 #: /usr/sbin/puppyinstaller:285
 msgid "USB Flash drive"
-msgstr ""
+msgstr "Pendrive"
 
 #: /usr/sbin/puppyinstaller:285
 msgid "USB hard drive"
