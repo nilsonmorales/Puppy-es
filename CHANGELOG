@@ -1,7 +1,7 @@
 Proximo update
 
 
-* Traducir /usr/share/doc/nls/puppyinstaller/puppyinstaller.pot al menor cambio hacer "push"[urgencia alta]
+* Traducir /usr/share/doc/nls/puppyinstaller/puppyinstaller.po al menor cambio hacer "push"[urgencia alta]
 * Revisar paqueteria en el repo, si hay paquetes con versiones viejas compilar a nuevos. [urgencia media]
 * Mirar que paquetes faltan en el repo. [urgencia media]
 * Ver que mas se puede traducir y apuntarlo al changelog [urgencia alta]
