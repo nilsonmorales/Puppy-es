@@ -411,9 +411,10 @@ msgid ""
 "The bootstrap loader code is missing from the MBR (Master Boot Record),\\n"
 "meaning that the USB drive will not boot. Please choose one of the\\n"
 "following to fix this. Personally, I have had success with mbr.bin."
-msgstr "El código bootstrap está ausente para el MBR (Master Boot Record), \\n"
-       "Lo que significa que el pendrive no boteará. Por favor elija una de las \\n"
-	   "siguientes para solucionarlo. Personalmente he tenido éxito con mbr.bin."
+msgstr ""
+"Está ausente para el MBR (Master Boot Record), \\n"
+"lo que significa que el pendrive no boteará. Por favor elija una de las \\n"
+"siguientes para solucionarlo. Personalmente he tenido éxito con mbr.bin."
 
 #: /usr/sbin/puppyinstaller:740
 #: /usr/sbin/puppyinstaller:742
