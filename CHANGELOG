@@ -6,6 +6,7 @@ Proximo update
 * Mirar que paquetes faltan en el repo. [urgencia media]
 * Ver que mas se puede traducir y apuntarlo al changelog [urgencia alta]
 * version agregada en  /etc/puppyversion [urgencia baja]
+* scroll en chequeo de dependencias, corregido
 
 
 update_21102012.pet [end]
