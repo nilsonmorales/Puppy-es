@@ -7,6 +7,7 @@ Proximo update
 * Ver que mas se puede traducir y apuntarlo al changelog [urgencia alta]
 * version agregada en  /etc/puppyversion [urgencia baja]
 * scroll en chequeo de dependencias, corregido
+* se soluciono el quickpet que no iniciaba [/usr/local/quickpet/quickpet.sh:32]
 
 
 update_21102012.pet [end]
