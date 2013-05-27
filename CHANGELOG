@@ -1,4 +1,11 @@
-Proximo update
+Puppy-es L10n - Internacionalización y localización
+
+* Se añadio carpeta l10n alli se ira metiendo los script y demas cosas a traducir de las ramas de puppy-es, espesifiquen de que rama es el script si Passaggio o Night
+
+
+
+
+update-06-03-2013.pet passaggio [end]
 
 
 * Traducir /usr/share/doc/nls/puppyinstaller/puppyinstaller.po al menor cambio hacer "push"[urgencia alta]
