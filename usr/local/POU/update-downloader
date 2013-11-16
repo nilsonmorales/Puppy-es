@@ -1,0 +1,5 @@
+#!/bin/bash
+DownloadFile=$1
+TERMINAL_SETTINGS="urxvt -geometry 80x10+25+25 -fg yellow -transparent +sb -e "
+$TERMINAL_SETTINGS wget -c "$DownloadFile"
+exit 0

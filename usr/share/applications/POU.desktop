@@ -1,0 +1,19 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=POU : update the OS
+Name[de]=POU : aktualisieren Sie die OS
+Name[fr]=POU : mettre à jour l'OS
+Name[es]=POU : actualizar el sistema operativo
+Comment=POU (Puppy Online Updater) : update the OS
+Comment[de]=POU (Puppy Online Updater) : aktualisieren Sie die OS
+Comment[fr]=POU (Puppy Online Updater) : mettre à jour l'OS
+Comment[es]=POU (Puppy Online Updater): actualizar el sistema operativo
+Exec=/usr/local/POU/pou-autoupdate
+Icon=pou.png
+Terminal=false
+Type=Application
+Categories=X-SetupEntry
+GenericName=POU : update the OS
+GenericName[de]=POU : aktualisieren Sie die OS
+GenericName[fr]=POU : mettre à jour l'OS
+GenericName[es]=POU : actualizar el sistema operativo

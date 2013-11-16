@@ -1,0 +1,222 @@
+#!/bin/bash -a
+#------------------------------------------------------------------------------
+# POU (Puppy Online updater) - French translation
+# 20121212 original localization (en-de) by RSH for LazY Puppy # 20130317 French localization by ASRI
+# 20130609 Updated by ASRI for POU-0.0.1
+#------------------------------------------------------------------------------
+
+# Distro Name etc.
+. /etc/DISTRO_SPECS
+. $APPDIR/version-authors
+. $APPDIR/download-dir
+. $APPDIR/update-url
+
+# Notebook GtkDialog GUI
+SERVERUPDATESTTL="Mises à jour disponibles"
+INSTALLUPDATESTTL="Mises à jour installées"
+SETTINGSUPDATESTTL="Options"
+
+# App POU infos : function, version, authors
+APPTITLE="POU (Puppy Online Updater)"
+APPTITLESHORT="POU"
+APPFUNCTIONTXT="Mise à jour de $OSCOMPATIBILITY"
+VERSION="version"
+FrmAppInfos="Version et auteurs de $APPTITLESHORT"
+APPINFOSTXT1="Afficher des informations sur la version et les auteurs"
+APPINFOSTXTTT1="Cliquez ici pour afficher des informations sur la version et les auteurs de $APPTITLE"
+APPINFOSTXT2="$APPTITLE - Version et auteurs
+Version utilisée : $APPTITLESHORT $VERSION $AppVersion par $AuthorActualVersion.
+Versions précédentes : par $AuthorPreviousVersions
+Version originale : par $AuthorOriginalVersion.
+
+--------------------------
+
+$TrayAppName - Version et auteurs
+Version utilisée : $TrayAppName $VERSION $TrayAppVersion par $TrayAppAuthorActualVersion.
+Versions précédentes : par $TrayAppAuthorPreviousVersions
+Version originale : par $TrayAppAuthorOriginalVersion."
+
+# Tray-App
+MT1GETUPDATESTXT="Télécharger toutes les mises à jour disponibles"
+MT2GETUPDATESTXT="Afficher la fenêtre principale de l'utilitaire $APPTITLE"
+MT3GETUPDATESTXT="Télécharger et installer toutes les mises à jour disponibles"
+MTREFRESHTXT="Rafraîchir l'affichage des mises à jour dans la barre d'état"
+MTEXITTXT="Arrêter temporairement la notification des mises à jour dans la barre d'état"
+POPUPTXT1="De nouvelles mises à jour ("
+POPUPTXT2=") sont disponibles !"
+GETUPDATESDONE="Les mises à jour téléchargées ont été enregistrées dans le dossier
+$DOWNLOAD_DIRECTORY."
+INSTALLALLUPDATES="Les mises à jours disponibles ont été correctement installées."
+
+# Detecting dependencies
+YADPRESENT="Yad est present."
+YADMISSING="L'application Yad est absente.
+Vous devez installer Yad avant d'utiliser l'utilitaire $APPTITLE."
+
+# Compatibility utility/OS
+FrmCompatibilityTxt="Compatibilité $APPTITLESHORT/OS"
+COMPATIBILITYBTNTXT="Vérifier la compatibilité entre $APPTITLESHORT et l'OS"
+COMPATIBILITYBTNTXTTT="Le paramétrage de $APPTITLESHORT est-il compatible avec votre OS ? Cliquez-ici pour le vérifier."
+OSCOMPATIBILITYTXT="Actuellement l'utilitaire $APPTITLE est paramétré pour mettre à jour l'OS '$OSCOMPATIBILITY'.
+
+Votre OS actuel est '$DISTRO_NAME $DISTRO_VERSION'.
+"
+OSCOMPATIBILITYTRUETXT="
+Par conséquent, $APPTITLESHORT est parfaitement configuré pour mettre à jour votre OS !"
+OSCOMPATIBILITYFALSETXT="
+Par conséquent, le paramétrage de $APPTITLESHORT ne semble pas adapté pour mettre à jour votre OS !
+- Si vous souhaitez télécharger des mises à jour destinées à un autre OS, alors tout est ok.
+- Si vous souhaitez utiliser $APPTITLESHORT pour mettre à jour votre OS actuel ($DISTRO_NAME $DISTRO_VERSION), vous devez tout d'abord vérifier/modifier le fichier update-url."
+CHANGECOMPATIBILITYBTNTXT="Modifier le paramétrage de $APPTITLESHORT"
+CHANGECOMPATIBILITYBTNTXTTT="Afin d'adapter à vos besoins le paramétrage de $APPTITLESHORT, vous pouvez éditer manuellement le fichier update-url."
+CHANGECOMPATIBILITYTXT01="L'éditeur de texte va afficher le contenu du fichier update-url.
+
+Les étapes à suivre :
+1 - Modifiez les informations.
+2 - Enregistrez vos modifications.
+3 - Fermez l'éditeur de textes.
+4 - $APPTITLESHORT redémarrera automatiquement en prenant en compte le nouveau paramétrage.
+
+Pour obtenir des informations complémentaires, le forum $APPTITLE est à votre disposition."
+
+# Connection failed
+CONNECTIONFAILEDMSG="Aucune connexion Internet n'est disponible. La recherche des mises à jour est donc actuellement impossible.
+
+Conseil : vérifiez votre connexion puis, relancez l'utilitaire $APPTITLE."
+NOUPDATESAVAILMSG="Aucune nouvelle mise à jour n'est disponible pour $OSCOMPATIBILITY."
+ALLUPDATESINSTALLEDMSG="Toutes les mises à jour proposées/disponibles sont déjà installées, votre système est donc actualisé !"
+
+# Extension for Infofile ---> needed for any other language than EN , DE = -de
+INFOLANGEXT="-fr"
+
+# Warning Messages
+DNLDFILEEXISTSMSG="Remarque : la mise à jour a déjà été téléchargée dans le répertoire $DOWNLOAD_DIRECTORY, le fichier téléchargé va être utilisé pour l'installation, ce fichier sera ensuite effacé du répertoire $DOWNLOAD_DIRECTORY."
+INSTFILEEXISTSMSG="Remarque : la mise à jour a déjà été installée."
+
+# yes and no buttons
+YESBTNTXT="Oui"
+NOBTNTXT="Non"
+
+# Repository
+FrmRepositoryTxt="Dépôt des mises à jour"
+REPOSITORYBTNTXT="Consulter le dépôt à l'aide de votre navigateur Internet."
+REPOSITORYBTNTXTTT="Cliquez ici pour activer votre navigateur Internet et consulter le contenu du dépôt, vous aurez ainsi accès à l'ensemble des mises à jour destinées à $OSCOMPATIBILITY"
+
+# Refresh/Reset activity
+FrmRefreshResetActivityTxt="Rafraîchir/Réinitialiser l'utilitaire $APPTITLESHORT"
+RESETACTIVITYBTNTXT01="Réinitialiser l'historique des mises à jour installées"
+RESETACTIVITYBTNTXT02="Réinitialiser l'historique des mises à jour téléchargées"
+RESETACTIVITYBTNTXT03="Réinitialiser l'utilitaire $APPTITLESHORT"
+RESETACTIVITYBTNTXTTT01="Cliquez ici pour supprimer immédiatement l'historique des mises à jour installées avec l'utilitaire $APPTITLESHORT.
+
+Remarques : 
+- La réinitialisation ne supprime pas les mises à jour déjà installées.
+- Après la réinitialisation, l'utilitaire $APPTITLESHORT affichera toutes les mises à jour disponibles (même si elles ont précédemment été installées)."
+RESETACTIVITYBTNTXTTT02="Cliquez ici pour supprimer immédiatement l'historique des mises à jour téléchargées avec l'utilitaire $APPTITLESHORT.
+
+Remarque : 
+- La réinitialisation ne supprime pas les mises à jour déjà téléchargées.
+- Après la réinitialisation, l'utilitaire $APPTITLESHORT vous permettra de télécharger toutes les mises à jour disponibles (même si elles ont précédemment été téléchargées)."
+RESETACTIVITYBTNTXTTT03="Cliquez ici pour supprimer immédiatement l'historique des mises à jour téléchargées/installées, ainsi que les fichiers temporaires de l'utilitaire $APPTITLESHORT.
+
+Remarques : 
+- La réinitialisation ne supprime pas les mises à jour déjà téléchargées/installées.
+- Après la réinitialisation, l'utilitaire $APPTITLESHORT vous donnera accès à toutes les mises à jour disponibles (même si elles ont précédemment été téléchargées/installées).
+- La réinitialisation complète n'est utile que pour déplanter une installation ou bidouiller."
+REFRESHBTNTXT="Rafraîchir la liste des mises à jour"
+REFRESHBTNTXTTT="Cliquez ici pour rafraîchir immédiatement la liste des mises à jour (disponibles ou installées).
+
+Remarques : 
+- Le rafraîchissement de l'interface graphique de $APPTITLESHORT ne modifie pas l'historique de l'utilitaire (à la différence de la réinitialisation).
+- Le rafraîchissement n'est utilise que si la liste des mises à jour (disponibles ou installées) ne s'est pas actualisée automatiquement après une installation."
+
+# Main GUI buttons
+UNINSTALLBTNTXT="Désinstaller"
+UNINSTALLBTNTXTTT="Afin de désintaller une mise à jour précédemment installée, cliquez sur ce bouton pour activer l'utilitaire PPM (Puppy Package Manager).
+
+Important : méfiez-vous car la suppression d'une mise à jour peut rendre le système instable. Au pire, vous pourrez toujours réinstaller la(les) mise(s) à jour que vous avez supprimée(s).
+
+Remarque : si la liste des paquets installés ne se met pas à jour automatiquement, vous pourrez utiliser le bouton 'Cacher' pour actualiser manuellement cette liste (et supprimer les entrées liées aux mises à jour désinstallées)."
+HIDEUPDATEBTNTXT="Cacher"
+HIDEUPDATEBTNTXTTT="Sélectionnez une mise à jour, puis cliquez sur ce bouton pour la supprimer de la liste (c'est utile si vous ne souhaitez pas installer la mise à jour proposée).
+
+Remarque : la mise à jour sélectionnée apparaîtra ensuite dans la liste des mises à jour déjà installées (donc, non proposées)."
+HIDEUPDATEINSTALLEDBTNTXT="Cacher"
+HIDEUPDATEINSTALLEDBTNTXTTT="Sélectionnez une mise à jour, puis cliquez sur ce bouton pour la supprimer de la liste (c'est utile si vous souhaitez réinstaller la mise à jour proposée).
+
+Remarque : la mise à jour sélectionnée apparaîtra ensuite dans la liste des mises à jour disponibles (non installées)."
+INFOBTNTXT="Informations"
+INFOBTNTXTTT="Sélectionnez une mise à jour, puis cliquez sur ce bouton pour afficher les informations relatives à cette mise à jour."
+SCREENBTNTXT="Copie d'écran"
+SCREENBTNTXTTT="Sélectionnez une mise à jour, puis cliquez sur ce bouton pour afficher une copie d'écran relative à cette mise à jour."
+DNLDBTNTXT="Télécharger"
+DNLDBTNTXTTT="Sélectionnez une mise à jour, puis cliquez sur ce bouton pour la télécharger et l'enregistrer dans le répertoire $DOWNLOAD_DIRECTORY."
+INSTBTNTXT="Installer"
+INSTBTNTXTTT="Sélectionnez une mise à jour, puis cliquez sur ce bouton pour la télécharger, puis l'installer."
+HELPBTNTXT=" Aide "
+HELPBTNTXTTT="Afficher l'aide de $APPTITLESHORT"
+QUITBTNTXT="Quitter"
+QUITBTNTXTTT="Quitter $APPTITLESHORT"
+
+# Download/Install Messages
+AUTOUPDATETXT="$APPTITLE"
+DNLDMSG="Téléchargement de la mise à jour. Veuillez patienter..."
+DNLDINFOMSG="Téléchargement du fichier information. Veuillez patienter..."
+DNLDIMGINFOMSG="Téléchargement de l'image. Veuillez patienter..."
+INSTMSG="Installation en cours..."
+NOUPDATEINFOTXT="Désolé, aucune information n'est disponible.
+Pour obtenir des renseignements complémentaires, vous pouvez consulter le forum $APPTITLE $OSCOMPATIBILITY."
+NOIMAGEINFOTXT="Désolé, aucune image n'est disponible.
+Pour obtenir des renseignements complémentaires, vous pouvez consulter le forum $APPTITLE $OSCOMPATIBILITY."
+
+# Main GUI Info Text
+InstallInfoMainTxt="Important : les mises à jour doivent être installées dans l'ordre de leur numéro/date de version (des plus anciennes au plus récentes)."
+InstInfoTxt1="La liste propose les mises à jour disponibles (celles qui n'ont pas encore été installées)."
+InstInfoTxt2="Il est recommandé d'installer toutes les mises à jour disponibles."
+InstInfoTxt3="Si vous avez des questions, cliquez sur le bouton Aide."
+InstInfoTxt4="D'autres informations sont disponibles sur le forum $APPTITLE."
+
+Frm1Txt="Mises à jour actuellement disponibles pour $OSCOMPATIBILITY"
+Frm1InfoTxt="Les mises à jour déjà installées ne sont pas affichées dans cette liste."
+Frm2Txt="Liste des mises à jour disponibles :"
+Frm3Txt="Remarques :"
+Frm1bTxt="Mises à jour déjà installées dans $DISTRO_NAME $DISTRO_VERSION"
+Frm1bInfoTxt="Pour obtenir des informations détaillées sur les mises à jour déjà installées, sélectionnez une mise à jour dans la liste, puis cliquez sur un des boutons ci-dessous."
+Frm2bTxt="Liste des mises à jour déjà installées :"
+PETCOLMNAME="Cliquez ici pour trier les mises à jour"
+
+# Options
+DOAUTOUPDATEOPTFRMTXT="Rechercher les mises à jour"
+DOAUTOUPDATEOPTTXT="Activer la recherche automatique des mises à jour"
+DOAUTOUPDATEOPTTXTTT="Cette option autorise l'utilitaire $APPTITLESHORT à rechercher automatiquement les mises à jour disponibles pour $OSCOMPATIBILITY, lors du démarrage du système (après que le serveur X soit chargé)"
+DOUSETRAYAPPOPTTXT="Afficher $APPTITLESHORT dans la barre d'état système"
+DOUSETRAYAPPOPTTXTTT="Cette option permet d'ajouter l'utilitaire $APPTITLESHORT dans la barre d'état système de $DISTRO_NAME $DISTRO_VERSION.
+
+Remarque : l'utilitaire $APPTITLESHORT ne s'affichera que si votre connexion Internet est fonctionnelle et que de nouvelles mises à jour sont disponibles."
+DOUSEINTERVALOPTTXT="Rechercher périodiquement les mises à jour"
+DOUSEINTERVALOPTTXTTT="Cette option active la recherche périodique des mises à jour disponibles pour $OSCOMPATIBILITY"
+INTERVALTIMEINFOTXT2="Intervalle : "
+INTERVALTIMEINFOTXT="Sélectionnez ou indiquez le nombre d'heures entre chaque recherche ('0 'désactive la recherche périodique)"
+INTERVALTIMEINFOTXTTT="Sélectionnez ou indiquez le nombre d'heures entre chaque recherche ('0 'désactive la recherche périodique)"
+
+# Help GUI
+HELPTITLE01="Aide de $APPTITLE"
+HELPTAB01="Mises à jour disponibles"
+HELPTAB02="Mises à jour installées"
+HELPTAB03="En savoir plus..."
+HELPTXT01="Remarques et conseils :
+- Il est recommandé d'installer toutes les mises à jour disponibles.
+- Pour connaître le contenu de chaque mise à jour, sélectionnez une mise à jour, puis cliquez sur le bouton 'Informations'.
+- Les mises à jour doivent être installées successivement dans l'ordre de leur numéro/date de version (des plus anciennes au plus récentes).
+- Pour conserver de façon permanente les mises à jour installées, il est nécessaire d'utiliser un fichier de stockage personnel (pupsave).
+- Vous pouvez utiliser les mises à jour téléchargées pour les installer sur d'autres ordinateurs (non connectés à Internet), ou pour les intégrer dans une version remastérisée de '$OSCOMPATIBILITY'.
+
+Pour obtenir des informations complémentaires et/ou proposer des améliorations/modifications, le forum $APPTITLE est à votre disposition."
+HELPTXT02="Help 2"
+HELPTXT03="Help 3"
+QUITHELPBTNTXT="Quitter"
+QUITHELPBTNTXTTT="Quitter l'aide de $APPTITLESHORT"
+
+# Other
+ReadyToWorkEcho="$APPTITLE - Prêt à mettre à jour $OSCOMPATIBILITY"
+PleaseWait="Veuillez patienter..."

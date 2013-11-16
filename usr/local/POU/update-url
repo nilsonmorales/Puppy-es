@@ -1,0 +1,4 @@
+TESTSERVER="mamalibre.com.ar"
+NEWSERVER="http://mamalibre.no-ip.org/pub/puppylinux/pou/passaggio/"
+INFSERVER="http://mamalibre.no-ip.org/pub/puppylinux/pou/passaggio/infos/"
+OSCOMPATIBILITY="Puppy-es OS"

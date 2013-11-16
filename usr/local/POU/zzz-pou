@@ -1,0 +1,29 @@
+#!/bin/sh
+#------------------------------------------------------------------------------
+# POU (Puppy Online updater)
+# Original script by RSH for LazY Puppy
+# 20130609 POU-0.0.1 by ASRI
+# 20130901 ping por curl por Fabián Bonetti
+#------------------------------------------------------------------------------
+
+POUDIR="/usr/local/POU"
+
+# Check, if server is available
+. $POUDIR/update-url # edit this file to change server adress
+#ping -4 -c 1 "$TESTSERVER" | no todos los server usan ping
+curl -s -o "/dev/null" "$TESTSERVER"
+if [ "$?" -ne 0 ]
+	then
+	exit 1
+fi
+
+# Get peferences to choose the GUI or the Tray-App to be executed
+. $POUDIR/preferences
+sleep 2
+cd $POUDIR
+if [ "$USETRAYAPPCHECK" = "false" ]; then # GUI
+	exec $POUDIR/pou-autoupdate "auto" &
+	else # Tray-App
+	exec $POUDIR/pou-autoupdate-trayapp &
+fi
+exit 0

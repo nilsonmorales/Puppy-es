@@ -1,0 +1,222 @@
+#!/bin/bash -a
+#------------------------------------------------------------------------------
+# POU (Puppy Online updater) - English translation
+# 20121212 original localization (en-de) by RSH for LazY Puppy
+# 20130605 Updated by ASRI for POU-0.0.1
+#------------------------------------------------------------------------------
+
+# Distro Name etc.
+. /etc/DISTRO_SPECS
+. $APPDIR/version-authors
+. $APPDIR/download-dir
+. $APPDIR/update-url
+
+# Notebook GtkDialog GUI
+SERVERUPDATESTTL="Available Updates"
+INSTALLUPDATESTTL="Installed Updates"
+SETTINGSUPDATESTTL="Settings"
+
+# App POU infos : function, version, authors
+APPTITLE="POU (Puppy Online Updater)"
+APPTITLESHORT="POU"
+APPFUNCTIONTXT="Upgrade of $OSCOMPATIBILITY"
+VERSION="version"
+FrmAppInfos="Version and authors of $APPTITLESHORT"
+APPINFOSTXT1="Display version and authors informations"
+APPINFOSTXTTT1="Click here to view information about the version and authors ok $APPTITLE"
+APPINFOSTXT2="$APPTITLE - Version and authors
+Version used : $APPTITLESHORT $VERSION $AppVersion by $AuthorActualVersion.
+Previous versions : by $AuthorPreviousVersions
+Original version : by $AuthorOriginalVersion.
+
+---------------------------
+
+$TrayAppName - Version and authors
+Version used : $TrayAppName $VERSION $TrayAppVersion by $TrayAppAuthorActualVersion.
+Previous versions : by $TrayAppAuthorPreviousVersions
+Original version : by $TrayAppAuthorOriginalVersion."
+
+# Tray-App
+MT1GETUPDATESTXT="Download all available Updates"
+MT2GETUPDATESTXT="Open $APPTITLE GUI"
+MT3GETUPDATESTXT="Download and install all available updates"
+MTREFRESHTXT="Refresh the display updates in the status bar"
+MTEXITTXT="Temporarily exit System-Tray Application"
+POPUPTXT1="There are"
+POPUPTXT2="new Updates available"
+GETUPDATESDONE="The downloaded updates were saved in the folder
+$DOWNLOAD_DIRECTORY."
+INSTALLALLUPDATES="The available updates are installed correctly."
+
+# Detecting dependencies
+YADPRESENT="Yad is present."
+YADMISSING="The Yad application is missing.
+You must install Yad before using the utility $APPTITLE."
+
+# Compatibility utility/OS
+FrmCompatibilityTxt="Compatibility $APPTITLESHORT/OS"
+COMPATIBILITYBTNTXT="Check compatibility between the OS and $APPTITLESHORT"
+COMPATIBILITYBTNTXTTT="The setting $APPTITLESHORT compatible with your OS? Click here to check it out."
+OSCOMPATIBILITYTXT="Currently $APPTITLESHORT utility is set to update the OS '$OSCOMPATIBILITY'.
+
+Your current OS is '$DISTRO_NAME $DISTRO_VERSION'.
+"
+OSCOMPATIBILITYTRUETXT="
+Therefore, $APPTITLESHORT is perfectly configured to update your OS!"
+OSCOMPATIBILITYFALSETXT="
+Therefore, setting $APPTITLESHORT does not seem appropriate to update your OS !
+- If you want to download updates for another OS, then everything is ok.
+- If you want to use $APPTITLESHORT to update your current OS, you must first check/change the file update-url."
+CHANGECOMPATIBILITYBTNTXT="Change the setting of $APPTITLESHORT"
+CHANGECOMPATIBILITYBTNTXTTT="To change $APPTITLESHORT settings, you can manually edit the update-url file."
+CHANGECOMPATIBILITYTXT01="The text editor will display the contents of the update-url file.
+
+The steps:
+1 - Edit the information.
+2 - Save your changes.
+3 - Close the text editor.
+4 - $APPTITLESHORT restart automatically, taking into account the new setting.
+
+For more information, $APPTITLE forum is at your disposal."
+
+# Connection failed
+CONNECTIONFAILEDMSG="No Internet connection available. Search for Updates has been exited!
+
+Tip: Check your connection, then restart $APPTITLE."
+NOUPDATESAVAILMSG="Currently no Updates available for $OSCOMPATIBILITY."
+ALLUPDATESINSTALLEDMSG="All updates offered/available days are already installed, your system is updated!"
+
+# Extension for Infofile ---> needed for any other language than EN , DE = -de
+INFOLANGEXT=""
+
+# Warning Messages
+DNLDFILEEXISTSMSG="Note: The update has already been downloaded to the directory $DOWNLOAD_DIRECTORY, the downloaded file will be used for installation, this file will then be deleted from the directory $DOWNLOAD_DIRECTORY."
+INSTFILEEXISTSMSG="This file has been already installed!"
+
+# yes and no buttons
+YESBTNTXT="Yes"
+NOBTNTXT="No"
+
+# Repository
+FrmRepositoryTxt="Deposit updates"
+REPOSITORYBTNTXT="Consult the deposit using your Internet browser."
+REPOSITORYBTNTXTTT="Click here to activate your Internet browser and view the contents of the deposit, you will have access to all updates for $OSCOMPATIBILITY"
+
+# Refresh/Reset activity
+FrmRefreshResetActivityTxt="Refresh/Reset utility $APPTITLESHORT"
+RESETACTIVITYBTNTXT01="Clear history updates installed"
+RESETACTIVITYBTNTXT02="Clear history downloaded updates"
+RESETACTIVITYBTNTXT03="Reset utility $APPTITLESHORT"
+RESETACTIVITYBTNTXTTT01="Click here to immediately delete the history of installed updates with the utility $APPTITLESHORT.
+
+Remarks :
+- The reset does not delete the updates already installed.
+- After the reset, the $APPTITLESHORT utility display all available updates (even if they have been previously installed)."
+RESETACTIVITYBTNTXTTT02="Click here to immediately delete the history of downloaded updates with the utility $APPTITLESHORT.
+
+Note:
+- The reset does not delete the updates already downloaded.
+- After the reset, the $APPTITLESHORT utility lets you download all available updates (even if they were previously downloaded)."
+RESETACTIVITYBTNTXTTT03="Click here to immediately delete the history of updates downloaded/installed, and temporary utility files $APPTITLESHORT.
+
+Remarks:
+- The reset does not delete the updates already downloaded/installed.
+- After the reset, the utility $APPTITLESHORT will give you access to all available updates (even if they have previously downloaded/installed).
+- The full reset is only useful to uproot a plant or hacking."
+REFRESHBTNTXT="Refresh the list of updates"
+REFRESHBTNTXTTT="Click here to refresh immediately the list of updates (available or installed).
+
+Remarks:
+- Refreshing GUI $APPTITLESHORT not alter the history of utiitaire (unlike the reset).
+- The cooling is used if the list of updates (available or installed) does not refresh automatically after installation."
+
+# Main GUI buttons
+UNINSTALLBTNTXT="Uninstall"
+UNINSTALLBTNTXTTT="To uninstall a previously installed update, click this button to activate the PPM (Puppy Package Manager) utility..
+
+Important: beware because removing an update can make the system unstable. At worst, you can always reinstall updates that you deleted.
+
+Note: If the list of installed packages does not update automatically, you can use the 'Hide' button to manually refresh the list (and delete entries related to software uninstalled day)."
+HIDEUPDATEBTNTXT="Hide"
+HIDEUPDATEBTNTXTTT="Select an update, and then click this button to remove it from the list (this is useful if you do not want to install the update offered).
+
+Note: The selected update then appear in the list of updates already installed (therefore not available)."
+HIDEUPDATEINSTALLEDBTNTXT="Hide"
+HIDEUPDATEINSTALLEDBTNTXTTT="Select an update, and then click this button to remove it from the list (this is useful if you want to reinstall the update offered).
+
+Note: The selected update will then appear in the list of available updates (not installed)."
+INFOBTNTXT="Information"
+INFOBTNTXTTT="Show information to the selected install file"
+SCREENBTNTXT="Screenshot"
+SCREENBTNTXTTT="Show screenshot of application"
+DNLDBTNTXT="Download"
+DNLDBTNTXTTT="Download and save file in $DOWNLOAD_DIRECTORY"
+INSTBTNTXT="Install"
+INSTBTNTXTTT="Select an update, and then click this button to download and install."
+HELPBTNTXT="Help"
+HELPBTNTXTTT="View using $APPTITLESHORT"
+QUITBTNTXT="Exit"
+QUITBTNTXTTT="Exit $APPTITLESHORT"
+
+# Download/Install Messages
+AUTOUPDATETXT="$APPTITLE"
+DNLDMSG="Downloading Update File. Please wait..."
+DNLDINFOMSG="Downloading Information File. Please wait..."
+DNLDIMGINFOMSG="Downloading Image. Please wait..."
+INSTMSG="Installing..."
+NOUPDATEINFOTXT="No information available.
+There might be some information on the $APPTITLE $OSCOMPATIBILITY thread."
+NOIMAGEINFOTXT="No image available.
+There might be some information on the $APPTITLE $OSCOMPATIBILITY thread."
+
+# Main GUI Info Text
+InstallInfoMainTxt="Important updates must be installed in the order of their number/release date (older to newer)."
+InstInfoTxt1="The list contains the available updates (those that have not yet been installed)."
+InstInfoTxt2="It is recommended to install all available updates."
+InstInfoTxt3="If you have any questions, click the Help button."
+InstInfoTxt4="Further information is available on the forum $APPTITLE."
+
+Frm1Txt="Currently available Updates for $OSCOMPATIBILITY"
+Frm1InfoTxt="Updates already installed are not displayed in this list."
+Frm2Txt="List of Programs at Server:"
+Frm3Txt="Note:"
+Frm1bTxt="Currently installed Updates for $DISTRO_NAME $DISTRO_VERSION"
+Frm1bInfoTxt="For detailed information on the updates already installed information, select an update in the list, and then click one of the buttons below."
+Frm2bTxt="List of Programs (already installed):"
+PETCOLMNAME="Click to sort Files"
+
+# Options
+DOAUTOUPDATEOPTFRMTXT="Search for Updates"
+DOAUTOUPDATEOPTTXT="Activate automated Search for Updates"
+DOAUTOUPDATEOPTTXTTT="This option allows $APPTITLESHORT utility automatically search for available updates for $OSCOMPATIBILITY at system startup (after the X server is loaded)"
+DOUSETRAYAPPOPTTXT="Show $APPTITLESHORT in the system tray"
+DOUSETRAYAPPOPTTXTTT="This option allows you to add $APPTITLESHORT utility in the system tray $DISTRO_NAME $DISTRO_VERSION state.
+
+Note: $APPTITLESHORT utility will only appear if your Internet connection is working and that new updates are available."
+DOUSEINTERVALOPTTXT="Search periodically for Updates"
+DOUSEINTERVALOPTTXTTT="This option activates periodically search for $OSCOMPATIBILITY Updates"
+INTERVALTIMEINFOTXT2="Interval: "
+INTERVALTIMEINFOTXT="Select or enter Time (in hours, '0' deactivates periodically search)"
+INTERVALTIMEINFOTXTTT="Select or enter Time (in hours) to search periodically for Updates ('0' deactivates periodically search)"
+
+# Help GUI
+HELPTITLE01="Help for $APPTITLE"
+HELPTAB01="Updates available"
+HELPTAB02="Installed updates"
+HELPTAB03="Read more..."
+HELPTXT01="Notes and tips:
+- It is recommended to install all available updates.
+- To know the contents of each update, select update, then click on the 'Information' button.
+- The updates must be installed sequentially in the order of their number/release date (older to newer).
+- To maintain permanently installed updates, it is necessary to use a personal storage file (pupsave).
+- You can use the downloaded updates to install on other computers (not connected to the Internet), or to integrate with a remastered version of '$OSCOMPATIBILITY'.
+
+For additional and/or suggest improvements/changes, the $AppTitle forum is at your disposal."
+HELPTXT02="Help 2"
+HELPTXT03="Help 3"
+QUITHELPBTNTXT="Exit"
+QUITHELPBTNTXTTT="Quit help of $APPTITLESHORT"
+
+# Other
+ReadyToWorkEcho="$APPTITLE - Ready to update $OSCOMPATIBILITY"
+PleaseWait="Please wait..."

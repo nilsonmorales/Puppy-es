@@ -1,0 +1,222 @@
+#!/bin/bash -a
+#------------------------------------------------------------------------------
+# POU (Puppy Online updater) - German translation
+# 20121212 original localization (en-de) by RSH for LazY Puppy
+# 20130605 Updated by ASRI for POU-0.0.1
+#------------------------------------------------------------------------------
+
+# Distro Name etc.
+. /etc/DISTRO_SPECS
+. $APPDIR/version-authors
+. $APPDIR/download-dir
+. $APPDIR/update-url
+
+# Notebook GtkDialog GUI
+SERVERUPDATESTTL="Vorhandene Aktualisierungen"
+INSTALLUPDATESTTL="Installierte Aktualisierungen"
+SETTINGSUPDATESTTL="Einstellungen"
+
+# App POU infos : function, version, authors
+APPTITLE="POU (Puppy Online Updater)"
+APPTITLESHORT="POU"
+APPFUNCTIONTXT="Upgrade von $OSCOMPATIBILITY"
+VERSION="version"
+FrmAppInfos="Version und Autoren der $APPTITLESHORT"
+APPINFOSTXT1="Zeigt die Versionsinformation an und die Autoren"
+APPINFOSTXTTT1="Klicken Sie hier, um Informationen über die Version und Autoren sehen $APPTITLE"
+APPINFOSTXT2="$APPTITLE - Version Autoren
+Version verwendet : $APPTITLESHORT $VERSION $AppVersion von $AuthorActualVersion.
+Frühere Versionen : von $AuthorPreviousVersions
+Original version : von $AuthorOriginalVersion.
+
+---------------------------
+
+$TrayAppName - Version Autoren
+Version verwendet : $TrayAppName $VERSION $TrayAppVersion von $TrayAppAuthorActualVersion.
+Frühere Versionen : von $TrayAppAuthorPreviousVersions
+Original version : von $TrayAppAuthorOriginalVersion."
+
+# Tray-App
+MT1GETUPDATESTXT="Alle Aktualisierungen herunterladen"
+MT2GETUPDATESTXT="Öffne $APPTITLE GUI"
+MT3GETUPDATESTXT="Downloaden und installieren Sie alle verfügbaren Updates"
+MTREFRESHTXT="Aktualisieren Sie die Anzeige aktualisiert in der Statusleiste"
+MTEXITTXT="Vorübergehend beende die System-Tray Anwendung"
+POPUPTXT1="Zur Zeit sind"
+POPUPTXT2="neue Aktualisierungen verfügbar"
+GETUPDATESDONE="Die heruntergeladenen Updates wurden in dem Ordner gespeichert
+$DOWNLOAD_DIRECTORY."
+INSTALLALLUPDATES="Die verfügbaren Updates korrekt installiert sind."
+
+# Detecting dependencies
+YADPRESENT="Yad vorhanden ist."
+YADMISSING="Das Yad Anwendung fehlt.
+Sie müssen vor der Verwendung des Yad-Dienstprogramm zu installieren $APPTITLE."
+
+# Compatibility utility/OS
+FrmCompatibilityTxt="Kompatibilität $APPTITLESHORT/OS"
+COMPATIBILITYBTNTXT="Überprüfen Sie die Kompatibilität zwischen dem OS und $APPTITLESHORT"
+COMPATIBILITYBTNTXTTT="Die Einstellung $APPTITLESHORT mit Ihrem Betriebssystem kompatibel? Klicken Sie hier, um es auszuprobieren."
+OSCOMPATIBILITYTXT="Derzeit $APPTITLESHORT Dienstprogramm wird eingestellt, um die Aktualisierung des Betriebssystems '$OSCOMPATIBILITY'.
+
+Ihre aktuelle OS ist '$DISTRO_NAME $DISTRO_VERSION'.
+"
+OSCOMPATIBILITYTRUETXT="
+Daher wird $APPTITLESHORT perfekt konfiguriert Ihr Betriebssystem aktualisieren!"
+OSCOMPATIBILITYFALSETXT="
+Daher wird die Einstellung $APPTITLESHORT nicht angemessen zu Ihrem Betriebssystem aktualisieren !
+- Wenn Sie Updates für ein anderes OS herunterladen möchten, dann ist alles ok.
+- Wenn Sie $APPTITLESHORT benutzen, um Ihre aktuell OS aktualisieren möchten, müssen Sie zunächst überprüfen/ändern Sie die update-url."
+CHANGECOMPATIBILITYBTNTXT="Ändern Sie die Einstellung von $APPTITLESHORT"
+CHANGECOMPATIBILITYBTNTXTTT="Um die Einstellung der $APPTITLESHORT ändern, können Sie manuell bearbeiten Sie die Update-URL-Datei."
+CHANGECOMPATIBILITYTXT01="Der Text-Editor zeigt den Inhalt des update-url-Datei.
+
+Die Schritte:
+1 - Bearbeiten Sie die Informationen.
+2 - Speichern Sie die Änderungen.
+3 - Schließen Sie den Texteditor.
+4 - $APPTITLESHORT Neustart automatisch unter Berücksichtigung der neuen Einstellung.
+
+Für weitere Informationen, ist $APPTITLE Forum zur Verfügung."
+
+# Connection failed
+CONNECTIONFAILEDMSG="Zur Zeit keine Internetverbindung vorhanden. Suche nach Aktualisierungen wurde abgebrochen!
+
+Tipp: Überprüfen Sie Ihre Verbindung, dann starten $APPTITLE."
+NOUPDATESAVAILMSG="Zur Zeit stehen keine Aktualisierungen für $OSCOMPATIBILITY."
+ALLUPDATESINSTALLEDMSG="Alle Updates angeboten/verfügbar Tagen bereits installiert sind, wird das System aktualisiert!"
+
+# Extension for Infofile ---> needed for any other language than EN , DE = -de
+INFOLANGEXT="-de"
+
+# Warning Messages
+DNLDFILEEXISTSMSG="Hinweis: Das Update bereits auf das Verzeichnis $DOWNLOAD_DIRECTORY heruntergeladen wurde, die heruntergeladene Datei für die Installation verwendet werden, diese Datei wird aus dem Verzeichnis $DOWNLOAD_DIRECTORY gelöscht werden."
+INSTFILEEXISTSMSG="Diese Datei wurde bereits installiert!"
+
+# yes and no buttons
+YESBTNTXT="Ja"
+NOBTNTXT="Nein"
+
+# Repository
+FrmRepositoryTxt="Kaution Aktuelles"
+REPOSITORYBTNTXT="Konsultieren Sie die Einzahlung mit Ihrem Internet-Browser."
+REPOSITORYBTNTXTTT="Klicken Sie hier, um Ihren Internet-Browser zu aktivieren und den Inhalt der Anzahlung erhalten Sie Zugriff auf alle Updates für haben $OSCOMPATIBILITY"
+
+# Refresh/Reset activity
+FrmRefreshResetActivityTxt="Refresh/Reset Utility $APPTITLESHORT"
+RESETACTIVITYBTNTXT01="Clear History Updates installiert"
+RESETACTIVITYBTNTXT02="Clear History heruntergeladenen Updates"
+RESETACTIVITYBTNTXT03="Reset Utility $APPTITLESHORT"
+RESETACTIVITYBTNTXTTT01="Klicken Sie hier, um sofort zu löschen, die Geschichte der installierten Updates mit dem Dienstprogramm $APPTITLESHORT.
+
+Bemerkungen:
+- Der Reset löscht nicht die Updates bereits installiert.
+- Nach dem Reset zeigen die $APPTITLESHORT Dienstprogramm alle verfügbaren Updates (auch wenn sie zuvor installiert)."
+RESETACTIVITYBTNTXTTT02="Klicken Sie hier, um sofort zu löschen die Geschichte der heruntergeladenen Updates mit dem Dienstprogramm $APPTITLESHORT.
+
+Hinweis:
+- Der Reset löscht nicht die Updates bereits heruntergeladen.
+- Nach dem Zurücksetzen kann der $APPTITLESHORT Dienstprogramm, das Sie herunterladen alle verfügbaren Updates (auch wenn sie zuvor heruntergeladen wurden)."
+RESETACTIVITYBTNTXTTT03="Klicken Sie hier, um sofort zu löschen die Geschichte der Updates heruntergeladen / installiert und temporäre Dateien Dienstprogramm $APPTITLESHORT.
+
+Bemerkungen:
+- Der Reset löscht nicht die Updates bereits heruntergeladen/installiert.
+- Nach dem Reset wird das Dienstprogramm $APPTITLESHORT Ihnen zu allen verfügbaren Updates (auch wenn sie zuvor heruntergeladen/installiert) zugreifen.
+- Die vollständigen Reset ist nur dann sinnvoll, eine Anlage oder Hacking entwurzeln."
+REFRESHBTNTXT="Aktualisieren Sie die Liste der Updates"
+REFRESHBTNTXTTT="Klicken Sie hier, um die Liste sofort aktualisiert (verfügbar oder installiert) aktualisieren.
+
+Bemerkungen:
+- Erfrischende GUI $APPTITLESHORT nichts an der Geschichte der utiitaire (im Gegensatz zum Reset).
+- Die Kühlung wird verwendet, wenn die Liste der Updates (verfügbar oder installiert) nicht automatisch aktualisiert nach der Installation."
+
+# Main GUI buttons
+UNINSTALLBTNTXT="Deinstallieren"
+UNINSTALLBTNTXTTT="Um ein zuvor installiertes Update zu deinstallieren, klicken Sie auf diese Schaltfläche, um das PPM (Puppy Package Manager)-Programm zu aktivieren..
+
+Wichtig: Vorsicht, da das Entfernen eines Updates kann das System instabil machen. Im schlimmsten Fall können Sie jederzeit neu installieren Updates, die Sie gelöscht haben.
+
+Hinweis: Wenn die Liste der installierten Pakete nicht automatisch aktualisiert, Sie können die 'Hide' Button verwenden, um manuell aktualisieren die Liste (und Löschen von Einträgen im Zusammenhang mit Software deinstalliert Tag)."
+HIDEUPDATEBTNTXT="Ausblenden"
+HIDEUPDATEBTNTXTTT="Wählen Sie ein Update, und klicken Sie dann auf diese Schaltfläche, um sie aus der Liste zu entfernen (dies ist nützlich, wenn Sie nicht wollen, um das Update zu installieren angeboten).
+
+Hinweis: Das ausgewählte Update dann in der Liste der Updates bereits installiert ist (also nicht verfügbar) angezeigt."
+HIDEUPDATEINSTALLEDBTNTXT="Ausblenden"
+HIDEUPDATEINSTALLEDBTNTXTTT="Wählen Sie ein Update, und klicken Sie dann auf diese Schaltfläche, um sie aus der Liste zu entfernen (dies ist nützlich, wenn Sie installieren das Update angeboten möchten).
+
+Hinweis: Das ausgewählte Update wird dann in der Liste der verfügbaren Updates angezeigt (nicht installiert)."
+INFOBTNTXT="Informationen"
+INFOBTNTXTTT="Informationen zur ausgewählten Installationsdatei anzeigen"
+SCREENBTNTXT="Bildschirmfoto"
+SCREENBTNTXTTT="Bildschirmfoto des Programmes anzeigen"
+DNLDBTNTXT="Herunterladen"
+DNLDBTNTXTTT="Datei herunterladen $DOWNLOAD_DIRECTORY"
+INSTBTNTXT="Installieren"
+INSTBTNTXTTT="Wählen Sie ein Update, und klicken Sie dann auf diese Schaltfläche, um herunterzuladen und zu installieren."
+HELPBTNTXT="Hilfe"
+HELPBTNTXTTT="Sehen Sie mit $APPTITLESHORT"
+QUITBTNTXT="Verlassen"
+QUITBTNTXTTT="Verlassen $APPTITLESHORT"
+
+# Download/Install Messages
+AUTOUPDATETXT="$APPTITLE"
+DNLDMSG="Lade Datei herunter. Bitte haben Sie ein wenig Geduld..."
+DNLDINFOMSG="Lade Informationsdatei herunter. Bitte haben Sie ein wenig Geduld..."
+DNLDIMGINFOMSG="Lade Bildschirmfoto herunter. Bitte haben Sie ein wenig Geduld..."
+INSTMSG="Installieren..."
+NOUPDATEINFOTXT="Zu diesem PET sind keine Informationen erhältlich.
+Möglicherweise finden Sie Informationen hierzu im $APPTITLE $OSCOMPATIBILITY forum."
+NOIMAGEINFOTXT="Zu diesem PET ist kein Bild erhältlich.
+Möglicherweise finden Sie Informationen hierzu im $APPTITLE $OSCOMPATIBILITY Forum."
+
+# Main GUI Info Text
+InstallInfoMainTxt="Wichtige Updates müssen in der Reihenfolge ihrer Anzahl/Erscheinungsdatum (älter auf neuere) installiert werden."
+InstInfoTxt1="Die Liste enthält die verfügbaren Updates (jene, die noch nicht installiert wurden)."
+InstInfoTxt2="Es wird empfohlen, alle verfügbaren Updates zu installieren."
+InstInfoTxt3="Wenn Sie irgendwelche Fragen haben, klicken Sie auf die Schaltfläche Hilfe."
+InstInfoTxt4="Weitere Informationen finden Sie auf dem Forum zur Verfügung $APPTITLE."
+
+Frm1Txt="Folgende Aktualisierungen stehen für $OSCOMPATIBILITY zur Verfügung"
+Frm1InfoTxt="Updates bereits installiert sind in dieser Liste nicht angezeigt."
+Frm2Txt="Programmliste auf dem Server:"
+Frm3Txt="Zur Beachtung:"
+Frm1bTxt="Folgende Aktualisierungen sind bereits in $DISTRO_NAME $DISTRO_VERSION installiert"
+Frm1bInfoTxt="Für detaillierte Informationen über die Updates bereits installiert haben, wählen Sie ein Update in der Liste aus, und klicken Sie dann auf eine der Schaltflächen unten."
+Frm2bTxt="Lokale Programmliste (bereits installiert):"
+PETCOLMNAME="Zum Sortieren hier klicken"
+
+# Options
+DOAUTOUPDATEOPTFRMTXT="Suche nach Aktualisierungen"
+DOAUTOUPDATEOPTTXT="Automatische Suche nach Aktualisierungen aktivieren"
+DOAUTOUPDATEOPTTXTTT="Diese Option ermöglicht $APPTITLESHORT Dienstprogramm automatisch nach verfügbaren Updates für $OSCOMPATIBILITY beim Systemstart suchen (nach der X-Server geladen wird)"
+DOUSETRAYAPPOPTTXT="Zeigen $APPTITLESHORT in der Taskleiste"
+DOUSETRAYAPPOPTTXTTT="Diese Option ermöglicht es Ihnen, $APPTITLESHORT Dienstprogramm in der Taskleiste $DISTRO_NAME $DISTRO_VERSION Zustand hinzuzufügen.
+
+Hinweis: $APPTITLESHORT Dienstprogramm wird nur angezeigt, wenn Ihre Internet-Verbindung funktioniert und dass neue Updates verfügbar sind."
+DOUSEINTERVALOPTTXT="Regelmäßig nach Aktualisierungen suchen"
+DOUSEINTERVALOPTTXTTT="Diese Option aktiviert die Suche nach Aktualisierungen für $OSCOMPATIBILITY in regelmäßigen Zeitabständen"
+INTERVALTIMEINFOTXT2="Zeit: "
+INTERVALTIMEINFOTXT="Zeitlicher Abstand (in Stunden, '0' deaktiviert die regelmäßige Suchoption)"
+INTERVALTIMEINFOTXTTT="Geben Sie hier einen zeitlichen Abstand (in Stunden) an, um regelmäßig nach Aktualisierungen zu suchen ('0' deaktiviert die regelmäßige Suchoption)"
+
+# Help GUI
+HELPTITLE01="Hilfe für $APPTITLE"
+HELPTAB01="Updates verfügbar"
+HELPTAB02="Installierte updates"
+HELPTAB03="Lesen Sie mehr..."
+HELPTXT01="Hinweise und Tipps:
+- Es wird empfohlen, alle verfügbaren Updates zu installieren.
+- Um den Inhalt jedes Update kennen, wählen Sie Update, dann auf die 'Informationen' klicken.
+- Die Updates müssen nacheinander in der Reihenfolge ihrer Anzahl/Erscheinungsdatum (älter auf neuere) installiert werden.
+- Um dauerhaft installierten Updates zu erhalten, ist es notwendig, eine Personal-Storage-Datei (pupsave) zu verwenden.
+- Sie können die heruntergeladenen Updates auf anderen Computern installieren (nicht mit dem Internet verbunden), oder in einer überarbeiteten Version von '$OSCOMPATIBILITY' integrieren.
+
+Für zusätzliche und/oder Verbesserungsvorschläge/Änderungen ist die $AppTitle Forum zur Verfügung."
+HELPTXT02="Help 2"
+HELPTXT03="Help 3"
+QUITHELPBTNTXT="Verlassen"
+QUITHELPBTNTXTTT="Beenden Sie mit $APPTITLESHORT"
+
+# Other
+ReadyToWorkEcho="$APPTITLE - Bereit zur Aktualisierung von $OSCOMPATIBILITY"
+PleaseWait="Bitte warten..."
