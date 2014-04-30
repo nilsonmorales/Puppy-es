@@ -1,0 +1,9 @@
+UPDATEINFOTXT="20130906.pet
+
+Descripción del paquete:
+- información
+
+ probando POU (Puppy Online Updater)
+ urgencia=baja
+ 
+Preguntas/Informacións => utilizar el foro."

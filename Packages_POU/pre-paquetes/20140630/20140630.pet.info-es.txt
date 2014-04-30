@@ -1,0 +1,16 @@
+UPDATEINFOTXT="20140430.pet
+
+Descripción del paquete:
+- información
+
+Script viejo de updates a POU
+
+
+
+
+ POU (Puppy Online Updater)
+ urgencia=media
+ 
+Preguntas/Información => utilizar el foro.
+      http://puppyes.com.ar/foros
+"

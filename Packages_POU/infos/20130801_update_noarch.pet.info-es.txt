@@ -1,0 +1,6 @@
+UPDATEINFOTXT="20130801_update_noarch.pet
+
+Descripción del paquete:
+- no hay información :):):):):):)
+
+Preguntas/Informacións => utilizar el foro."
