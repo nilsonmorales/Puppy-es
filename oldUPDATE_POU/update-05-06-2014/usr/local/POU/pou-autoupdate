@@ -18,7 +18,7 @@ DEFLANG=`env|grep "LANG="`
 LANGUAGE=`echo $LANG|head -c5`
 TMPLANG="`ls $APPDIR/locals/ | grep $LANGUAGE`"
 . $APPDIR/locals/es_ES.UTF-8:spanish
-[[ "$TMPLANG" != "en_US:english" ]] && . $APPDIR/locals/$TMPLANG 2> /dev/null
+[[ "$TMPLANG" != "es_ES:spanish" ]] && . $APPDIR/locals/$TMPLANG 2> /dev/null
 echo $TMPLANG
 #------------------------------------------------------------------------------
 
