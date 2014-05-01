@@ -1,0 +1,229 @@
+#!/bin/bash -a
+#------------------------------------------------------------------------------
+# POU (Puppy Online updater)
+# 20130314 original script by RSH (and stu90) for LazY Puppy
+# 20130609 POU-0.0.1 by ASRI
+#------------------------------------------------------------------------------
+
+# Get Language Settings and APPDIR
+#------------------------------------------------------------------------------
+APPDIR="`dirname $0`"
+[ "$APPDIR" = "." ] && APPDIR="`pwd`"
+export APPDIR="$APPDIR"
+export APPDIR=`dirname $0`
+[ $APPDIR = '.' ] && export APPDIR=`pwd`
+
+DEFLANG=`env|grep "LANG="`
+LANGUAGE=`echo $LANG|head -c5`
+TMPLANG="`ls $APPDIR/locals/ | grep $LANGUAGE`"
+. $APPDIR/locals/en_US:english
+[[ "$TMPLANG" != "en_US:english" ]] && . $APPDIR/locals/$TMPLANG 2> /dev/null
+echo $TMPLANG
+#------------------------------------------------------------------------------
+
+# Detecting presence of dependencies
+echo "Detecting presence of dependencies"
+# First dependencies
+DEP01="yad"
+PRESENCE=`which $DEP01`
+if [[ "$PRESENCE" != "" ]];then
+	echo "$YADPRESENT"
+	else
+	Xdialog  --title "$APPTITLE" --msgbox "$YADMISSING." 0 0
+	exit
+fi
+
+# Init default data ---> don't edit this, edit the files listed below
+# If this is removed and the files below would not exist, the app won't start
+TESTSERVER="88.191.250.18" # tuxfamily
+DOWNLOAD_DIRECTORY="/root/Downloads/Updates"
+NAMEPASS_ZIGBERT="puppy:linux"
+NEWSERVER="http://sw.asri-education.org/asriedu_sw/pou/noarch/"
+INFSERVER="http://sw.asri-education.org/asriedu_sw/pou/noarch/infos/"
+OSCOMPATIBILITY="Puppy noarch"
+AUTOUPDATECHECK="true"
+USETRAYAPPCHECK="true"
+USEINTERVALCHECK="false"
+SKIPCHECKS="false"
+INTERVALCOMBOOUT=0
+instpetlist="$APPDIR/installed_list"
+dlpetlist="$APPDIR/downloaded_list"
+#RUNAS=$1
+
+#-------------------------------------------------------------------------
+# Default data above will be overwritten if the files below are loaded
+#-------------------------------------------------------------------------
+
+# Get Download Directory ---> $DOWNLOAD_DIRECTORY
+. $APPDIR/download-dir
+# Get Passwords for Server Access ---> $NAMEPASS_ZIGBERT etc.
+. $APPDIR/pw-list
+# Get Update URL ---> $NEWSERVER
+. $APPDIR/update-url
+# Get Preferences
+. $APPDIR/preferences
+# Get Testserver ---> $TESTSERVER - edit this file
+#. $APPDIR/testserver #20130605 intégration de l'info TESTSERVEUR dans le fichier update-url
+
+export SERVER="$NEWSERVER"  ## server to check for updates
+export DLUPDATE="$APPDIR/downloaded_list"  ## list of already downloaded updates
+export INSUPDATE="$APPDIR/installed_list"  ## list of already installed updates
+export TMPUPDATE="/tmp/updates-tmp"  ## list of updates on server
+export TMPNEWUPDATE="/tmp/newupdates-tmp"  ## list of new updates on server
+export DOWNDIR="$DOWNLOAD_DIRECTORY"  ## pet download directory
+
+# Create files if not exist
+ [[ ! -f "$DLUPDATE" ]] && touch "$DLUPDATE"  ## make downloaded updates file
+ [[ ! -f "$INSUPDATE" ]] && touch "$INSUPDATE"  ## make installed updates file
+ 
+########################################################################
+
+function RUN_UPDATE_TRAY () {
+
+	## Tray Defaults
+	
+	TRAY_ICON="/usr/share/pixmaps/pou.png"  ## tray icon
+	POPUP_TEXT1="$POPUPTXT1"  ## pop up text part 1
+	# Count of available updates is inserted between POPUP_TEXT1 & POPUP_TEXT2
+	POPUP_TEXT2="$POPUPTXT2"  ## pop up text part 2
+	MENU_TEXT1="$MT1GETUPDATESTXT"  ## menu text get all updates avaibles
+	MENU_TEXT2="$MT2GETUPDATESTXT"  ## menu text open GUI
+	MENU_TEXT3="$MT3GETUPDATESTXT" ## menu text install all updates avaibles
+	REFRESH_TEXT="$MTREFRESHTXT"  ## refresh tray app text
+	EXIT_TEXT="$MTEXITTXT"  ## exit tray app text
+	UPDATEAPP="$APPDIR/pou-autoupdate"  ## update application 
+	PIPE_FIFO=$(mktemp -u /tmp/update.XXXXXXXX)
+	
+	## close / quit menu
+	function CLOSE_QUIT () {
+		exec 3<> $PIPE_FIFO
+		echo "quit" >&3
+		rm -f $PIPE_FIFO
+	}
+	export -f CLOSE_QUIT
+	
+	## Refresh tray app
+	function REFRESH_TRAY () {
+		$APPDIR/pou-autoupdate-trayapp &
+		CLOSE_QUIT
+	}
+	export -f REFRESH_TRAY
+	
+	## get updates from server
+	function UPDATE_NOW () {
+		Xdialog --title "$APPTITLE" --msgbox "$DNLDMSG." 0 0 &
+		X2PID=$!
+		exec 3<> $PIPE_FIFO
+		grep -v -f "$INSUPDATE" "$TMPUPDATE" | while read PET ;
+		do
+			wget -b  -q -c -P "$DOWNDIR" "$SERVER""$PET" #&
+			wget -b  -q -c -P "$DOWNDIR" "$SERVER""$PET-md5.txt"
+			wget -b  -q -c -P "$DOWNDIR" "$INFSERVER""$PET.info$INFOLANGEXT.txt" #&
+			wget -b  -q -c -P "$DOWNDIR" "$INFSERVER""$PET.screenshot.jpg"
+			sleep 1 # probably needed to take effect 
+			#wget -c "$INFSERVER$GETPET".info$INFOLANGEXT.txt
+			sync
+			sleep 1 # needed to take effect of renaming
+			mv -f $DOWNDIR/$PET.info$INFOLANGEXT.txt $DOWNDIR/$PET.txt
+			#rm $-f DOWNDIR/$PET.info$INFOLANGEXT.txt
+			#echo "$PET" >> "$DLUPDATE" #20130607 Abandon de la liste des paquets déjà téléchargés (cette fonction étant finalement peu utile)
+		done
+		sync
+			kill $X2PID
+			rox $DOWNLOAD_DIRECTORY &
+			sleep 1
+			Xdialog  --title "$APPTITLE" --msgbox "$GETUPDATESDONE" 0 0
+		#CLOSE_QUIT
+	}
+	export -f UPDATE_NOW
+	
+	## get updates from server & install
+	function INSTALLALLUPDATES_NOW () {
+		Xdialog --title "$APPTITLE" --msgbox "$INSTMSG." 0 0 &
+		X3PID=$!
+		exec 3<> $PIPE_FIFO
+		grep -v -f "$INSUPDATE" "$TMPUPDATE" | while read PET ;
+		do
+			wget -b  -q -c -P "$DOWNDIR" "$SERVER""$PET" #&
+			wget -b  -q -c -P "$DOWNDIR" "$INFSERVER""$PET.info$INFOLANGEXT.txt" #&
+			wget -b  -q -c -P "$DOWNDIR" "$INFSERVER""$PET.screenshot.jpg"
+			sleep 1 # probably needed to take effect 
+			sync
+			sleep 1 # needed to take effect of renaming
+			mv -f $DOWNDIR/$PET.info$INFOLANGEXT.txt $DOWNDIR/$PET.txt
+			cd "$DOWNDIR"
+			petget "$PET"
+			#echo "$PET" >> "$INSUPDATE" #20130608 Désormais intégré dans pinstall des paquets
+			mv -f $DOWNDIR/$PET.txt $APPDIR/installed/$PET.txt
+			mv -f $DOWNDIR/$PET.screenshot.jpg $APPDIR/installed/$PET.screenshot.jpg
+			echo "$DOWNDIR/$PET" >> /tmp/updatepet_installed_log
+			rm $DOWNDIR/$PET
+			rm $DOWNDIR/$PET-md5.txt
+		done
+		sync
+		kill $X3PID
+		Xdialog  --title "$APPTITLE" --msgbox "$INSTALLALLUPDATES" 0 0
+		CLOSE_QUIT
+	}
+	export -f INSTALLALLUPDATES_NOW
+	
+	## get updates from GUI
+	function UPDATE_FROM_GUI () {
+		exec 3<> $PIPE_FIFO
+		$UPDATEAPP &  ## for use if external application handles updates
+	}
+	export -f UPDATE_FROM_GUI
+    	
+	## 1 Create PIPE_FIFO file
+	mkfifo $PIPE_FIFO
+	export PIPE_FIFO
+	
+	## 2 Attach a filedescriptor to this PIPE_FIFO
+	exec 3<> $PIPE_FIFO
+ 
+## 3 Run yad and tell it to read its stdin from the file descriptor
+#GUI=$(yad --notification --kill-parent --listen \ # 20130609 Probablement une bonne solution, mais problème de compatibilité avec les anciennes Puppy (avant Puppy5.5).
+GUI=$(yad --notification --listen \
+--image="$TRAY_ICON" \
+--text="$POPUP_TEXT1 $cnt $POPUP_TEXT2" \
+--command="bash -c LEFT_CLICK" <&3 ) & 
+
+	## 4 generate right click options menu
+	echo "menu:$MENU_TEXT1!bash -c UPDATE_NOW|$MENU_TEXT3!bash -c INSTALLALLUPDATES_NOW|$MENU_TEXT2!bash -c UPDATE_FROM_GUI|$REFRESH_TEXT!bash -c REFRESH_TRAY|$EXIT_TEXT!bash -c CLOSE_QUIT" >&3
+ 
+} # End RUN_UPDATE_TRAY
+
+
+## check server for updates
+#20130531 Modif fin de ligne et ajout option -L pour curl afin d'accepter les redirections. Exemple http://sw.asri-education.org/ est utilisé pour accéder à http://download.tuxfamily.org/ludoeduasri/
+#GETUPDATE=`curl -s "$SERVER" | awk 'BEGIN{ RS="<a href=" ; FS="\"" } {print $2 }' | grep '\.pet$' | sort -f -u ` #script RSH
+#GETUPDATE=` curl -s -L $SERVER | awk 'BEGIN{ RS="<a href=" ; FS="\"" } {print $2 }' | grep '\.pet$' | sort -f -u | tr '\n' ' ' ` # Script ASRI
+GETUPDATE=` curl -s -L $SERVER | awk 'BEGIN{ RS="<a href=" ; FS="\"" } {print $2 }' | grep '\.pet$' | sort -f -u ` # Script ASRI
+echo "$GETUPDATE" > "$TMPUPDATE"
+GETNEWUPDATE=` grep -v -f "$INSUPDATE" "$TMPUPDATE" ` # Script ASRI
+echo "$GETNEWUPDATE" > "$TMPNEWUPDATE"
+
+## Calculate number of available updates
+cnt=0
+while read LINE
+do
+	if [ "$LINE" != "" ]; then
+		cnt=`expr $cnt + 1`
+	fi
+#done < "$TMPUPDATE" # Script RSH
+done < "$TMPNEWUPDATE" # Script ASRI
+   
+## test if updates avaibles on server (if 0 then exit)
+if [ "$cnt" = "0" ]; then
+	echo "No updates available on server" && exit
+fi
+
+## compare installed updates against updates on server if different run_update_tray notification
+COMPARE1="` diff -q -B $INSUPDATE $TMPUPDATE`"
+echo "$COMPARE1" > /tmp/compare1.txt
+COMPARE="` diff -q -B $INSUPDATE $TMPUPDATE`"  
+if  [ -z "$COMPARE" ] ;then
+	echo "No new updates available on server" && exit
+	else
+	RUN_UPDATE_TRAY
+fi

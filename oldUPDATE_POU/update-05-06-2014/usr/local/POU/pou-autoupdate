@@ -1,0 +1,775 @@
+#!/bin/bash -a
+#------------------------------------------------------------------------------
+# POU (Puppy Online updater)
+# 20130314 original script by RSH (and stu90) for LazY Puppy
+# 20130609 POU-0.0.1 by ASRI
+# 20130901 ping por curl por Fabián Bonetti
+#------------------------------------------------------------------------------
+
+# Get Language Settings and APPDIR
+#------------------------------------------------------------------------------
+APPDIR="`dirname $0`"
+[ "$APPDIR" = "." ] && APPDIR="`pwd`"
+export APPDIR="$APPDIR"
+export APPDIR=`dirname $0`
+[ $APPDIR = '.' ] && export APPDIR=`pwd`
+
+DEFLANG=`env|grep "LANG="`
+LANGUAGE=`echo $LANG|head -c5`
+TMPLANG="`ls $APPDIR/locals/ | grep $LANGUAGE`"
+. $APPDIR/locals/es_ES.UTF-8:spanish
+[[ "$TMPLANG" != "en_US:english" ]] && . $APPDIR/locals/$TMPLANG 2> /dev/null
+echo $TMPLANG
+#------------------------------------------------------------------------------
+
+# check gtkdialog4 (0.8) ---> no icons for files in tree lists in gtkdialog3
+gtkdia=gtkdialog4
+GTKD4="`which gtkdialog4`"
+if [ "$GTKD4" = "" ];then
+	gtkdia=gtkdialog3
+fi
+
+# Init default data ---> don't edit this, edit the files listed below
+# If this is removed and the files below would not exist, the app won't start
+TESTSERVER="mamalibre.com.ar" # tuxfamily
+DOWNLOAD_DIRECTORY="/root/Downloads/Updates"
+NAMEPASS_ZIGBERT="puppy:linux"
+NEWSERVER="http://mamalibre.no-ip.org/pub/puppylinux/pou/passaggio/"
+INFSERVER="http://mamalibre.no-ip.org/pub/puppylinux/pou/passaggio/infos/"
+OSCOMPATIBILITY="Puppy-es OS"
+AUTOUPDATECHECK="true"
+USETRAYAPPCHECK="true"
+USEINTERVALCHECK="false"
+SKIPCHECKS="false"
+INTERVALCOMBOOUT=0
+instpetlist="$APPDIR/installed_list"
+dlpetlist="$APPDIR/downloaded_list"
+RUNAS=$1
+ICONS_DIR="$APPDIR/img"
+
+#-------------------------------------------------------------------------
+# Default data above will be overwritten if the files below are loaded
+#-------------------------------------------------------------------------
+
+# Get Download Directory ---> $DOWNLOAD_DIRECTORY
+. $APPDIR/download-dir
+# Get Passwords for Server Access ---> $NAMEPASS_ZIGBERT etc.
+. $APPDIR/pw-list
+# Get Update URL ---> $NEWSERVER
+. $APPDIR/update-url
+# Get Preferences
+. $APPDIR/preferences
+# Get Testserver ---> $TESTSERVER - edit this file
+#. $APPDIR/testserver #20130605 intégration de l'info TESTSERVEUR dans le fichier update-url
+
+# Create files if not exist
+ [[ ! -f "$dlpetlist" ]] && touch "$dlpetlist"  ## make downloaded updates file
+ [[ ! -f "$instpetlist" ]] && touch "$instpetlist"  ## make installed updates file
+
+# User fido needs root password ---> don't know if really needed/wanted
+#[ "`whoami`" != "root" ] && exec sudo -A ${0} ${@}
+
+# Data for online check
+Online="false"
+OnlineCancel="false"
+CNTLOOP=0
+
+# Online?
+if [ "$RUNAS" = "auto" ]; then # if called from /root/Startup
+	while [ "$Online" = "false" ];
+	do
+		#ping -4 -c 1 "$TESTSERVER"
+		#if [[ "$?" == "1" ]]; then
+		curl -s -o "/dev/null" "$TESTSERVER"
+		if [ "$?" -ne 0 ]
+			then
+			sleep 10
+			else
+			Online="true"
+			break
+		fi
+		CNTLOOP=`expr $CNTLOOP + 1`
+		if [ "$CNTLOOP" -eq 6 ]; then
+			if [ "$RUNAS" != "auto" ]; then # if called from menu
+				Online="true"
+				OnlineCancel="true"
+				echo "$CONNECTIONFAILEDMSG"
+				Xdialog --title "$AUTOUPDATETXT" --timeout 5 --left --wrap --msgbox "$CONNECTIONFAILEDMSG" 0 0
+			fi
+			exit 1
+		fi	
+	done
+	else
+	#ping -4 -c 1 "$TESTSERVER"
+	#if [[ "$?" == "1" ]]; then
+	curl -s -o "/dev/null" "$TESTSERVER"
+	if [ "$?" -ne 0 ]
+	then
+		echo "$CONNECTIONFAILEDMSG"
+		SKIPCHECKS="true"
+		Xdialog --title "$AUTOUPDATETXT" --left --wrap --msgbox "$CONNECTIONFAILEDMSG" 0 0
+	fi	
+fi
+
+# If Online (Web) Connection is existing
+if [ "$OnlineCancel" = "false" ]; then
+	
+	if [ "$SKIPCHECKS" = "false" ]; then
+	
+		# check for available .pet on server ---> simple version
+		#AVPET="` curl -s $NEWSERVER | awk -F '\"' '/href=\".*\.pet/ {print $8}' | sort -f -u | tr '\n' ' ' | sed '$s/.$//' `"
+
+		# check for available .pet on server ---> extended password version
+		#20130531 Ajout option "-L" pour curl afin d'accepter les redirections. Exemple http://sw.asri-education.org/ est utilisé pour accéder à http://download.tuxfamily.org/ludoeduasri/
+		#AVPET=` curl -s $NEWSERVER | awk 'BEGIN{ RS="<a href=" ; FS="\"" } {print $2 }' | grep '\.pet$' | sort -f -u | tr '\n' ' ' ` # Script RSH
+		AVPET=` curl -s -L $NEWSERVER | awk 'BEGIN{ RS="<a href=" ; FS="\"" } {print $2 }' | grep '\.pet$' | sort -f -u | tr '\n' ' ' ` # Script ASRI
+		[[ ! -n "$AVPET" ]] && AVPET=` curl -s -u $NAMEPASS_ZIGBERT $NEWSERVER | awk 'BEGIN{ RS="<a href=" ; FS="\"" } {print $2 }' | grep '\.pet$' |sort -f -u | tr '\n' ' ' `
+		echo $AVPET > /tmp/autoupdate_lazypuppy_tmp1
+		serverpetlist1=/tmp/autoupdate_lazypuppy_tmp1
+
+		# Updates available? If not, exit
+		EMPTY=`cat $serverpetlist1`
+		if [ "$EMPTY" = "" ]; then
+			if [ "$RUNAS" != "auto" ]; then # if called from menu
+				echo "$NOUPDATESAVAILMSG"
+				Xdialog --title "$AUTOUPDATETXT" --left --wrap --msgbox "$NOUPDATESAVAILMSG" 0 0
+			fi
+			#exit 2
+			if [ "$RUNAS" = "auto" ]; then # if called from /root/Startup
+			echo "$NOUPDATESAVAILMSG"
+			exit
+			fi
+		fi
+
+		# Exclude already installed Update files
+		rm /tmp/autoupdate_lazypuppy_tmp
+		for i in `cat $serverpetlist1`;
+		do
+			echo $i > /tmp/slist_tmp
+			if (grep .pet /tmp/slist_tmp) then
+				#if [ ! -f $APPDIR/installed/$i.txt ]; then # Script RSH
+				if ( ! grep $i $APPDIR/installed_list) then # Script ASRI
+				echo $i >> /tmp/autoupdate_lazypuppy_tmp
+				fi
+			fi
+		done
+		serverpetlist=/tmp/autoupdate_lazypuppy_tmp
+		rm /tmp/slist_tmp
+
+		# New, not yet installed Updates available? If not, exit
+		EMPTY=`cat $serverpetlist`
+		if [ "$EMPTY" = "" ]; then
+			if [ "$RUNAS" != "auto" ]; then # if called from menu
+				echo "$ALLUPDATESINSTALLEDMSG"
+				Xdialog --title "$AUTOUPDATETXT" --left --wrap --msgbox "$ALLUPDATESINSTALLEDMSG" 0 0
+			fi
+			#exit 3
+		fi
+		
+	fi
+	
+	
+	# Function Create list of .pet Update files in gui
+	function FuncPETListCreate() {
+		n="0"
+		for i in `cat $serverpetlist`; do 
+			n="$((n+1))"
+			#file[$n]="`basename $i`"
+			file[$n]="$i"
+		done
+		export NUM="$((n+1))"
+		for ((i=1;i<"$NUM";i++)); do 
+			echo '<item>'"${file[$i]}"'</item>'
+		done
+	} # End of function FuncPETListCreate
+	
+	
+	# Function Create list of installed Updates files in gui
+	function FuncInstPETListCreate() {
+		n="0"
+		for i in `cat $instpetlist`; do 
+			n="$((n+1))"
+			#file[$n]="`basename $i`"
+			file[$n]="$i"
+		done
+		export NUM="$((n+1))"
+		for ((i=1;i<"$NUM";i++)); do 
+			echo '<item>'"${file[$i]}"'</item>'
+		done
+	} # End of function FuncInstPETListCreate
+	
+	
+	# Function Download .pet Update files
+	function DoDownloadFiles(){
+		GETLOC=$DOWNLOAD_DIRECTORY
+		cd "$GETLOC"
+		if [ "$NEWPET" != "" ]; then
+			for GETPET in $NEWPET;
+			do
+				if (grep $GETPET $APPDIR/downloaded_list) then
+					Xdialog --title "$GETPET" --timeout 5 --left --wrap --msgbox "$DNLDFILEEXISTSMSG" 0 0
+					else
+					yaf-splash -deco "$GETPET" -icon gtk-info -placement center -bg lightgray -close never -fontsize large -text "$DNLDMSG" &
+					XPID=$!
+					$APPDIR/update-downloader "$NEWSERVER$GETPET"
+					wget -c "$NEWSERVER$GETPET"-md5.txt
+					wget -c "$INFSERVER$GETPET".info$INFOLANGEXT.txt
+					wget -c "$INFSERVER$GETPET".screenshot.jpg
+					sync
+					sleep 1 # needed to take effect of renaming !!!
+					mv -f $GETPET.info$INFOLANGEXT.txt $GETPET.txt
+					kill $XPID
+					#echo "$GETPET" >> $APPDIR/downloaded_list #20130607 Abandon de la liste des paquets déjà téléchargés (cette fonction étant finalement peu utile)
+					echo "$GETLOC/$GETPET" >> /tmp/updatepet_download_log
+					#mv -f $GETLOC/$GETPET.info$INFOLANGEXT.txt $GETLOC/$GETPET.txt
+				fi
+			done
+		fi
+	} # End of function DoDownloadFiles
+
+
+	# Function Show downloaded files
+	function ShowDownloadedFiles(){
+		GETLOC=$DOWNLOAD_DIRECTORY
+		rox $GETLOC &
+		sleep 1
+		Xdialog  --title "$APPTITLE" --left --wrap --msgbox "$GETUPDATESDONE" 0 0
+	} # End of function ShowDownloadedFiles
+	
+	
+	# Function Download and install .pet Update files
+	function DoInstallFiles(){
+		DoDownloadFiles
+		GETLOC=$DOWNLOAD_DIRECTORY
+		cd "$GETLOC"
+		if [ "$NEWPET" != "" ]; then
+			for GETPET in $NEWPET;
+			do
+				if [ -f $APPDIR/installed/$GETPET.txt ]; then
+					Xdialog --title "$GETPET" --timeout 5 --left --wrap --msgbox "$INSTFILEEXISTSMSG" 0 0
+					else
+					yaf-splash -deco "$GETPET" -icon gtk-info -placement center -bg lightgray -close never -fontsize large -text "$INSTMSG" &
+					XPID=$!
+					/usr/local/petget/petget $GETLOC/$GETPET
+					kill $XPID
+					#if [ -f $APPDIR/installed/$GETPET.txt ]; then
+						#echo "$GETPET" >> $APPDIR/installed_list #20130608 Désormais intégré dans pinstall des paquets
+						echo "$GETLOC/$GETPET" >> /tmp/updatepet_installed_log
+						mv -f "$GETLOC/$GETPET".txt $APPDIR/installed/$GETPET.txt
+						mv -f "$GETLOC/$GETPET".screenshot.jpg $APPDIR/installed/$GETPET.screenshot.jpg
+						rm $GETLOC/$GETPET
+						rm $GETLOC/$GETPET-md5.txt
+					#fi
+				fi
+			done
+		fi
+	} # End of function DoInstallFiles
+	
+	
+	# Function HideUpdate
+	function HideUpdate(){
+		GETLOC=$DOWNLOAD_DIRECTORY
+		cd "$GETLOC"
+		if [ "$NEWPET" != "" ]; then
+			for GETPET in $NEWPET;
+			do
+			# Add pet in file installer_list to hide it from the list of avaible updates
+			wget -c "$INFSERVER$GETPET".info$INFOLANGEXT.txt
+			wget -c "$INFSERVER$GETPET".screenshot.jpg
+			mv -f $GETPET.info$INFOLANGEXT.txt $GETPET.txt
+			echo "$GETPET" >> $APPDIR/installed_list
+			echo "$GETLOC/$GETPET" >> /tmp/updatepet_installed_log
+			mv -f "$GETLOC/$GETPET".txt $APPDIR/installed/$GETPET.txt
+			mv -f "$GETLOC/$GETPET".screenshot.jpg $APPDIR/installed/$GETPET.screenshot.jpg
+			done
+		fi
+	} # End of function HideUpdate
+	
+	
+	# Function HideUpdateInstalled
+	function HideUpdateInstalled(){
+		if [ "$INSTNEWPET" != "" ]; then
+			OLDVALUE01="$INSTNEWPET"
+			#NEWVALUE01=""
+			#sed -i "s/$OLDVALUE01/$NEWVALUE01/g" $APPDIR/installed_list
+			#sed -i "s/$OLDVALUE01/$NEWVALUE01/g" /tmp/updatepet_installed_log
+			sed -i "/$OLDVALUE01/d" $APPDIR/installed_list
+			sed -i "/$OLDVALUE01/d" /tmp/updatepet_installed_log
+			rm $APPDIR/installed/$INSTNEWPET.txt
+			rm $APPDIR/installed/$INSTNEWPET.screenshot.jpg
+		fi
+	} # End of function HideUpdateInstalled
+	
+	
+	# Function Download and show .pet Screenshot
+	function AutoUpdateScreenshot(){
+		GETLOC=/tmp
+		cd "$GETLOC"
+		if [ "$NEWPET" != "" ]; then
+			for GETPETINFO in $NEWPET;
+			do
+				yaf-splash -deco "$GETPETINFO" -icon gtk-info -placement center -bg lightgray -close never -fontsize large -text "$DNLDIMGINFOMSG" &
+				XPID=$!
+				wget -c "$INFSERVER$GETPETINFO".screenshot.jpg
+				kill $XPID
+			done
+			imginfofile="false"
+			# Show Info, if available
+			if [ -f /tmp/$GETPETINFO.screenshot.jpg ]; then
+				imginfo="true"
+			fi
+			if [ "$imginfo" = "true" ]; then
+				defaultimageviewer /tmp/$GETPETINFO.screenshot.jpg
+				rm /tmp/$GETPETINFO.screenshot.jpg
+				else
+				Xdialog --title "$GETPETINFO" --left --wrap --msgbox "$NOIMAGEINFOTXT" 0 0
+			fi
+		fi
+	} # End of function AutoUpdateScreenshot
+	
+	
+	# Function Download .pet Update Information files and show Update Information
+	function AutoUpdateFileInfo(){
+		GETLOC=/tmp
+		cd "$GETLOC"
+		if [ "$NEWPET" != "" ]; then
+			for GETPETINFO in $NEWPET;
+			do
+				yaf-splash -deco "$GETPETINFO" -icon gtk-info -placement center -bg lightgray -close never -fontsize large -text "$DNLDINFOMSG" &
+				XPID=$!
+				cd $GETLOC
+				wget -c "$INFSERVER$GETPETINFO".info.txt
+				if [ "$INFOLANGEXT" != "" ]; then
+					echo "$INFOLANGEXT"
+					wget -c "$INFSERVER$GETPETINFO".info$INFOLANGEXT.txt
+				fi
+				kill $XPID
+			done
+			infofile="false"
+			# Show Info, if available
+			if [ -f /tmp/$GETPETINFO.info.txt ]; then
+				. /tmp/$GETPETINFO.info.txt
+				infofile="true"
+			fi
+			if [ -f /tmp/$GETPETINFO.info$INFOLANGEXT.txt ]; then
+				. /tmp/$GETPETINFO.info$INFOLANGEXT.txt
+				infofile="true"
+			fi
+			if [ "$infofile" = "true" ]; then
+				Xdialog --title "$GETPETINFO" --left --wrap --msgbox "$UPDATEINFOTXT" 0 0
+				rm "$INFSERVER$GETPETINFO".info.txt
+				rm "$INFSERVER$GETPETINFO".info$INFOLANGEXT.txt
+				else
+				Xdialog --title "$GETPETINFO" --left --wrap --msgbox "$NOUPDATEINFOTXT" 0 0
+			fi
+		fi
+	} # End of function AutoUpdateFileInfo
+	
+	
+	## Function OpenInstalledList
+	function OpenInstalledList(){
+		if [ "$INSTNEWPET" != "" ]; then
+			infofile="false"
+			# Show Info, if available
+			if [ -f $APPDIR/installed/$INSTNEWPET.txt ]; then
+				. $APPDIR/installed/$INSTNEWPET.txt
+				infofile="true"
+			fi
+			if [ "$infofile" = "true" ]; then
+				Xdialog --title "$GETPETINFO" --left --wrap --msgbox "$UPDATEINFOTXT" 0 0
+				else
+				Xdialog --title "$GETPETINFO" --left --wrap --msgbox "$NOUPDATEINFOTXT" 0 0
+			fi
+		fi
+	} # End of OpenInstalledList
+	
+	
+	## Function OpenInstalledListScreenshot
+	function OpenInstalledListScreenshot(){
+		if [ "$INSTNEWPET" != "" ]; then
+			infofile="false"
+			# Show Info, if available
+			if [ -f $APPDIR/installed/$INSTNEWPET.screenshot.jpg ]; then
+				infofile="true"
+			fi
+			if [ "$infofile" = "true" ]; then
+				defaultimageviewer $APPDIR/installed/$INSTNEWPET.screenshot.jpg &
+				else
+				Xdialog --title "$INFOBTNTXT" --left --wrap --msgbox "$NOIMAGEINFOTXT" 0 0
+			fi
+		fi
+	 } # End of function OpenInstalledListScreenshot
+
+
+	## Function HelpGUI
+	function HelpGUI(){ 
+		Xdialog --title "$HELPTITLE01" --left --wrap --msgbox "$HELPTXT01" 0 0
+	} # End of funcion HelpGUI
+
+
+	## Function HelpGUI2
+	function HelpGUI2(){ 
+	export HelpGUI2="
+	<window title=\"$HELPTITLE01\" icon-name=\"gtk-help\">
+	<vbox>
+	<notebook page=\"0\" labels=\" $HELPTAB01 | $HELPTAB02 | $HELPTAB03 \">
+		
+	<vbox>
+	<text width-request=\"650\" use-markup=\"true\"><label>\"
+$HELPTXT01
+	\"</label></text>
+	</vbox>
+
+	<vbox>
+	<text width-request=\"650\" use-markup=\"true\"><label>\"
+$HELPTXT02
+	\"</label></text>		
+	</vbox>
+	
+	<vbox>	
+	<text width-request=\"650\" use-markup=\"true\"><label>\"
+$HELPTXT03
+	\"</label></text>		
+	</vbox>
+	
+	</notebook>
+	
+	<hbox>
+		<button tooltip-text=\"$QUITHELPBTNTXTTT\">
+		<label>$QUITHELPBTNTXT</label> 
+		<input file>$ICONS_DIR/close.png</input>
+		<action>exit:QUIT</action>
+		</button>
+	</hbox>
+	
+	</vbox>
+	<action signal=\"hide\">exit:ABORT</action>
+	</window>" # End - HelpGUI2
+
+	## show GUI HelpGUI2
+	echo "HelpGUI ready to work"
+
+	RETPARAMS="`$gtkdia --program=HelpGUI2 --center`"
+	eval "$RETPARAMS"
+	} # End of function HelpGUI2
+
+
+	# Function Reset Activity - Delete the history of installed updates
+	function ResetInstalledUpdates(){
+	rm -fR /usr/local/POU/installed/*
+	rm /usr/local/POU/installed_list
+	rm /tmp/updatepet_installed_log
+	sleep 1
+	} # End of function ResetInstalledUpdates
+
+	# Function Reset Activity - Delete the history of downloded updades
+	function ResetDownlodedUpdates(){
+	rm /usr/local/POU/downloaded_list
+	rm /tmp/updatepet_download_log
+	sleep 1
+	} # End of function ResetDownlodedUpdates
+
+	# Function Reset Activity - Delete all the history of POU
+	function ResetPOUhistory(){
+	rm -fR /usr/local/POU/installed/*
+	rm /usr/local/POU/downloaded_list
+	rm /usr/local/POU/installed_list
+	rm /tmp/autoupdate_lazypuppy_tmp
+	rm /tmp/autoupdate_lazypuppy_tmp1
+	rm /tmp/slist_tmp
+	rm /tmp/updatepet_installed_log
+	rm /tmp/updatepet_download_log
+	rm /tmp/updates-tmp
+	sleep 1
+	} # End of function ResetPOUhistory
+
+
+	# Function Uninstall_Dialog	
+	function Uninstall_Dialog(){
+	$APPDIR/uninstall_packages
+	} #End of function Uninstall_Dialog
+	
+	
+	# Function InfosVersionAuthors
+	function InfosVersionAuthors(){
+	Xdialog --title "$APPTITLE" --left --wrap --msgbox "$APPINFOSTXT2" 0 0
+	} #End of InfosVersionAuthors
+	
+	
+	# Function InfosCompatibility
+	function InfosCompatibility(){
+	if [ "$OSCOMPATIBILITY" = "$DISTRO_NAME $DISTRO_VERSION" ]; then
+		Xdialog --title "$APPTITLE" --left --wrap --msgbox "$OSCOMPATIBILITYTXT $OSCOMPATIBILITYTRUETXT" 0 0
+		else
+		Xdialog --title "$APPTITLE" --left --wrap --msgbox "$OSCOMPATIBILITYTXT $OSCOMPATIBILITYFALSETXT" 0 0
+	fi
+	} #End of InfosCompatibility
+	
+	
+	# Function ChangeCompatibility
+	function ChangeCompatibility(){
+	Xdialog --title "$APPTITLE" --left --wrap --msgbox "$CHANGECOMPATIBILITYTXT01" 0 0
+	defaulttexteditor $APPDIR/update-url
+	} #End of ChangeCompatibility
+	
+
+	#--------------------------------------------------------------------------
+	# GtkDialog GUI Parts
+	#--------------------------------------------------------------------------
+
+	# Main GUI
+	export AutoUpdateGUI="
+	<window title=\"$APPTITLE - $APPFUNCTIONTXT\" icon-name=\"pou\" resizable=\"false\">
+	<vbox>
+	
+	<notebook page=\"0\" labels=\" $SERVERUPDATESTTL | $INSTALLUPDATESTTL | $SETTINGSUPDATESTTL \">
+	
+	<vbox>
+	
+		<frame $Frm1Txt >
+			<hbox width-request=\"520\">
+			<vbox>
+				<frame $Frm2Txt >
+				<tree icon-name=\"pet48\">
+					<height>270</height>
+					<width>336</width>
+					<label>$PETCOLMNAME</label>
+					$(FuncPETListCreate)
+					<variable>NEWPET</variable>
+				</tree>
+				<text width-request=\"336\"><label>$InstallInfoMainTxt</label></text>
+				</frame>
+			</vbox>
+			<vbox>
+			<frame $Frm3Txt >
+				<text width-request=\"155\"><label>$InstInfoTxt1</label></text>
+				<text width-request=\"155\"><label>$InstInfoTxt2</label></text>
+				<text width-request=\"155\"><label>$InstInfoTxt3</label></text>
+				<text width-request=\"155\"><label>$InstInfoTxt4</label></text>
+			</frame>	
+			</vbox>
+			</hbox>
+
+			<hbox>
+			<button tooltip-text=\"$SCREENBTNTXTTT\">
+				<label>$SCREENBTNTXT</label> 
+				<input file>$ICONS_DIR/screenshot.png</input>
+				<action>AutoUpdateScreenshot &</action>
+			</button>
+			<button tooltip-text=\"$INFOBTNTXTTT\">
+				<label>$INFOBTNTXT</label> 
+				<input file>$ICONS_DIR/infos.png</input>
+				<action>AutoUpdateFileInfo &</action>
+			</button>
+			<button tooltip-text=\"$HIDEUPDATEBTNTXTTT\">
+				<label>$HIDEUPDATEBTNTXT</label> 
+				<input file>$ICONS_DIR/hide.png</input>
+				<action>HideUpdate</action>
+				<action>$APPDIR/pou-autoupdate &</action>
+				<action>exit:REFRESHEXIT</action>
+			</button>
+			<button tooltip-text=\"$DNLDBTNTXTTT\">
+				<label>$DNLDBTNTXT</label> 
+				<input file>$ICONS_DIR/download.png</input>
+				<action>DoDownloadFiles</action>
+				<action>ShowDownloadedFiles</action>
+			</button>
+			<button tooltip-text=\"$INSTBTNTXTTT\">
+				<label>$INSTBTNTXT</label> 
+				<input file>$ICONS_DIR/install.png</input>
+				<action>DoInstallFiles</action>
+				<action>$APPDIR/pou-autoupdate &</action>
+				<action>exit:REFRESHEXIT</action>
+			</button>
+		</hbox>
+		
+		</frame>	
+		
+	</vbox>
+	
+	<vbox>
+	
+		<frame $Frm1bTxt >
+			<hbox width-request=\"520\">
+			<vbox>
+				<frame $Frm2bTxt >
+				<tree icon-name=\"pet48\">
+					<height>326</height>
+					<width>510</width>
+					<label>$PETCOLMNAME</label>
+					$(FuncInstPETListCreate)
+					<variable>INSTNEWPET</variable>
+				</tree>
+				</frame>
+			</vbox>
+			</hbox>
+			<hbox>
+			<button tooltip-text=\"$SCREENBTNTXTTT\">
+				<label>$SCREENBTNTXT</label> 
+				<input file>$ICONS_DIR/screenshot.png</input>
+				<action>OpenInstalledListScreenshot</action>
+			</button>
+			<button tooltip-text=\"$INFOBTNTXTTT\">
+				<label>$INFOBTNTXT</label> 
+				<input file>$ICONS_DIR/infos.png</input>
+				<action>OpenInstalledList</action>
+			</button>
+			<button tooltip-text=\"$HIDEUPDATEINSTALLEDBTNTXTTT\">
+				<label>$HIDEUPDATEINSTALLEDBTNTXT</label> 
+				<input file>$ICONS_DIR/hide.png</input>
+				<action>HideUpdateInstalled</action>
+				<action>$APPDIR/pou-autoupdate &</action>
+				<action>exit:REFRESHEXIT</action>
+			</button>
+			<button tooltip-text=\"$UNINSTALLBTNTXTTT\">
+				<label>$UNINSTALLBTNTXT</label> 
+				<input file>$ICONS_DIR/uninstall.png</input>
+				<action>Uninstall_Dialog</action>
+				<action>$APPDIR/pou-autoupdate &</action>
+				<action>exit:REFRESHEXIT</action>
+			</button>
+		</hbox>
+		</frame>	
+		
+	</vbox>
+	
+	<vbox>
+
+		<frame $FrmCompatibilityTxt >
+	    <hbox>
+		    <text><label>$COMPATIBILITYBTNTXT</label></text>
+			<button tooltip-text=\"$COMPATIBILITYBTNTXTTT\">
+			<input file>$ICONS_DIR/compatibility.png</input>
+		    <action>InfosCompatibility &</action>
+		    </button>
+		</hbox>
+	    <hbox>
+		    <text><label>$CHANGECOMPATIBILITYBTNTXT</label></text>
+			<button tooltip-text=\"$CHANGECOMPATIBILITYBTNTXTTT\">
+			<input file>$ICONS_DIR/configuration.png</input>
+		    <action>ChangeCompatibility</action>
+		    <action>$APPDIR/pou-autoupdate &</action>
+			<action>exit:REFRESHEXIT</action>
+		    </button>
+		</hbox>
+		</frame>
+
+		<frame $DOAUTOUPDATEOPTFRMTXT >
+			<checkbox tooltip-text=\"$DOAUTOUPDATEOPTTXTTT\">
+				<label>$DOAUTOUPDATEOPTTXT</label>
+				<default>$AUTOUPDATECHECK</default>
+				<variable>AUTOUPDATECHECK</variable>
+			</checkbox>
+			<checkbox tooltip-text=\"$DOUSETRAYAPPOPTTXTTT\">
+				<label>$DOUSETRAYAPPOPTTXT</label>
+				<default>$USETRAYAPPCHECK</default>
+				<variable>USETRAYAPPCHECK</variable>
+			</checkbox>
+		</frame>
+		
+		<frame $FrmRefreshResetActivityTxt >	    
+	    <hbox>
+		    <text><label>$REFRESHBTNTXT</label></text>
+			<button tooltip-text=\"$REFRESHBTNTXTTT\">
+			<input file>$ICONS_DIR/refresh.png</input>
+			<action>$APPDIR/pou-autoupdate &</action>
+			<action>exit:REFRESHEXIT</action>
+		    </button>
+		</hbox>			    
+	    <hbox>
+		    <text><label>$RESETACTIVITYBTNTXT03</label></text>
+			<button tooltip-text=\"$RESETACTIVITYBTNTXTTT03\">
+			<input file>$ICONS_DIR/reset.png</input>
+		    <action>ResetPOUhistory &</action>
+			<action>$APPDIR/pou-autoupdate &</action>
+			<action>exit:REFRESHEXIT</action>
+		    </button>
+		</hbox>
+		</frame>
+		
+		<frame $FrmRepositoryTxt >
+	    <hbox>
+		    <text><label>$REPOSITORYBTNTXT</label></text>
+			<button tooltip-text=\"$REPOSITORYBTNTXTTT\">
+			<input file>$ICONS_DIR/webbrowser.png</input>
+		    <action>defaultbrowser $NEWSERVER &</action>
+		    </button>
+		</hbox>
+		</frame>
+		
+		<frame $FrmAppInfos >	    		    
+	    <hbox>
+		    <text><label>$APPINFOSTXT1</label></text>
+			<button tooltip-text=\"$APPINFOSTXTTT1\">
+			<input file>$ICONS_DIR/app-infos.png</input>
+			<action>InfosVersionAuthors &</action>
+		    </button>
+		</hbox>
+		</frame>
+		
+	</vbox>
+	
+	</notebook>
+	
+	<hbox>	
+		<button tooltip-text=\"$HELPBTNTXTTT\">
+			<label>$HELPBTNTXT</label> 
+			<input file>$ICONS_DIR/help.png</input>
+			<action>HelpGUI &</action>
+		</button>
+		<button tooltip-text=\"$QUITBTNTXTTT\">
+			<label>$QUITBTNTXT</label> 
+			<input file>$ICONS_DIR/close.png</input>
+			<action>exit:QUIT</action>
+		</button>
+	</hbox>
+	
+	</vbox>
+	<action signal=\"hide\">exit:ABORT</action>
+	</window>" # End - Main GUI
+
+	# show GUI
+	echo "$ReadyToWorkEcho"
+
+	#$gtkdia --program=AutoUpdateGUI --center
+	RETPARAMS="`$gtkdia --program=AutoUpdateGUI --center`"
+	eval "$RETPARAMS" # End Main GUI
+
+	#--------------------------------------------------------------------------
+	# GtkDialog GUI Afterworks
+	#--------------------------------------------------------------------------
+	
+	if [ "$EXIT" != "REFRESHEXIT" ]; then
+		# Save needed Program Data to its Files
+		echo 'DOWNLOAD_DIRECTORY="'$DOWNLOAD_DIRECTORY'"' > $APPDIR/download-dir
+		echo 'NAMEPASS_ZIGBERT="'$NAMEPASS_ZIGBERT'"' > $APPDIR/pw-list
+		echo 'TESTSERVER="'$TESTSERVER'"' > $APPDIR/update-url
+		echo 'NEWSERVER="'$NEWSERVER'"' >> $APPDIR/update-url
+		echo 'INFSERVER="'$INFSERVER'"' >> $APPDIR/update-url
+		echo 'OSCOMPATIBILITY="'$OSCOMPATIBILITY'"' >> $APPDIR/update-url
+
+		# Save Preferences
+		echo 'AUTOUPDATECHECK="'$AUTOUPDATECHECK'"' > $APPDIR/preferences
+		echo 'USETRAYAPPCHECK="'$USETRAYAPPCHECK'"' >> $APPDIR/preferences
+		echo 'USEINTERVALCHECK="'$USEINTERVALCHECK'"' >> $APPDIR/preferences
+		echo 'INTERVALCOMBOOUT="'$INTERVALCOMBOOUT'"' >> $APPDIR/preferences
+
+		# Enable or disable Auto Search for Updates
+		if [ "$AUTOUPDATECHECK" = "true" ]; then
+			cp -af /$APPDIR/zzz-pou /root/Startup/zzz-pou
+			else
+			rm /root/Startup/zzz-pou
+		fi
+		
+	fi
+	
+	#------------------------------------
+	else # if [ "$OnlineCancel" = "false" ];
+	#------------------------------------
+	
+	echo "Online Check canceled"
+	exit 10
+
+fi # if [ "$OnlineCancel" = "false" ];
+
+exit 0

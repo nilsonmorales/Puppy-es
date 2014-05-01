@@ -1,0 +1,223 @@
+#!/bin/bash -a
+#------------------------------------------------------------------------------
+# POU (Puppy Online updater) - Spanish translation
+# 20121212 original localization (en-de) by RSH for LazY Puppy
+# 20130609 Spanish localization by ASRI for POU-0.0.1
+#------------------------------------------------------------------------------
+# 20130907 nilsonmorales: Spanish minimal orthographic and grammatical corrections 
+
+# Distro Name etc.
+. /etc/DISTRO_SPECS
+. $APPDIR/version-authors
+. $APPDIR/download-dir
+. $APPDIR/update-url
+
+# Notebook GtkDialog GUI
+SERVERUPDATESTTL="Actualizaciones disponibles"
+INSTALLUPDATESTTL="Actualizaciones instaladas"
+SETTINGSUPDATESTTL="Configuración"
+
+# App POU infos : function, version, authors
+APPTITLE="POU (Puppy Online Updater)"
+APPTITLESHORT="POU"
+APPFUNCTIONTXT="Actualización de $OSCOMPATIBILITY"
+VERSION="versión"
+FrmAppInfos="Versión y los autores de $APPTITLESHORT"
+APPINFOSTXT1="Muestra información de la versión y los autores"
+APPINFOSTXTTT1="Haga clic aquí para ver información sobre la versión y autores de $APPTITLE"
+APPINFOSTXT2="$APPTITLE - Versión y autores 
+Versión usada : $APPTITLESHORT $VERSION $AppVersion de $AuthorActualVersion.
+Versiones anteriores : de $AuthorPreviousVersions
+Versión original : de $AuthorOriginalVersion.
+
+---------------------------
+
+$TrayAppName - Versión y autores 
+Versión usada : $TrayAppName $VERSION $TrayAppVersion de $TrayAppAuthorActualVersion.
+Versiones anteriores : de $TrayAppAuthorPreviousVersions
+Versión original : de $TrayAppAuthorOriginalVersion."
+
+# Tray-App
+MT1GETUPDATESTXT="Obtenga todas las actualizaciones disponibles"
+MT2GETUPDATESTXT="Mostrar la ventana principal de la utilidad $APPTITLE"
+MT3GETUPDATESTXT="Descargue e instale todas las actualizaciones disponibles"
+MTREFRESHTXT="Actualizar la lista de actualizaciones de pantalla en la barra de estado"
+MTEXITTXT="Salir temporalmente de la bandeja del sistema (Systray)"
+POPUPTXT1="Hay"
+POPUPTXT2="nuevas actualizaciones disponibles"
+GETUPDATESDONE="Las actualizaciones descargadas se guardan en la carpeta
+$DOWNLOAD_DIRECTORY."
+INSTALLALLUPDATES="Las actualizaciones disponibles se han instalado correctamente."
+
+# Detecting dependencies
+YADPRESENT="Yad está presente."
+YADMISSING="La aplicación Yad falta.
+Debe instalar Yad antes de usar la utilidad $APPTITLE."
+
+# Compatibility utility/OS
+FrmCompatibilityTxt="Compatibilidad $APPTITLESHORT/OS"
+COMPATIBILITYBTNTXT="Compruebe la compatibilidad entre el sistema operativo y $APPTITLESHORT"
+COMPATIBILITYBTNTXTTT="La configuración de $APPTITLESHORT es compatible con tu sistema operativo?. Haga clic aquí para comprobarlo."
+OSCOMPATIBILITYTXT="Actualmente la utilidad $APPTITLESHORT está configurada para actualizar el sistema operativo '$OSCOMPATIBILITY'.
+
+Su sistema operativo actual es '$DISTRO_NAME $DISTRO_VERSION'.
+"
+OSCOMPATIBILITYTRUETXT="
+Por lo tanto, $APPTITLESHORT está perfectamente configurado para actualizar su sistema operativo!"
+OSCOMPATIBILITYFALSETXT="
+Por lo tanto, la configuración de $APPTITLESHORT no parece conveniente para actualizar su sistema operativo!
+- Si desea descargar las actualizaciones para otro sistema operativo, entonces todo está bien.
+- Si desea utilizar $APPTITLESHORT para actualizar su sistema operativo actual, primero debe comprobar/cambiar el archivo update-url."
+CHANGECOMPATIBILITYBTNTXT="Cambie el ajuste de $APPTITLESHORT"
+CHANGECOMPATIBILITYBTNTXTTT="Para cambiar la configuración de $APPTITLESHORT, se puede editar manualmente el archivo update-url."
+CHANGECOMPATIBILITYTXT01="El editor de texto mostrará el contenido del archivo update-url.
+
+Los pasos:
+1 - Edite la información.
+2 - Guarde los cambios.
+3 - Cierre el editor de texto.
+4 - $APPTITLESHORT reinicie automáticamente, teniendo en cuenta el nuevo ajuste.
+
+Para obtener más información, foro $APPTITLE está a su disposición."
+
+# Connection failed
+CONNECTIONFAILEDMSG="No hay conexión a Internet disponible. Busqueda de actualizaciones se ha salido!
+
+Sugerencia: compruebe la conexión, y vuelva a iniciar el programa $APPTITLE."
+NOUPDATESAVAILMSG="Actualmente no existen actualizaciones disponibles para $OSCOMPATIBILITY."
+ALLUPDATESINSTALLEDMSG="Todas las actualizaciones ofrecidas/disponibles al dia ya están instaladas, el sistema está actualizado!"
+
+# Extension for Infofile ---> needed for any other language than EN , DE = -de
+INFOLANGEXT="-es"
+
+# Warning Messages
+DNLDFILEEXISTSMSG="Nota: La actualización ya se ha descargado en el directorio $DOWNLOAD_DIRECTORY, el archivo descargado se utilizará para la instalación, y este archivo luego se eliminará del directorio $DOWNLOAD_DIRECTORY."
+INSTFILEEXISTSMSG="Este archivo ha ya sido instalado!"
+
+# yes and no buttons
+YESBTNTXT="Sí"
+NOBTNTXT="No"
+
+# Repository
+FrmRepositoryTxt="Repositorio de actualizaciones"
+REPOSITORYBTNTXT="Consulte con el repositorio a través de su navegador de Internet."
+REPOSITORYBTNTXTTT="Haga clic aquí para activar el navegador de Internet y ver el contenido del repositorio, usted tendrá acceso a todas las actualizaciones de $OSCOMPATIBILITY"
+
+# Refresh/Reset activity
+FrmRefreshResetActivityTxt="Actualizar/Resetear Utilidad $APPTITLESHORT"
+RESETACTIVITYBTNTXT01="Borrar el historial de actualizaciones instaladas"
+RESETACTIVITYBTNTXT02="Borrar historial descargar actualizaciones"
+RESETACTIVITYBTNTXT03="Resetear Utilidad $APPTITLESHORT"
+RESETACTIVITYBTNTXTTT01="Haga clic aquí para eliminar inmediatamente el historial de actualizaciones instaladas con la utilidad $APPTITLESHORT.
+
+Observaciones :
+- El reinicio no elimina los cambios que ya están instalados.
+- Después del reinicio, la utilidad $APPTITLESHORT visualizará todas las actualizaciones disponibles (incluso si han sido previamente instaladas)."
+RESETACTIVITYBTNTXTTT02="Haga clic aquí para eliminar inmediatamente la historia de las actualizaciones descargadas con la utilidad $APPTITLESHORT.
+
+Nota:
+- El reinicio no elimina las actualizaciones ya descargadas.
+- Después del reinicio, la utilidad $APPTITLESHORT le permite descargar todas las actualizaciones disponibles (aunque hayan sido descargados previamente)."
+RESETACTIVITYBTNTXTTT03="Haga clic aquí para eliminar inmediatamente el historial de las actualizaciones descargadas/instaladas y los archivos temporales de servicios públicos $APPTITLESHORT.
+
+Observaciones:
+- El reinicio no elimina los cambios que ya ha descargado/instalado.
+- Después del reinicio, la utilidad $APPTITLESHORT le dará acceso a todas las actualizaciones disponibles (incluso si se han descargado/instalado).
+- El restablecimiento completo sólo es útil para arrancar de raíz una planta o hacking."
+REFRESHBTNTXT="Actualizar la lista de actualizaciones"
+REFRESHBTNTXTTT="Haga clic aquí para actualizar la lista inmediatamente (actualizaciones disponibles o instalados).
+
+Observaciones:
+- Refrescar el GUI $APPTITLESHORT no altera el historial de la utilidad (a diferencia del reset).
+- El enfriamiento se utiliza si la lista de actualizaciones (disponible o instalada) no se actualiza automáticamente después de la instalación."
+
+# Main GUI buttons
+UNINSTALLBTNTXT="Desinstalar"
+UNINSTALLBTNTXTTT="Para desinstalar una actualización instalada previamente, haga clic en este botón para activar el  PPM (Puppy Package Manager) de utilidad..
+
+Importante: ten cuidado porque la eliminación de una actualización puede hacer que el sistema sea inestable. En el peor de los casos, siempre se puede volver a instalar las actualizaciones que ha eliminado.
+
+Nota: Si la lista de paquetes instalados no se actualiza automáticamente, puede utilizar el botón 'Ocultar' para actualizar manualmente la lista (y eliminar las entradas relacionadas con el software desinstalado día)."
+HIDEUPDATEBTNTXT="Ocultar"
+HIDEUPDATEBTNTXTTT="Seleccionar una actualización y, a continuación, haga clic en este botón para eliminarlo de la lista (esto es útil si no desea instalar la actualización ofrecida).
+
+Nota: La actualización se selecciona, aparece en la lista de actualizaciones ya instaladas (por lo tanto no está disponible)."
+HIDEUPDATEINSTALLEDBTNTXT="Ocultar"
+HIDEUPDATEINSTALLEDBTNTXTTT="Seleccionar una actualización y, a continuación, haga clic en este botón para eliminarlo de la lista (esto es útil si desea volver a instalar la actualización se ofrece).
+
+Nota: La actualización seleccionada aparecerá en la lista de actualizaciones disponibles (no instalado)."
+INFOBTNTXT="Información"
+INFOBTNTXTTT="Mostrar la información en el archivo de instalación seleccionado"
+SCREENBTNTXT="Captura"
+SCREENBTNTXTTT="Ver captura de pantalla de la aplicación"
+DNLDBTNTXT="Descargar"
+DNLDBTNTXTTT="Descargue y guarde el archivo en $DOWNLOAD_DIRECTORY"
+INSTBTNTXT="Instalar"
+INSTBTNTXTTT="Seleccionar una actualización y, a continuación, haga clic en este botón para descargar e instalar."
+HELPBTNTXT="Ayudar"
+HELPBTNTXTTT="Ver el uso de $APPTITLESHORT"
+QUITBTNTXT="Salir"
+QUITBTNTXTTT="Salir $APPTITLESHORT"
+
+# Download/Install Messages
+AUTOUPDATETXT="$APPTITLE"
+DNLDMSG="Descarga de archivos de actualización. Por favor, espere..."
+DNLDINFOMSG="Descarga de archivo de información. Por favor, espere..."
+DNLDIMGINFOMSG="Descarga de imágenes. Por favor, espere..."
+INSTMSG="Instalando..."
+NOUPDATEINFOTXT="No hay información disponible.
+Puede haber algo de información sobre foro $APPTITLE $OSCOMPATIBILITY."
+NOIMAGEINFOTXT="No hay imagen disponible.
+Puede haber algo de información sobre foro $APPTITLE $OSCOMPATIBILITY."
+
+# Main GUI Info Text
+InstallInfoMainTxt="Cambios importantes deben instalarse en el orden de su fecha/número de versión (mayor a más reciente)."
+InstInfoTxt1="La lista contiene las actualizaciones disponibles (las que aún no se han instalado)."
+InstInfoTxt2="Se recomienda instalar todas las actualizaciones disponibles."
+InstInfoTxt3="Si usted tiene alguna pregunta, haga clic en el botón Ayuda."
+InstInfoTxt4="Más información está disponible en el foro $APPTITLE."
+
+Frm1Txt="Actualizaciones disponibles en la actualidad para $OSCOMPATIBILITY"
+Frm1InfoTxt="Actualizaciones ya instaladas no aparecen en esta lista."
+Frm2Txt="Lista de programas de servidor:"
+Frm3Txt="Nota:"
+Frm1bTxt="Actualizaciones actualmente instalados en $DISTRO_NAME $DISTRO_VERSION"
+Frm1bInfoTxt="Para obtener información detallada sobre las actualizaciones ya instaladas información, seleccione una actualización de la lista y, a continuación, haga clic en uno de los botones de abajo."
+Frm2bTxt="Lista de programas (ya instalado):"
+PETCOLMNAME="Haga clic para ordenar los archivos"
+
+# Options
+DOAUTOUPDATEOPTFRMTXT="Buscar actualizaciones"
+DOAUTOUPDATEOPTTXT="Activar búsqueda automática de actualizaciones"
+DOAUTOUPDATEOPTTXTTT="Esta opción permite $APPTITLESHORT utilidad busque automáticamente las actualizaciones disponibles para $OSCOMPATIBILITY al inicio del sistema (después de cargar el servidor X)"
+DOUSETRAYAPPOPTTXT="Mostrar $APPTITLESHORT en la bandeja del sistema"
+DOUSETRAYAPPOPTTXTTT="Esta opción le permite añadir utilidad $APPTITLESHORT en la bandeja $DISTRO_NAME estado $DISTRO_VERSION sistema.
+
+Nota: La utilidad $APPTITLESHORT sólo aparecerá si su conexión a Internet está funcionando y que las nuevas versiones están disponibles."
+DOUSEINTERVALOPTTXT="Periódicamente buscar actualizaciones"
+DOUSEINTERVALOPTTXTTT="Esta opción activa periódicamente busca actualizaciones para $OSCOMPATIBILITY"
+INTERVALTIMEINFOTXT2="Intervalo: "
+INTERVALTIMEINFOTXT="Seleccione o escriba el tiempo (en horas, '0' desactiva periódicamente búsqueda)"
+INTERVALTIMEINFOTXTTT="Seleccione o escriba el tiempo (en horas) para buscar actualizaciones de forma periódica ('0' desactiva periódicamente búsqueda)"
+
+# Help GUI
+HELPTITLE01="Ayudar para $APPTITLE"
+HELPTAB01="Actualizaciones disponibles"
+HELPTAB02="Actualizaciones instaladas"
+HELPTAB03="Leer más..."
+HELPTXT01="Notas y sugerencias:
+- Se recomienda instalar todas las actualizaciones disponibles.
+- Conocer los contenidos de cada actualización, seleccione la actualización y, a continuación, haga clic en el botón 'Información'.
+- Las actualizaciones se deben instalar de forma secuencial en el orden de la fecha/número de versión (mayor a más reciente).
+- Mantener actualizaciones instaladas de forma permanente, es necesario el uso de un archivo de almacenamiento personal (pupsave).
+- Puede utilizar las actualizaciones descargadas para instalar en otros equipos (no conectado a Internet), o para integrarse con una versión remasterizada de '$OSCOMPATIBILITY'.
+
+Para información adicional y/o sugerir mejoras/cambios, el foro $AppTitle está a su disposición."
+HELPTXT02="Help 2"
+HELPTXT03="Help 3"
+QUITHELPBTNTXT="Dejar"
+QUITHELPBTNTXTTT="Dejar ayudar de $APPTITLESHORT"
+
+# Other
+ReadyToWorkEcho="$APPTITLE - Listo para actualizar $OSCOMPATIBILITY"
+PleaseWait="Por favor espere..."
