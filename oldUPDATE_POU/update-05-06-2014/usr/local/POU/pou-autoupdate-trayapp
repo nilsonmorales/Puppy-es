@@ -16,7 +16,7 @@ export APPDIR=`dirname $0`
 DEFLANG=`env|grep "LANG="`
 LANGUAGE=`echo $LANG|head -c5`
 TMPLANG="`ls $APPDIR/locals/ | grep $LANGUAGE`"
-. $APPDIR/locals/en_US:english
+. $APPDIR/locals/es_ES:spanish
 [[ "$TMPLANG" != "es_ES:spanish" ]] && . $APPDIR/locals/$TMPLANG 2> /dev/null
 echo $TMPLANG
 #------------------------------------------------------------------------------
@@ -35,12 +35,12 @@ fi
 
 # Init default data ---> don't edit this, edit the files listed below
 # If this is removed and the files below would not exist, the app won't start
-TESTSERVER="88.191.250.18" # tuxfamily
+TESTSERVER="mamalibre.com.ar" # tuxfamily
 DOWNLOAD_DIRECTORY="/root/Downloads/Updates"
 NAMEPASS_ZIGBERT="puppy:linux"
-NEWSERVER="http://sw.asri-education.org/asriedu_sw/pou/noarch/"
-INFSERVER="http://sw.asri-education.org/asriedu_sw/pou/noarch/infos/"
-OSCOMPATIBILITY="Puppy noarch"
+NEWSERVER="http://mamalibre.no-ip.org/pub/puppylinux/pou/passaggio/"
+INFSERVER="http://mamalibre.no-ip.org/pub/puppylinux/pou/passaggio/infos/"
+OSCOMPATIBILITY="Puppy-es OS"
 AUTOUPDATECHECK="true"
 USETRAYAPPCHECK="true"
 USEINTERVALCHECK="false"
